@@ -4,3 +4,6 @@
     margin: 10px;
     padding: 10px;
 }
+.select2-container{
+    height: auto !important;
+}
