@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% block body %}
+    <h3>
+        {% if object.job %}
+            <small>{{ object.job }} -</small>{% endif %}
+        {{ object.name }}
+        {% if object.birthday %}
+            <small> - {{ object.birthday|timesince }}</small>{% endif %}
+    </h3>
+    <div class="btn-group btn-block">
+        <a href="{% url 'Patients:add_height_and_weight' object.id %}" class="btn btn-dark" data-toggle="modal" data-target="#sub_modal">
+            تسجيل وزن
+        </a>
+        <a href="{% url 'Patients:add_vital_record' object.id %}" data-toggle="modal" data-target="#sub_modal" class="btn btn-danger">
+            تسجيل العمليات الحيوية
+        </a>
+        <a href="{% url 'Patients:add_investigation' object.id %}" data-toggle="modal" data-target="#sub_modal" class="btn btn-info">
+            تسجيل كشف
+        </a>
+    </div>
+    <div class="btn-group btn-block">
+        <a href="#" class="btn btn-primary">
+            طلب تحاليل
+        </a>
+        <a href="#" class="btn btn-success">
+            طلب آشعة
+        </a>
+        <a href="#" class="btn btn-warning">
+            كتابة روشتة
+        </a>
+    </div>
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-info" role="tab"
+               aria-controls="nav-info" aria-selected="true">البيانات الشخصية</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-history" role="tab"
+               aria-controls="nav-history" aria-selected="false">التاريخ المرضي</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-lab-test" role="tab"
+               aria-controls="nav-lab-test" aria-selected="false">التحاليل</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-radiology" role="tab"
+               aria-controls="nav-radiology" aria-selected="false">الآشعة</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-visits" role="tab"
+               aria-controls="nav-visits" aria-selected="false">الزيارات</a>
+
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-info" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        البيانات الشخصية
+                    </div>
+                    <div class="card-tools">
+                        <a href="{% url 'Patients:PatientUpdate' object.id %}" class="btn"
+                           data-toggle="modal" data-target="#sub_modal">
+                            <i class="fa fa-edit"></i> تعديل
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h4>{{ object.name }}</h4>
+                    <p>
+                        <i class="fa fa-map-marker"></i>
+                        {{ object.city.state.country }} - {{ object.city.state }} -{{ object.city }} - {{ object.area }}
+                        <br>
+                        <i class="fa fa-briefcase"></i>
+                        {{ object.job }}
+                        <br>
+                        <i class="fa fa-birthday-cake"></i>
+                        {{ object.birthday|timesince }}
+                        <br>
+                        <i class="fa fa-mobile"></i> {{ object.telephone }}
+                        <a href="tel:{{ object.telephone }}">
+                            <i class="fa fa-phone"></i>
+                        </a>
+                        <a href="http://wa.me/2{{ object.telephone }}"
+                           target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <br>
+                        <i class="fa fa-clock"></i>
+                        آخر زيارة
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        التاريخ المرضي
+                    </div>
+                    <div class="card-tools">
+                        <a href="{% url 'Patients:PatientHistoryUpdate' object.id %}" class="btn"
+                           data-toggle="modal" data-target="#sub_modal">
+                            <i class="fa fa-edit"></i> تعديل
+                        </a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        {% for x in object.patient_history.all %}
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                                {{ x }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-lab-test" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+        </div>
+        <div class="tab-pane fade" id="nav-radiology" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+        </div>
+        <div class="tab-pane fade" id="nav-visits" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+        </div>
+    </div>
+{% endblock %}

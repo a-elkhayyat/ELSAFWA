@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block css %}
+    <style>
+    </style>
+{% endblock %}
+{% block body %}
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">
+                <i class="fa fa-search"></i> بحث
+            </div>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="maximize">
+                    <i class="fas fa-expand"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <form method="get">
+                <input type="text" name="name" placeholder="الاسم" class="form-group">
+                <input type="text" name="telephone" placeholder="التليفون" class="form-group">
+                <select name="gender" class="form-group">
+                    <option></option>
+                    <option value="1">ذكر</option>
+                    <option value="2">أنثي</option>
+                </select>
+                <button type="submit" class="btn btn-sm btn-info"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title"><i class="fa fa-list"></i> {{ title }}</div>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="maximize">
+                    <i class="fas fa-expand"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="card-body table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <th>#</th>
+                <td>الاسم</td>
+                <td>رقم التليفون</td>
+                <td>آخر زيارة</td>
+                <td></td>
+                </thead>
+                <tbody>
+                {% for x in object_list %}
+                    <tr>
+                        <td>{{ x.id }}</td>
+                        <td>{{ x.name }}</td>
+                        <td>
+                            {{ x.telephone }}
+                            {% if x.telephone %}
+                                <a href="tel:{{ x.telephone }}">
+                                    <i class="fa fa-phone"></i>
+                                </a>
+                                <a href="http://wa.me/2{{ x.telephone }}"
+                                   target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            {% endif %}
+                        </td>
+                        <td>{{ x.las }}</td>
+                        <td>
+
+                            <div class="btn-group-sm">
+                                <a href="{% url 'Patients:PatientDetail' x.id %}" class="btn  btn-success">
+                                    <i class="fa fa-eye"></i>
+                                    عرض
+                                </a>
+                                <a href="{% url 'Patients:PatientUpdate' x.id %}" class="btn  btn-warning"
+                                   data-toggle="modal" data-target="#sub_modal">
+                                    <i class="fa fa-edit"></i>
+                                    تعديل
+                                </a>
+                                <a href="{% url 'Patients:PatientDelete' x.id %}" class="btn  btn-danger"
+                                   data-toggle="modal" data-target="#sub_modal">
+                                    <i class="fa fa-trash"></i>
+                                    حذف
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    <div class="card-footer">
+        {% include 'segments/pagination.html' %}
+    </div>
+    </div>
+{% endblock %}

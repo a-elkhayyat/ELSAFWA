@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    {{ object }}
+                </div>
+                {% include 'segments/card_tools.html' %}
+            </div>
+            <div class="card-body table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                    <th>#</th>
+                    <th>الخصائص</th>
+                    <th>الوحدة</th>
+                    <th>أقل قيمة طبيعية</th>
+                    <th>أعلي قيمة طبيعية</th>
+                    <th></th>
+                    </thead>
+                    <tbody>
+                    {% for x in object.labtestattribute_set.all %}
+                        <tr>
+                            <td>{{ x.id }}</td>
+                            <td>{{ x.name }}</td>
+                            <td>{{ x.unit }}</td>
+                            <td>{{ x.normal_min }}</td>
+                            <td>{{ x.normal_max }}</td>
+                            <td>
+
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <td><a href="{% url 'LabTest:add_lab_test_attribute' object.id %}" class="btn btn-success"
+                               data-toggle="modal" data-target="#sub_modal"><i class="fa fa-plus-circle"></i> </a></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

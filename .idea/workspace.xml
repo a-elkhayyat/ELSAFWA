@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6195c29f-c14a-4313-922e-2b703262546d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/vueapp/frontend/views/Post.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/codemirror/addon/hint/html-hint.js" beforeDir="false" afterPath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/codemirror/addon/hint/html-hint.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/codemirror/codemirror.js" beforeDir="false" afterPath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/codemirror/codemirror.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/datatables/jquery.dataTables.js" beforeDir="false" afterPath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/datatables/jquery.dataTables.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/jquery-ui/jquery-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/jquery-ui/jquery-ui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/jquery-validation/jquery.validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/jquery-validation/jquery.validate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/jquery/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/jquery/jquery.slim.js" beforeDir="false" afterPath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/jquery/jquery.slim.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/moment/locale/pl.js" beforeDir="false" afterPath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/moment/locale/pl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/moment/locales.js" beforeDir="false" afterPath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/moment/locales.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/moment/moment-with-locales.js" beforeDir="false" afterPath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/moment/moment-with-locales.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/overlayScrollbars/js/OverlayScrollbars.js" beforeDir="false" afterPath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/overlayScrollbars/js/OverlayScrollbars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/pdfmake/pdfmake.js" beforeDir="false" afterPath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/pdfmake/pdfmake.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/pdfmake/pdfmake.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/pdfmake/pdfmake.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/AdminLTE/plugins/codemirror/addon/hint/html-hint.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/AdminLTE/plugins/codemirror/addon/hint/html-hint.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/AdminLTE/plugins/codemirror/codemirror.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/AdminLTE/plugins/codemirror/codemirror.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/AdminLTE/plugins/datatables/jquery.dataTables.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/AdminLTE/plugins/datatables/jquery.dataTables.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/AdminLTE/plugins/jquery-ui/jquery-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/AdminLTE/plugins/jquery-ui/jquery-ui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/AdminLTE/plugins/jquery-validation/jquery.validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/AdminLTE/plugins/jquery-validation/jquery.validate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/AdminLTE/plugins/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/AdminLTE/plugins/jquery/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/AdminLTE/plugins/jquery/jquery.slim.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/AdminLTE/plugins/jquery/jquery.slim.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/AdminLTE/plugins/moment/locale/pl.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/AdminLTE/plugins/moment/locale/pl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/AdminLTE/plugins/moment/locales.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/AdminLTE/plugins/moment/locales.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/AdminLTE/plugins/moment/moment-with-locales.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/AdminLTE/plugins/moment/moment-with-locales.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/AdminLTE/plugins/overlayScrollbars/js/OverlayScrollbars.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/AdminLTE/plugins/overlayScrollbars/js/OverlayScrollbars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/AdminLTE/plugins/pdfmake/pdfmake.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/AdminLTE/plugins/pdfmake/pdfmake.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/AdminLTE/plugins/pdfmake/pdfmake.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/AdminLTE/plugins/pdfmake/pdfmake.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueapp/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueapp/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueapp/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/codemirror/addon/hint/html-hint.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/codemirror/addon/hint/html-hint.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/codemirror/codemirror.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/codemirror/codemirror.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/datatables/jquery.dataTables.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/datatables/jquery.dataTables.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/jquery-ui/jquery-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/jquery-ui/jquery-ui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/jquery-validation/jquery.validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/jquery-validation/jquery.validate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/jquery/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/jquery/jquery.slim.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/jquery/jquery.slim.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/moment/locale/pl.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/moment/locale/pl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/moment/locales.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/moment/locales.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/moment/moment-with-locales.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/moment/moment-with-locales.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/overlayScrollbars/js/OverlayScrollbars.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/overlayScrollbars/js/OverlayScrollbars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/pdfmake/pdfmake.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/pdfmake/pdfmake.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/pdfmake/pdfmake.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/pdfmake/pdfmake.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/components/HelloWorld.vue" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LabTest/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="45" column="26" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#64#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LabTest/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="87" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="87" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/LabTest/templates/LabTest/labtest_detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LabTest/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="14" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Customer</find>
+      <find>Setting</find>
+      <find>login(request)</find>
+      <find>cairo</find>
+      <find>logout(request)</find>
+      <find>fonts</find>
+      <find>Auth:</find>
+      <find>font-fami</find>
+      <find>Cairo</find>
+      <find>search</find>
+      <find>List</find>
+      <find>Branches</find>
+      <find>Branch</find>
+      <find>crispy</find>
+      <find>accordi</find>
+      <find>accordion</find>
+      <find>spar</find>
+      <find>block</find>
+      <find>rig</find>
+      <find>vue</find>
+      <find>Long</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>Core:</replace>
+      <replace>../../../static/</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/vueapp/frontend" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Core/templates/Core/index.html" />
+        <option value="$PROJECT_DIR$/Core/static/Login/css/main.css" />
+        <option value="$PROJECT_DIR$/Core/templates/Auth/login.html" />
+        <option value="$PROJECT_DIR$/Core/templates/Auth/list_users.html" />
+        <option value="$PROJECT_DIR$/templates/segments/cardbase.html" />
+        <option value="$PROJECT_DIR$/Core/templates/Core/user_list.html" />
+        <option value="$PROJECT_DIR$/Core/forms.py" />
+        <option value="$PROJECT_DIR$/Core/models.py" />
+        <option value="$PROJECT_DIR$/Core/admin.py" />
+        <option value="$PROJECT_DIR$/Patients/forms" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/Core/views.py" />
+        <option value="$PROJECT_DIR$/templates/forms/form_template.html" />
+        <option value="$PROJECT_DIR$/Services/models.py" />
+        <option value="$PROJECT_DIR$/../../AdminLTE/pages/UI/general.html" />
+        <option value="$PROJECT_DIR$/Patients/admin.py" />
+        <option value="$PROJECT_DIR$/Calendar/models.py" />
+        <option value="$PROJECT_DIR$/Patients/models.py" />
+        <option value="$PROJECT_DIR$/Patients/templates/Patients/patient_detail.html" />
+        <option value="$PROJECT_DIR$/Patients/forms.py" />
+        <option value="$PROJECT_DIR$/templates/segments/navbar.html" />
+        <option value="$PROJECT_DIR$/templates/segments/card-tools.html" />
+        <option value="$PROJECT_DIR$/templates/segments/card_tools.html" />
+        <option value="$PROJECT_DIR$/Core/static/ONCore/css/onlink.css" />
+        <option value="$PROJECT_DIR$/Core/urls.py" />
+        <option value="$PROJECT_DIR$/ONCore/urls.py" />
+        <option value="$PROJECT_DIR$/ONCore/settings.py" />
+        <option value="$PROJECT_DIR$/vueapp/frontend/src/components/HelloWorld.vue" />
+        <option value="$PROJECT_DIR$/vueapp/frontend/src/route.js" />
+        <option value="$PROJECT_DIR$/vueapp/frontend/src/main.js" />
+        <option value="$PROJECT_DIR$/Patients/urls.py" />
+        <option value="$PROJECT_DIR$/Patients/serializers.py" />
+        <option value="$PROJECT_DIR$/vueapp/frontend/src/App.vue" />
+        <option value="$PROJECT_DIR$/vueapp/frontend/public/index.html" />
+        <option value="$PROJECT_DIR$/LabTest/models.py" />
+        <option value="$PROJECT_DIR$/LabTest/serializers.py" />
+        <option value="$PROJECT_DIR$/LabTest/views.py" />
+        <option value="$PROJECT_DIR$/LabTest/urls.py" />
+        <option value="$PROJECT_DIR$/Core/templates/base.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/Patients/templates/Patients/patient_list.html" />
+        <option value="$PROJECT_DIR$/templates/segments/pagination.html" />
+        <option value="$PROJECT_DIR$/Patients/views.py" />
+        <option value="$PROJECT_DIR$/Core/templates/cardbase.html" />
+        <option value="$PROJECT_DIR$/LabTest/templates/LabTest/labtest_list.html" />
+        <option value="$PROJECT_DIR$/LabTest/forms.py" />
+        <option value="$PROJECT_DIR$/Calendar/templates/calendar_list.html" />
+        <option value="$PROJECT_DIR$/Calendar/views.py" />
+        <option value="$PROJECT_DIR$/Calendar/urls.py" />
+        <option value="$PROJECT_DIR$/LabTest/templates/LabTest/labtest_detail.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1659" />
+    <option name="y" value="1" />
+    <option name="width" value="1936" />
+    <option name="height" value="1053" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ONCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ONCore" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ONCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ONCore" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Art" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\D\Work\Websites\ELSAFWA\ONCore\templates" />
+      <recent name="D:\Work\Websites\ONCore\Core\templates" />
+      <recent name="D:\Work\Websites\ONCore\Core\static\Login\fonts" />
+      <recent name="D:\Work\Websites\ONCore\static\Login" />
+      <recent name="D:\Work\Websites\ONCore\Core\templates\Core" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\Websites\ONCore\Core\templates\Core" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="ONCore" type="Python.DjangoServer" factoryName="Django server">
+      <module name="ONCore" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="ONCore.settings" />
+      </envs>
+      <option name="SDK_HOME" value="F:\D\Work\Websites\ELSAFWA\elsafwa-venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6195c29f-c14a-4313-922e-2b703262546d" name="Default Changelist" comment="" />
+      <created>1602564317929</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602564317929</updated>
+      <workItem from="1602564319628" duration="999000" />
+      <workItem from="1602628283511" duration="831000" />
+      <workItem from="1602640870663" duration="2685000" />
+      <workItem from="1602643867672" duration="10497000" />
+      <workItem from="1602728872529" duration="5557000" />
+      <workItem from="1602860828160" duration="281000" />
+      <workItem from="1602944481569" duration="1398000" />
+      <workItem from="1602945927317" duration="19650000" />
+      <workItem from="1603510595916" duration="227000" />
+      <workItem from="1603663066150" duration="6996000" />
+      <workItem from="1603771825431" duration="1796000" />
+      <workItem from="1604182782828" duration="10574000" />
+      <workItem from="1604264713890" duration="598000" />
+      <workItem from="1604435019711" duration="1813000" />
+      <workItem from="1604497984922" duration="67000" />
+      <workItem from="1604721171618" duration="119000" />
+      <workItem from="1604797210302" duration="4891000" />
+      <workItem from="1604813359739" duration="1503000" />
+      <workItem from="1604816710962" duration="70000" />
+      <workItem from="1604821572642" duration="13138000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="83690000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1592" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1369936" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3206934" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.35714287" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3206934" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Core/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Services/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../AdminLTE/pages/UI/general.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-379">
+          <caret line="1368" column="24" lean-forward="true" selection-start-line="1368" selection-start-column="24" selection-end-line="1368" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Patients/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Patients/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="11" column="56" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Patients/templates/Patients/patient_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Patients/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="92" column="39" selection-start-line="92" selection-start-column="39" selection-end-line="92" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/segments/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="132" column="40" lean-forward="true" selection-start-line="132" selection-start-column="40" selection-end-line="132" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/segments/card_tools.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/static/ONCore/css/onlink.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/templates/Core/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/templates/Core/form_template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="27" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ONCore/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="53" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+          <folding>
+            <element signature="e#630#662#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ONCore/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2363">
+          <caret line="139" selection-start-line="139" selection-end-line="139" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vueapp/frontend/src/components/HelloWorld.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vueapp/frontend/src/routes.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vueapp/frontend/views/Post.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vueapp/frontend/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="27" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Patients/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/static/AdminLTE/dist/css/adminlte-rtl.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../elsafwa-venv/Lib/site-packages/django/template/defaulttags.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21964">
+          <caret line="1314" column="4" selection-start-line="1314" selection-start-column="4" selection-end-line="1314" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vueapp/frontend/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1017">
+          <caret line="156" column="26" lean-forward="true" selection-start-line="156" selection-start-column="26" selection-end-line="156" selection-end-column="26" />
+          <folding>
+            <element signature="e#3099#3106#1#HTML" expanded="true" />
+            <element signature="e#5615#5621#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vueapp/frontend/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LabTest/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Patients/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="20" lean-forward="true" selection-start-line="1" selection-start-column="20" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1278">
+          <caret line="108" column="50" selection-start-line="108" selection-start-column="50" selection-end-line="108" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="35" column="70" selection-start-line="35" selection-start-column="70" selection-end-line="35" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Patients/templates/Patients/patient_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="103" column="44" selection-start-line="103" selection-start-column="44" selection-end-line="103" selection-end-column="44" />
+          <folding>
+            <element signature="e#2146#4802#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/segments/pagination.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Patients/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/templates/cardbase.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/templates/Core/user_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="20" lean-forward="true" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="203" column="20" lean-forward="true" selection-start-line="203" selection-start-column="20" selection-end-line="203" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LabTest/templates/LabTest/labtest_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="30" column="152" selection-start-line="30" selection-start-column="152" selection-end-line="30" selection-end-column="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LabTest/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/cardbase.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../AdminLTE/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1428" />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/common.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2159">
+          <caret line="127" column="18" selection-start-line="127" selection-start-column="18" selection-end-line="127" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="48" lean-forward="true" selection-end-line="18" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Calendar/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Calendar/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Calendar/templates/calendar_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+          <folding>
+            <element signature="e#51#5660#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../AdminLTE/pages/calendar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="806" column="37" lean-forward="true" selection-start-line="806" selection-start-column="37" selection-end-line="807" selection-end-column="41" />
+          <folding>
+            <element signature="n#script#11;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Calendar/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LabTest/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="45" column="26" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LabTest/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LabTest/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LabTest/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="87" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="87" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LabTest/templates/LabTest/labtest_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
