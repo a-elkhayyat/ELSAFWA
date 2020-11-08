@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6195c29f-c14a-4313-922e-2b703262546d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/vueapp/frontend/views/Post.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/codemirror/addon/hint/html-hint.js" beforeDir="false" afterPath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/codemirror/addon/hint/html-hint.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/codemirror/codemirror.js" beforeDir="false" afterPath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/codemirror/codemirror.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/datatables/jquery.dataTables.js" beforeDir="false" afterPath="$PROJECT_DIR$/Core/static/AdminLTE/plugins/datatables/jquery.dataTables.js" afterDir="false" />
@@ -29,10 +28,7 @@
       <change beforePath="$PROJECT_DIR$/static/AdminLTE/plugins/overlayScrollbars/js/OverlayScrollbars.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/AdminLTE/plugins/overlayScrollbars/js/OverlayScrollbars.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/AdminLTE/plugins/pdfmake/pdfmake.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/AdminLTE/plugins/pdfmake/pdfmake.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/AdminLTE/plugins/pdfmake/pdfmake.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/AdminLTE/plugins/pdfmake/pdfmake.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vueapp/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vueapp/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vueapp/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/codemirror/addon/hint/html-hint.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/codemirror/addon/hint/html-hint.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/codemirror/codemirror.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/codemirror/codemirror.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/datatables/jquery.dataTables.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/datatables/jquery.dataTables.js" afterDir="false" />
@@ -46,7 +42,6 @@
       <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/overlayScrollbars/js/OverlayScrollbars.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/overlayScrollbars/js/OverlayScrollbars.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/pdfmake/pdfmake.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/pdfmake/pdfmake.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/pdfmake/pdfmake.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE/plugins/pdfmake/pdfmake.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vueapp/frontend/src/components/HelloWorld.vue" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +81,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/LabTest/templates/LabTest/labtest_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
+            <state relative-caret-position="569">
               <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
             </state>
           </provider>
@@ -321,22 +316,22 @@
       <workItem from="1604797210302" duration="4891000" />
       <workItem from="1604813359739" duration="1503000" />
       <workItem from="1604816710962" duration="70000" />
-      <workItem from="1604821572642" duration="13138000" />
+      <workItem from="1604821572642" duration="13388000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83690000" />
+    <option name="totallyTimeSpent" value="83940000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1369936" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1369936" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32827735" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -345,7 +340,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3206934" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3206934" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -781,7 +776,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/LabTest/templates/LabTest/labtest_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
+        <state relative-caret-position="569">
           <caret line="35" column="16" lean-forward="true" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
         </state>
       </provider>
