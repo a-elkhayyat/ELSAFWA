@@ -113,8 +113,25 @@ def add_height_and_weight(request, pk):
 
 def add_investigation(request, pk):
     patient = get_object_or_404(Patient, id=pk)
-    title = 'إضافة سجل الوزن والطول'
+    title = 'إضافة زيارة كشف'
     form = InvestigationForm(request.POST or None)
+    if form.is_valid():
+        record = form.save(commit=False)
+        record.patient = patient
+        record.save()
+        return redirect('Patients:PatientDetail', patient.id)
+    context = {
+        'title': title,
+        'form': form,
+    }
+    return render(request, 'forms/form_template.html', context)
+
+
+def edit_investigation(request, pk):
+    investigation = get_object_or_404(PatientInvestigation, id=pk)
+    patient = investigation.patient
+    title = 'تعديل زيارة كشف'
+    form = InvestigationForm(request.POST or None, instance=investigation)
     if form.is_valid():
         record = form.save(commit=False)
         record.patient = patient

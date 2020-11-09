@@ -1,4 +1,17 @@
 {% extends 'base.html' %}
+{% block css %}
+    <style>
+        .canvasjs-chart-canvas {
+            width: 100% !important;
+        }
+
+        canvas {
+            height: 100vh;
+            width: 100vw;
+            display: block;
+        }
+    </style>
+{% endblock %}
 {% block body %}
     <h3>
         {% if object.job %}
@@ -8,13 +21,16 @@
             <small> - {{ object.birthday|timesince }}</small>{% endif %}
     </h3>
     <div class="btn-group btn-block">
-        <a href="{% url 'Patients:add_height_and_weight' object.id %}" class="btn btn-dark" data-toggle="modal" data-target="#sub_modal">
+        <a href="{% url 'Patients:add_height_and_weight' object.id %}" class="btn btn-dark" data-toggle="modal"
+           data-target="#sub_modal">
             تسجيل وزن
         </a>
-        <a href="{% url 'Patients:add_vital_record' object.id %}" data-toggle="modal" data-target="#sub_modal" class="btn btn-danger">
+        <a href="{% url 'Patients:add_vital_record' object.id %}" data-toggle="modal" data-target="#sub_modal"
+           class="btn btn-danger">
             تسجيل العمليات الحيوية
         </a>
-        <a href="{% url 'Patients:add_investigation' object.id %}" data-toggle="modal" data-target="#sub_modal" class="btn btn-info">
+        <a href="{% url 'Patients:add_investigation' object.id %}" data-toggle="modal" data-target="#sub_modal"
+           class="btn btn-info">
             تسجيل كشف
         </a>
     </div>
@@ -41,6 +57,10 @@
                aria-controls="nav-radiology" aria-selected="false">الآشعة</a>
             <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-visits" role="tab"
                aria-controls="nav-visits" aria-selected="false">الزيارات</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-weight" role="tab"
+               aria-controls="nav-visits" aria-selected="false">سجل الوزن والطول</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-vital" role="tab"
+               aria-controls="nav-visits" aria-selected="false">سجل العمليات الحيوية</a>
 
         </div>
     </nav>
@@ -116,7 +136,185 @@
 
         </div>
         <div class="tab-pane fade" id="nav-visits" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">سجل الكشف</div>
+                    <div class="card-tools">{% include 'segments/card_tools.html' %}</div>
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                        <th>#</th>
+                        <th>التاريخ</th>
+                        <th>الشكوي</th>
+                        <th>التشخيص</th>
+                        <th>الخطة العلاجية</th>
+                        <th></th>
+                        </thead>
+                        <tbody>
+                        {% for x in object.patientinvestigation_set.all %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ x.added_at.date.isoformat }}</td>
+                                <td>{{ x.complain }}</td>
+                                <td>{{ x.diagnosis }}</td>
+                                <td>{{ x.medical_plan }}</td>
+                                <td>
+                                    <div class="btn-group-sm">
+                                        <a href="{% url 'Patients:edit_investigation' x.id %}" class="btn btn-warning"
+                                           data-toggle="modal" data-target="#sub_modal">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-weight" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">سجل الوزن</div>
+                            {% include 'segments/card_tools.html' %}
+                        </div>
+                        <div class="card-body" style="height: 550px;">
+                            <div id="weight-chart" style="width:100%; height: 500px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">سجل الطول</div>
+                            {% include 'segments/card_tools.html' %}
+                        </div>
+                        <div class="card-body" style="height: 550px;">
+                            <div id="height-chart" style="width:100%; height: 500px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">سجل الكتلة</div>
+                            {% include 'segments/card_tools.html' %}
+                        </div>
+                        <div class="card-body" style="height: 550px;">
+                            <div id="bmi-chart" style="width:100%; height: 500px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-vital" role="tabpanel" aria-labelledby="nav-contact-tab">
 
         </div>
     </div>
+{% endblock %}
+{% block js %}
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script>
+        var weight_chart = new CanvasJS.Chart("weight-chart", {
+            exportEnabled: true,
+            animationEnabled: true,
+            width: 300,
+            theme: "light2", // "light1", "light2", "dark1", "dark2"
+            title: {
+                text: ""
+            },
+            axisY: {
+                title: "الوزن",
+                suffix: "",
+            },
+            axisX: {
+                title: "التاريخ"
+            },
+            data: [{
+                type: "stackedArea",
+                yValueFormatString: "#,##0.0#\"\"",
+                dataPoints: [
+                    {% for x in object.heightandweight_set.all %}
+                        {
+                            y: {{ x.weight|floatformat:".2f" }},
+                            label: "{{ x.added_at.date.isoformat }}"
+                        }{% if not forloop.last %},{% endif %}
+
+                    {% endfor %}
+
+                ]
+            }]
+        });
+        weight_chart.render();
+    </script>
+    <script>
+        var height_chart = new CanvasJS.Chart("height-chart", {
+            exportEnabled: true,
+            animationEnabled: true,
+            width: 300,
+            theme: "light2", // "light1", "light2", "dark1", "dark2"
+            title: {
+                text: ""
+            },
+            axisY: {
+                title: "الطول",
+                suffix: ""
+            },
+            axisX: {
+                title: "التاريخ"
+            },
+            data: [{
+                type: "stackedArea",
+                yValueFormatString: "#,##0.0#\"\"",
+                dataPoints: [
+                    {% for x in object.heightandweight_set.all %}
+                        {
+                            y: {{ x.height|floatformat:".2f" }},
+                            label: "{{ x.added_at.date.isoformat }}"
+                        }{% if not forloop.last %},{% endif %}
+
+                    {% endfor %}
+
+                ]
+            }]
+        });
+        height_chart.render();
+    </script>
+    <script>
+        var bmi_chart = new CanvasJS.Chart("bmi-chart", {
+            exportEnabled: true,
+            animationEnabled: true,
+            width: 300,
+            theme: "light2", // "light1", "light2", "dark1", "dark2"
+            title: {
+                text: ""
+            },
+            axisY: {
+                title: "bmi",
+                suffix: ""
+            },
+            axisX: {
+                title: "التاريخ"
+            },
+            data: [{
+                type: "stackedArea",
+                yValueFormatString: "#,##0.0#\"\"",
+                dataPoints: [
+                    {% for x in object.heightandweight_set.all %}
+                        {
+                            y: {{ x.bmi|floatformat:".2f" }},
+                            label: "{{ x.added_at.date.isoformat }}"
+                        }{% if not forloop.last %},{% endif %}
+
+                    {% endfor %}
+
+                ]
+            }]
+        });
+        bmi_chart.render();
+    </script>
 {% endblock %}

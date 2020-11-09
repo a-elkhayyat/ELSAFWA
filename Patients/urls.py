@@ -18,4 +18,5 @@ urlpatterns += [
     path('record/weight/<int:pk>/', add_height_and_weight, name='add_height_and_weight'),
     path('record/vital/<int:pk>/', add_vital_record, name='add_vital_record'),
     path('record/investigation/<int:pk>/', add_investigation, name='add_investigation'),
+    path('record/investigation/<int:pk>/edit', edit_investigation, name='edit_investigation'),
 ]

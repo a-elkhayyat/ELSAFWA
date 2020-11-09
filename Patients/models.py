@@ -76,6 +76,9 @@ class PatientViralProcess(models.Model):
     def __str__(self):
         return self.patient.name
 
+    class Meta:
+        ordering = ['added_at']
+
 
 class HeightAndWeight(models.Model):
     weight_status_choices = (
@@ -114,6 +117,9 @@ class HeightAndWeight(models.Model):
         self.save()
         return bmi
 
+    class Meta:
+        ordering = ['added_at']
+
 
 class PatientInvestigation(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='المريض')
@@ -125,6 +131,9 @@ class PatientInvestigation(models.Model):
     def __str__(self):
         return str(self.id)
 
+    class Meta:
+        ordering = ['added_at']
+
 
 class MedicalPrescription(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='المريض')
@@ -132,6 +141,9 @@ class MedicalPrescription(models.Model):
 
     def __str__(self):
         return str(self.id)
+
+    class Meta:
+        ordering = ['added_at']
 
 
 class PatientHistory(models.Model):
@@ -151,6 +163,9 @@ class PatientHistory(models.Model):
     def __str__(self):
         return str(self.id)
 
+    class Meta:
+        ordering = ['added_at']
+
 
 class LabTestRequest(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='المريض')
@@ -160,6 +175,9 @@ class LabTestRequest(models.Model):
 
     def __str__(self):
         return str(self.id)
+
+    class Meta:
+        ordering = ['added_at']
 
 
 class LabTestResult(models.Model):
