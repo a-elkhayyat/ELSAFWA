@@ -35,13 +35,14 @@
         </a>
     </div>
     <div class="btn-group btn-block">
-        <a href="#" class="btn btn-primary">
+        <a href="{% url 'Patients:lab_test_request' object.id %}" class="btn btn-primary" data-toggle="modal"
+           data-target="#sub_modal">
             طلب تحاليل
         </a>
-        <a href="#" class="btn btn-success">
+        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#sub_modal">
             طلب آشعة
         </a>
-        <a href="#" class="btn btn-warning">
+        <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#sub_modal">
             كتابة روشتة
         </a>
     </div>

@@ -144,6 +144,22 @@ def edit_investigation(request, pk):
     return render(request, 'forms/form_template.html', context)
 
 
+def lab_test_request(request, pk):
+    patient = get_object_or_404(Patient, id=pk)
+    title = 'طلب تحليل'
+    form = LabTestRequestForm(request.POST or None)
+    if form.is_valid():
+        obj = form.save(commit=False)
+        obj.patient = patient
+        obj.save()
+        return redirect('Patients:PatientDetail', patient.id)
+    context = {
+        'title': title,
+        'form': form,
+    }
+    return render(request, 'forms/form_template.html', context)
+
+
 class PatientViewSet(ModelViewSet):
     queryset = Patient.objects.filter(deleted=False)
     serializer_class = PatientSerializer

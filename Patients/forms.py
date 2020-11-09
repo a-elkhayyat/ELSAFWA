@@ -45,3 +45,9 @@ class InvestigationForm(ModelForm):
         model = PatientInvestigation
         exclude = ['patient']
 
+
+class LabTestRequestForm(ModelForm):
+    class Meta:
+        model = LabTestRequest
+        exclude = ['patient']
+
