@@ -164,3 +164,15 @@ class PatientViewSet(ModelViewSet):
     queryset = Patient.objects.filter(deleted=False)
     serializer_class = PatientSerializer
 
+
+def add_lab_test_result(request, pk):
+    lab_test = get_object_or_404(LabTestRequest, id=pk)
+    title = 'إدخال نتيجة التحاليل'
+    for x in lab_test.lab_test.labtestattribute_set.all():
+        result = LabTestResult()
+        result.lab_test = lab_test
+        result.attribute = x
+        result.save()
+
+
+

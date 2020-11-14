@@ -183,8 +183,19 @@ class LabTestRequest(models.Model):
 class LabTestResult(models.Model):
     lab_test = models.ForeignKey(LabTestRequest, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='التحليل')
     attribute = models.ForeignKey(LabTestAttribute, on_delete=models.CASCADE, verbose_name='الخاصية')
-    value = models.FloatField(verbose_name='القيمة')
+    value = models.FloatField(verbose_name='القيمة', null=True, blank=True)
 
     def __str__(self):
         return str(self.id)
 
+
+class LabTestImages(models.Model):
+    lab_test = models.ForeignKey(LabTest, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='التحليل')
+    image = models.ImageField(verbose_name='الصورة')
+
+    def __str__(self):
+        return str(self.id)
+
+
+class RadiologyRequest(models.Model):
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, null=True, blank=True, verbose_name='المريض')

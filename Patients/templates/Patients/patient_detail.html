@@ -132,6 +132,46 @@
         </div>
         <div class="tab-pane fade" id="nav-lab-test" role="tabpanel" aria-labelledby="nav-contact-tab">
 
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        التحاليل
+                    </div>
+                    <div class="card-tools">
+                        {% include 'segments/card_tools.html' %}
+                    </div>
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                        <th>#</th>
+                        <th>التاريخ</th>
+                        <th>التحليل</th>
+                        <th></th>
+                        </thead>
+                        <tbody>
+                        {% for x in object.labtestrequest_set.all %}
+                            <tr>
+                                <td>{{ x.id }}</td>
+                                <td>{{ x.added_at.date.isoformat }}</td>
+                                <td>{{ x.lab_test }}</td>
+                                <td>
+                                    {% if x.labtestresult_set.all %}
+                                        <a href="" data-toggle="modal" data-target="#sub_modal" class="btn btn-success">
+                                            <i class="fa fa-eye"></i>
+                                        </a>
+                                    {% else %}
+                                        <a href="" data-toggle="modal" data-target="#sub_modal" class="btn btn-success">
+                                            <i class="fa fa-plus-circle"></i>
+                                        </a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <div class="tab-pane fade" id="nav-radiology" role="tabpanel" aria-labelledby="nav-contact-tab">
 
