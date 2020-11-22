@@ -173,6 +173,50 @@ def add_lab_test_result(request, pk):
         result.lab_test = lab_test
         result.attribute = x
         result.save()
+        return redirect('Patients:LabTestResultDetail', lab_test.id)
+    context = {
+        'title': title,
+    }
+    return render(request, 'forms/form_template.html', context)
 
 
+class LabTestResultDetail(ONViewMixin, DetailView):
+    model = LabTestRequest
+
+
+def radiology_request(request, pk):
+    patient = get_object_or_404(Patient, id=pk)
+    title = 'طلب آشعة'
+    form = RadiologyRequestForm(request.POST or None)
+    if form.is_valid():
+        obj = form.save(commit=False)
+        obj.patient = patient
+        obj.save()
+        return redirect('Patients:PatientDetail', patient.id)
+    context = {
+        'title': title,
+        'form': form,
+    }
+    return render(request, 'forms/form_template.html', context)
+
+
+def add_radiology_result(request, pk):
+    radiology = get_object_or_404(RadiologyRequest, id=pk)
+    title = 'إدخال نتيجة آشعة'
+    form = RadiologyResultForm(request.POST or None)
+    if form.is_valid():
+        result = form.save(commit=False)
+        result.radiology = radiology
+        result.save()
+        return redirect('Patients:PatientDetail', radiology.patient.id)
+    context = {
+        'title': title,
+        'form': form,
+    }
+    return render(request, 'forms/form_template.html', context)
+
+
+class RadiologyResult(ONViewMixin, DetailView):
+    title = 'عرض نتائج الاشعة'
+    model = RadiologyResult
 

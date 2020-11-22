@@ -39,7 +39,8 @@
            data-target="#sub_modal">
             طلب تحاليل
         </a>
-        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#sub_modal">
+        <a href="{% url 'Patients:radiology_request' object.id %}" class="btn btn-success" data-toggle="modal"
+           data-target="#sub_modal">
             طلب آشعة
         </a>
         <a href="#" class="btn btn-warning" data-toggle="modal" data-target="#sub_modal">
@@ -159,10 +160,12 @@
                                     {% if x.labtestresult_set.all %}
                                         <a href="" data-toggle="modal" data-target="#sub_modal" class="btn btn-success">
                                             <i class="fa fa-eye"></i>
+                                            عرض النتيجة
                                         </a>
                                     {% else %}
-                                        <a href="" data-toggle="modal" data-target="#sub_modal" class="btn btn-success">
+                                        <a href="{% url 'Patients:add_lab_test_result' x.id %}" data-toggle="modal" data-target="#sub_modal" class="btn btn-success">
                                             <i class="fa fa-plus-circle"></i>
+                                            إضافة النتيجة
                                         </a>
                                     {% endif %}
                                 </td>
@@ -172,9 +175,52 @@
                     </table>
                 </div>
             </div>
+
         </div>
         <div class="tab-pane fade" id="nav-radiology" role="tabpanel" aria-labelledby="nav-contact-tab">
 
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        الآشعة
+                    </div>
+                    <div class="card-tools">
+                        {% include 'segments/card_tools.html' %}
+                    </div>
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                        <th>#</th>
+                        <th>التاريخ</th>
+                        <th>الآشعة</th>
+                        <th></th>
+                        </thead>
+                        <tbody>
+                        {% for x in object.radiologyrequest_set.all %}
+                            <tr>
+                                <td>{{ x.id }}</td>
+                                <td>{{ x.added_at.date.isoformat }}</td>
+                                <td>{{ x.radiology }}</td>
+                                <td>
+                                    {% if x.radiologyresult_set.all %}
+                                        <a href="{% url 'Patients:RadiologyResult' x.radiologyresult_set.all.first.id %}" data-toggle="modal" data-target="#sub_modal" class="btn btn-success">
+                                            <i class="fa fa-eye"></i>
+                                            عرض النتيجة
+                                        </a>
+                                    {% else %}
+                                        <a href="{% url 'Patients:add_radiology_result' x.id %}" data-toggle="modal" data-target="#sub_modal" class="btn btn-success">
+                                            <i class="fa fa-plus-circle"></i>
+                                            إضافة النتيجة
+                                        </a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <div class="tab-pane fade" id="nav-visits" role="tabpanel" aria-labelledby="nav-contact-tab">
             <div class="card">

@@ -1,0 +1,11 @@
+{% extends 'cardbase.html' %}
+{% block cardbody %}
+    <h2>{{ object.radiology }}</h2>
+    <small>{{ object.added_at.date }}</small>
+    <p>{{ object.comment }}</p>
+    {% for x in object.radiology.radiologyimages_set.all %}
+        <div class="col-lg-4 col-md-3 col-sm-6 col-12">
+            <img src="{{ x.url }}" width="100%">
+        </div>
+    {% endfor %}
+{% endblock %}

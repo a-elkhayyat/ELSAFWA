@@ -20,4 +20,9 @@ urlpatterns += [
     path('record/investigation/<int:pk>/', add_investigation, name='add_investigation'),
     path('record/investigation/<int:pk>/edit', edit_investigation, name='edit_investigation'),
     path('lab_test/request/<int:pk>/', lab_test_request, name='lab_test_request'),
+    path('lab_test/add/result/<int:pk>/', add_lab_test_result, name='add_lab_test_result'),
+    path('lab_test/result/<int:pk>/', LabTestResultDetail.as_view(), name='LabTestResultDetail'),
+    path('radiology/request/<int:pk>/', radiology_request, name='radiology_request'),
+    path('radiology/add/result/<int:pk>/', add_radiology_result, name='add_radiology_result'),
+    path('radiology/view/result/<int:pk>/', RadiologyResult, name='RadiologyResult'),
 ]

@@ -8,57 +8,41 @@ from .serializers import *
 
 
 # Create your views here.
-class LabTestCreate(ONViewMixin, CreateView):
-    title = 'إضافة تحليل'
-    model = LabTest
-    form_class = LabTestForm
+class RadiologyCreate(ONViewMixin, CreateView):
+    title = 'إضافة آشعة'
+    model = Radiology
+    form_class = RadiologyForm
     template_name = 'forms/form_template.html'
-    success_url = reverse_lazy('LabTest:LabTestList')
+    success_url = reverse_lazy('Radiology:RadiologyList')
 
 
-class LabTestList(ONViewMixin, ListView):
-    title = 'عرض التحاليل'
-    model = LabTest
+class RadiologyList(ONViewMixin, ListView):
+    title = 'عرض الآشعة'
+    model = Radiology
     paginate_by = 20
 
 
-class LabTestUpdate(ONViewMixin, UpdateView):
-    title = 'تعديل تحليل'
-    model = LabTest
-    form_class = LabTestForm
+class RadiologyUpdate(ONViewMixin, UpdateView):
+    title = 'تعديل آشعة'
+    model = Radiology
+    form_class = RadiologyForm
     template_name = 'forms/form_template.html'
-    success_url = reverse_lazy('LabTest:LabTestList')
+    success_url = reverse_lazy('Radiology:RadiologyList')
 
 
-class LabTestDelete(ONViewMixin, UpdateView):
-    title = 'حذف تحليل'
-    model = LabTest
-    form_class = LabTestDeleteForm
+class RadiologyDelete(ONViewMixin, UpdateView):
+    title = 'حذف آشعة'
+    model = Radiology
+    form_class = RadiologyDeleteForm
     template_name = 'forms/form_template.html'
-    success_url = reverse_lazy('LabTest:LabTestList')
+    success_url = reverse_lazy('Radiology:RadiologyList')
 
 
-class LabTestDetail(ONViewMixin, DetailView):
-    title = 'عرض التحاليل'
-    model = LabTest
+class RadiologyDetail(ONViewMixin, DetailView):
+    title = 'عرض الآشعة'
+    model = Radiology
 
 
-def add_lab_test_attribute(request, pk):
-    title = 'إضافة خصائص تحليل'
-    lab_test = get_object_or_404(LabTest, id=pk)
-    form = LabTestAttributeForm(request.POST or None)
-    if form.is_valid():
-        record = form.save(commit=False)
-        record.lab_test = lab_test
-        record.save()
-        return redirect('LabTest:LabTestDetail', lab_test.id)
-    context = {
-        'title': title,
-        'form': form,
-    }
-    return render(request, 'forms/form_template.html', context)
-
-
-class LabTestViewSet(ModelViewSet):
-    queryset = LabTest.objects.filter(deleted=False)
-    serializer_class = LabTestSerializer
+class RadiologyViewSet(ModelViewSet):
+    queryset = Radiology.objects.filter(deleted=False)
+    serializer_class = RadiologySerializer

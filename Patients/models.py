@@ -1,6 +1,7 @@
 from django.db import models
 from Core.models import *
 from LabTest.models import *
+from Radiology.models import *
 
 
 # Create your models here.
@@ -181,7 +182,8 @@ class LabTestRequest(models.Model):
 
 
 class LabTestResult(models.Model):
-    lab_test = models.ForeignKey(LabTestRequest, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='التحليل')
+    lab_test = models.ForeignKey(LabTestRequest, on_delete=models.SET_NULL, null=True, blank=True,
+                                 verbose_name='التحليل')
     attribute = models.ForeignKey(LabTestAttribute, on_delete=models.CASCADE, verbose_name='الخاصية')
     value = models.FloatField(verbose_name='القيمة', null=True, blank=True)
 
@@ -190,8 +192,10 @@ class LabTestResult(models.Model):
 
 
 class LabTestImages(models.Model):
-    lab_test = models.ForeignKey(LabTest, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='التحليل')
+    lab_test = models.ForeignKey(LabTestRequest, on_delete=models.SET_NULL, null=True, blank=True,
+                                 verbose_name='التحليل')
     image = models.ImageField(verbose_name='الصورة')
+    added_at = models.DateTimeField(auto_now_add=True, verbose_name='التاريخ', null=True)
 
     def __str__(self):
         return str(self.id)
@@ -199,3 +203,29 @@ class LabTestImages(models.Model):
 
 class RadiologyRequest(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE, null=True, blank=True, verbose_name='المريض')
+    radiology = models.ForeignKey(Radiology, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='الآشعة')
+    added_at = models.DateTimeField(auto_now_add=True, verbose_name='التاريخ', null=True)
+
+    def __str__(self):
+        return str(self.id)
+
+
+class RadiologyResult(models.Model):
+    radiology = models.ForeignKey(RadiologyRequest, on_delete=models.CASCADE, null=True, blank=True,
+                                  verbose_name='الآشعة')
+    comment = models.TextField(verbose_name='الملخص')
+    added_at = models.DateTimeField(auto_now_add=True, verbose_name='التاريخ', null=True)
+
+    def __str__(self):
+        return str(self.id)
+
+
+class RadiologyImages(models.Model):
+    radiology = models.ForeignKey(RadiologyRequest, on_delete=models.SET_NULL, null=True, blank=True,
+                                  verbose_name="الآشعة")
+    image = models.ImageField(verbose_name='الصورة')
+    added_at = models.DateTimeField(auto_now_add=True, verbose_name='التاريخ', null=True)
+
+    def __str__(self):
+        return str(self.id)
+

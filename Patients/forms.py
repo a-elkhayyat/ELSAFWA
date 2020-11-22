@@ -51,3 +51,14 @@ class LabTestRequestForm(ModelForm):
         model = LabTestRequest
         exclude = ['patient']
 
+
+class RadiologyRequestForm(ModelForm):
+    class Meta:
+        model = RadiologyRequest
+        exclude = ['patient']
+
+
+class RadiologyResultForm(ModelForm):
+    class Meta:
+        model = RadiologyResult
+        exclude = ['radiology']

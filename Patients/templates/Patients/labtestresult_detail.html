@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block body %}
+
+    <div class="col-lg-12">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">{{ title }}</div>
+            <div class="card-tools">{% include 'segments/card_tools.html' %}</div>
+        </div>
+        <div class="card-body table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <th>#</th>
+                <th>الخاصية</th>
+                <td>النتيجة</td>
+                <td>الوحدة</td>
+                <td>الطبيعي</td>
+                <td>طبيعي</td>
+                <td></td>
+                </thead>
+                <tbody>
+                {% for x in object.labtestresult_set.all %}
+                    <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ x.attribute }}</td>
+                    <td>{{ x.value }}</td>
+                    <td>{{ x.lab_test.lab_test.unit }}</td>
+                    <td>{{ x.lab_test.lab_test.normal_min }}</td>
+                    <td>{{ x.lab_test.lab_test.normal_max }}</td>
+                    <td>
+                        <div class="btn-group">
+                            <a href="" class="btn btn-warning">
+                                <i class="fa fa-edit"></i>
+                                تعديل
+                            </a>
+                        </div>
+                    </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+{% endblock %}
