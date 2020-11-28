@@ -23,5 +23,7 @@ urlpatterns = [
     path('lab_test/', include('LabTest.urls')),
     path('radiology/', include('Radiology.urls')),
     path('services/', include('Services.urls')),
+    path('medicine/', include('Medicines.urls')),
+    path('calendar/', include('Calendar.urls')),
     path('api-auth/', include('rest_framework.urls'))
 ]

@@ -16,4 +16,5 @@ urlpatterns = [
     path('users/list/', UserList.as_view(), name='UserList'),
     path('users/add/', UserCreate.as_view(), name='UserCreate'),
     path('users/update/<pk>/', UserUpdate.as_view(), name='UserUpdate'),
+    path('users/enable/<pk>/', UserDisable.as_view(), name='UserDisable'),
 ]

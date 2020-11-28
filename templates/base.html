@@ -34,15 +34,20 @@
     <!-- Cairo Font -->
     <link href='https://fonts.googleapis.com/css?family=Cairo' rel='stylesheet'>
 
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- Vue JS -->
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>-->
     <style>
         body {
             font-family: Cairo !important;
         }
-        .symbol-input100{
+
+        .symbol-input100 {
             left: -12px !important;
         }
     </style>
+    {% block css %}
+
+    {% endblock %}
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <!--<body class="sidebar-mini layout-fixed sidebar-closed sidebar-collapse">-->
@@ -61,13 +66,8 @@
 
         <div class="modal fade" id="sub_modal">
             <div class="modal-dialog">
-                <div class="modal-content">
-                    <span class="float-left">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </span>
-                    <div class="modal-body" id="sub_body">
+                <div class="modal-content" id="sub_body">
 
-                    </div>
                 </div>
             </div>
         </div>

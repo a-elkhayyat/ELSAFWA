@@ -6,6 +6,7 @@ class Service(models.Model):
     name = models.CharField(max_length=128, verbose_name='اسم الخدمة')
     price = models.FloatField(verbose_name='سعر الخدمة')
     number_of_visits = models.IntegerField(verbose_name='عدد الزيارات')
+    deleted = models.BooleanField(default=False, verbose_name='حذف')
 
     def __str__(self):
         return self.name

@@ -6,6 +6,8 @@ from .forms import *
 from Core.views import ONViewMixin
 from rest_framework.viewsets import ModelViewSet
 from .serializers import *
+from django.db.models import Q
+from rest_framework.pagination import PageNumberPagination
 
 
 # Create your views here.
@@ -160,11 +162,6 @@ def lab_test_request(request, pk):
     return render(request, 'forms/form_template.html', context)
 
 
-class PatientViewSet(ModelViewSet):
-    queryset = Patient.objects.filter(deleted=False)
-    serializer_class = PatientSerializer
-
-
 def add_lab_test_result(request, pk):
     lab_test = get_object_or_404(LabTestRequest, id=pk)
     title = 'إدخال نتيجة التحاليل'
@@ -220,3 +217,14 @@ class RadiologyResult(ONViewMixin, DetailView):
     title = 'عرض نتائج الاشعة'
     model = RadiologyResult
 
+
+class PatientViewSet(ModelViewSet):
+    queryset = Patient.objects.filter(deleted=False)
+    serializer_class = PatientSerializer
+
+    def get_queryset(self):
+        queryset = self.queryset.filter(instance=self.request.user.instance)
+        if self.request.GET.get('q'):
+            queryset = queryset.filter(Q(name__icontains=self.request.GET.get('q')) | Q(
+                telephone__icontains=self.request.GET.get('q')))
+        return queryset

@@ -35,13 +35,22 @@
                 </div>
             </div>
         </div>
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
+
+                <li class="nav-item">
+                    <a href="{% url 'Calendar:CalendarList' %}" class="nav-link">
+                        <i class="nav-icon fas fa-calendar"></i>
+                        <p>
+الأجندة والمواعيد
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                </li>
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
@@ -63,7 +72,8 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{% url 'Core:UserCreate' %}" class="nav-link" data-toggle="modal" data-target="#sub_modal">
+                                    <a href="{% url 'Core:UserCreate' %}" class="nav-link" data-toggle="modal"
+                                       data-target="#sub_modal">
                                         <i class="far fa-dot-circle nav-icon"></i>
                                         <p>إضافة</p>
                                     </a>
@@ -88,7 +98,8 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{% url 'Patients:PatientCreate' %}" class="nav-link" data-toggle="modal" data-target="#sub_modal">
+                                    <a href="{% url 'Patients:PatientCreate' %}" class="nav-link" data-toggle="modal"
+                                       data-target="#sub_modal">
                                         <i class="far fa-dot-circle nav-icon"></i>
                                         <p>إضافة</p>
                                     </a>
@@ -120,7 +131,8 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{% url 'LabTest:LabTestCreate' %}" class="nav-link" data-toggle="modal" data-target="#sub_modal">
+                                    <a href="{% url 'LabTest:LabTestCreate' %}" class="nav-link" data-toggle="modal"
+                                       data-target="#sub_modal">
                                         <i class="far fa-dot-circle nav-icon"></i>
                                         <p>إضافة</p>
                                     </a>
@@ -134,8 +146,8 @@
                                 </li>
                             </ul>
                         </li>
-                        
-                        
+
+
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -146,7 +158,8 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{% url 'Radiology:RadiologyCreate' %}" class="nav-link" data-toggle="modal" data-target="#sub_modal">
+                                    <a href="{% url 'Radiology:RadiologyCreate' %}" class="nav-link" data-toggle="modal"
+                                       data-target="#sub_modal">
                                         <i class="far fa-dot-circle nav-icon"></i>
                                         <p>إضافة</p>
                                     </a>
@@ -172,7 +185,8 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{% url 'Services:ServiceCreate' %}" class="nav-link" data-toggle="modal" data-target="#sub_modal">
+                                    <a href="{% url 'Services:ServiceCreate' %}" class="nav-link" data-toggle="modal"
+                                       data-target="#sub_modal">
                                         <i class="far fa-dot-circle nav-icon"></i>
                                         <p>إضافة</p>
                                     </a>
@@ -182,6 +196,47 @@
                                        class="nav-link">
                                         <i class="far fa-dot-circle nav-icon"></i>
                                         <p>عرض</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'Services:ServiceTrashList' %}"
+                                       class="nav-link">
+                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        <p>سلة المهملات</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    الأدوية
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{% url 'Medicines:MedicineCreate' %}" class="nav-link" data-toggle="modal"
+                                       data-target="#sub_modal">
+                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        <p>إضافة</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'Medicines:MedicineList' %}"
+                                       class="nav-link">
+                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        <p>عرض</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'Medicines:MedicineTrashList' %}"
+                                       class="nav-link">
+                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        <p>سلة المهملات</p>
                                     </a>
                                 </li>
                             </ul>

@@ -8,6 +8,13 @@ from .forms import *
 class ServiceList(ONViewMixin, ListView):
     title = 'عرض الخدمات'
     model = Service
+    queryset = Service.objects.filter(deleted=False)
+
+
+class ServiceTrashList(ONViewMixin, ListView):
+    title = 'عرض الخدمات المحذوفة'
+    model = Service
+    queryset = Service.objects.filter(deleted=True)
 
 
 class ServiceCreate(ONViewMixin, CreateView):
@@ -23,3 +30,9 @@ class ServiceUpdate(ONViewMixin, UpdateView):
     form_class = ServiceForm
     template_name = 'forms/form_template.html'
 
+
+class ServiceDelete(ONViewMixin, UpdateView):
+    title = 'حذف خدمة'
+    model = Service
+    form_class = ServiceDeleteForm
+    template_name = 'forms/form_template.html'

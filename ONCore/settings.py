@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'Invoices',
     'Radiology',
     'Services',
+    'Medicines',
     'rest_framework'
 ]
 
@@ -112,12 +113,27 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+DATETIME_INPUT_FORMATS = [
+    '%Y-%m-%dT%H:%M',   # datetime-local
+    '%Y-%m-%dT%H:%M:%S',   # datetime-local
+    '%Y-%m-%d %H:%M:%S',  # '2006-10-25 14:30:59'
+    '%Y-%m-%d %H:%M:%S.%f',  # '2006-10-25 14:30:59.000200'
+    '%Y-%m-%d %H:%M',  # '2006-10-25 14:30'
+    '%m/%d/%Y %H:%M:%S',  # '10/25/2006 14:30:59'
+    '%m/%d/%Y %H:%M:%S.%f',  # '10/25/2006 14:30:59.000200'
+    '%m/%d/%Y %H:%M',  # '10/25/2006 14:30'
+    '%m/%d/%y %H:%M:%S',  # '10/25/06 14:30:59'
+    '%m/%d/%y %H:%M:%S.%f',  # '10/25/06 14:30:59.000200'
+    '%m/%d/%y %H:%M',  # '10/25/06 14:30'
+
+]
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'ar-eg'
+LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Africa/Cairo'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 

@@ -51,8 +51,17 @@ class RegisterForm(forms.ModelForm):
         ]
         labels = {
             'first_name': 'الإسم',
+            'is_staff': 'موظف',
         }
         widgets = {
             'password': forms.PasswordInput(),
             'instance': forms.HiddenInput(),
         }
+
+
+class DisableForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = [
+            'is_active',
+        ]

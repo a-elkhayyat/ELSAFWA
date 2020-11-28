@@ -5,6 +5,10 @@ from .models import *
 class ServiceForm(ModelForm):
     class Meta:
         model = Service
-        fields = '__all__'
+        exclude = ['deleted']
 
 
+class ServiceDeleteForm(ModelForm):
+    class Meta:
+        model = Service
+        fields = ['deleted']

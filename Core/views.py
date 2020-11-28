@@ -251,3 +251,23 @@ class UserUpdate(PermissionRequiredMixin, UpdateView):
             return self.request.POST.get('url')
         else:
             return self.success_url
+
+
+class UserDisable(PermissionRequiredMixin, UpdateView):
+    model = User
+    permission_required = 'Core.disable_user'
+    form_class = DisableForm
+    success_url = reverse_lazy('Core:UserList')
+    template_name = 'forms/form_template.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'تفعيل/تعطيل مستخدم'
+        context['action_url'] = reverse_lazy('Core:UserDisable', kwargs={'pk': self.object.id})
+        return context
+
+    def get_success_url(self):
+        if self.request.POST.get('url'):
+            return self.request.POST.get('url')
+        else:
+            return self.success_url
