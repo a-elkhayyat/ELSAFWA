@@ -1,5 +1,5 @@
 from django.db import models
-from Core.models import User
+from Core.models import User, Instance
 from Services.models import Service
 from Patients.models import Patient
 
@@ -15,6 +15,7 @@ class Invoice(models.Model):
     discount = models.FloatField(default=0, verbose_name='خصم')
     after_discount = models.FloatField(default=0, verbose_name='بعد الخصم')
     visits_used = models.IntegerField(default=1, verbose_name='عدد الزيارات المستخدمة')
+    instance = models.ForeignKey(Instance, on_delete=models.CASCADE)
 
     def __str__(self):
         return str(self.id)

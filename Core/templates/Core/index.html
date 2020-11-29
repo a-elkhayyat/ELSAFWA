@@ -6,9 +6,9 @@
             <!-- small box -->
             <div class="small-box bg-info">
                 <div class="inner">
-                    <h3></h3>
+                    <h3>{{ request.user.instance.patient_set.count }}</h3>
 
-                    <p>عدد العملاء</p>
+                    <p>عدد المرضي</p>
                 </div>
                 <div class="icon">
                     <i class="ion ion-person-add"></i>
@@ -21,7 +21,7 @@
             <!-- small box -->
             <div class="small-box bg-success">
                 <div class="inner">
-                    <h3></h3>
+                    <h3>{{ request.user.instnace.queue_set.count }}</h3>
 
                     <p>مشروعات مكتملة</p>
                 </div>

@@ -13,6 +13,22 @@
             <i class="fa fa-calendar-plus"></i> إضافة موعد
         </a>
     </div>
+    <div class="col-lg-12">
+        <form method="get" action="#" class="form-inline">
+            <div class="form-group">
+                من
+                <input type="date" name="start" {% if request.GET.start %}value="{{ request.GET.start }}"{% else %}value="{% now "Y-m-01" %}"{% endif %}>
+            </div>
+            <div class="form-group">
+                إلي
+                <input type="date" name="end"{% if request.GET.end %}value="{{ request.GET.end }}"{% else %}value="{% now "Y-m-d" %}"{% endif %}>
+            </div>
+            <button type="submit" class="btn btn-sm btn-success">
+                <i class="fa fa-filter"></i>
+                فلتر
+            </button>
+        </form>
+    </div>
     <div class="col-lg-12 table-responsive">
         <table class="table table-hover">
             <thead>
@@ -74,19 +90,25 @@
                     right: 'dayGridMonth,timeGridWeek,timeGridDay'
                 },
                 'themeSystem': 'bootstrap',
+                // #ToDo: Use JSON Format instead of ListView
                 events: [
                     {% for x in object_list %}
 
                         {
                             title: '{{ x.patient.name }}',
-                            start: new Date({{ x.date.year }}, {{ x.date.month }}, {{ x.date.day }}, {{ x.date.hour }}, {{ x.date.minute }}),
+                            start: new Date({{ x.date.year }}, {{ x.date.month }} -1, {{ x.date.day }}, {{ x.date.hour }}, {{ x.date.minute }}),
+                            {% if x.end %}
+                                end: new Date({{ x.end.year }}, {{ x.end.month }} -1, {{ x.end.day }}, {{ x.end.hour }}, {{ x.end.minute }}),
+                            {% endif %}
                             allDay: false,
                             backgroundColor: '#0073b7', //Blue
-                            borderColor: '#0073b7' //Blue
+                            borderColor: '#0073b7', //Blue
+                            url: '{% url 'Calendar:AppointmentUpdate' x.id %}'
                         }{% if not forloop.last %},{% endif %}
                     {% endfor %}
 
                 ],
+
                 editable: true,
                 droppable: false, // this allows things to be dropped onto the calendar !!!
                 drop: function (info) {
@@ -100,6 +122,9 @@
                 slotDuration: '00:05',
                 defaultTimedEventDuration: '00:05',
 
+                eventClick: function (x) {
+                    $('#sub_body').load(x.relatedTarget.href)
+                }
 
             });
 

@@ -12,12 +12,19 @@ class AppointmentForm(forms.ModelForm):
         widget=DateInput(format='%Y-%m-%dT%H:%M'),
         label='الموعد'
     )
+    end = forms.DateTimeField(
+        input_formats=['%Y-%m-%dT%H:%M'],
+        widget=DateInput(format='%Y-%m-%dT%H:%M'),
+        label='نهاية الجلسة'
+    )
 
     class Meta:
         model = Appointment
         fields = '__all__'
         widgets = {
-            'date': DateInput()
+            'date': DateInput(),
+            'end': DateInput(),
+            'instance': forms.HiddenInput(),
         }
 
     def __init__(self, *args, **kwargs):
@@ -29,3 +36,9 @@ class AppointmentForm(forms.ModelForm):
 
         elif self.instance.patient:
             self.fields['patient'].queryset = Patient.objects.filter(deleted=False, id=self.instance.patient.pk)
+
+
+class QueueForm(forms.ModelForm):
+    class Meta:
+        model = Queue
+        exclude = ['appointment']

@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="row">
+        <div class="col-lg-12">
+            <a href="{% url 'Calendar:AppointmentCreate' %}" class="btn btn-success" data-toggle="modal"
+               data-target="#sub_modal">
+                <i class="fa fa-calendar-plus"></i> إضافة موعد
+            </a>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        مواعيد اليوم
+                    </div>
+                    {% include 'segments/card_tools.html' %}
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                        <th>#</th>
+                        <th>الموعد</th>
+                        <th>المريض</th>
+                        <th>الخدمة</th>
+                        <th></th>
+                        </thead>
+                        <tbody>
+                        {% for x in appointments %}
+                            <tr>
+                                <td>{{ x.id }}</td>
+                                <td>{{ x.date.time }}</td>
+                                <td>{{ x.patient }}</td>
+                                <td>{{ x.service }}</td>
+                                <td>
+                                    {% if x.queue_set.count == 0 %}
+                                        <div class="btn-group-sm">
+                                            <a href="{% url 'Calendar:AppointmentUpdate' x.id %}"
+                                               class="btn btn-warning"
+                                               data-toggle="modal" data-target="#sub_modal">
+                                                <i class="fa fa-edit"></i>
+                                                تعديل
+                                            </a>
+                                            <a href="{% url 'Calendar:Attend' x.id %}" class="btn btn-success">
+                                                <i class="fa fa-arrow-left"></i>
+                                                حضور
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        قائمة الانتظار
+                    </div>
+                    {% include 'segments/card_tools.html' %}
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                        <th>#</th>
+                        <th>حضور</th>
+                        <th>الموعد</th>
+                        <th>المريض</th>
+                        <th>الجلسات المتاحة</th>
+                        <th></th>
+                        </thead>
+                        <tbody>
+                        {% for x in queues %}
+                            <tr>
+                                <td>{{ x.id }}</td>
+                                <td>{{ x.date.time }}</td>
+                                <td>{{ x.appointment.date.time }}</td>
+                                <td>{{ x.appointment.patient }}</td>
+                                <td>
+                                    {% if x.sessions_left < 0 %}
+                                        <span class="badge badge-danger">
+                                    {{ x.sessions_left }}
+                                    </span>
+                                    {% else %}
+                                        <span class="badge badge-success">
+                                    {{ x.sessions_left }}
+                                    </span>
+                                    {% endif %}
+                                </td>
+                                <td>
+                                    <div class="btn-group-sm">
+                                        <a href="{% url 'Calendar:QueueDone' x.id %}" class="btn btn-success">
+                                            <i class="fa fa-check"></i>
+                                            إتمام
+                                        </a>
+                                        <a href="{% url 'Calendar:AppointmentUpdate' x.id %}" class="btn btn-warning">
+                                            <i class="fab fa-cc-visa"></i>
+                                            دفع
+                                        </a>
+                                        <a href="{% url 'Calendar:QueueDelete' x.id %}" class="btn btn-danger">
+                                            <i class="fa fa-trash"></i>
+                                            حذف
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

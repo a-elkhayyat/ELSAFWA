@@ -43,13 +43,33 @@
                      with font-awesome or any other icon font library -->
 
                 <li class="nav-item">
-                    <a href="{% url 'Calendar:CalendarList' %}" class="nav-link">
+                    <a href="" class="nav-link">
                         <i class="nav-icon fas fa-calendar"></i>
                         <p>
-الأجندة والمواعيد
+                            الأجندة والمواعيد
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{% url 'Calendar:TodayCalendar' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    مواعيد اليوم
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'Calendar:CalendarList' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    الأجندة
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li class="nav-item">
