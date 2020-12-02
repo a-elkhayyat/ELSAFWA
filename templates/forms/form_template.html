@@ -1,4 +1,4 @@
-{% block css %}
+
     <style>
         .select2-container {
             width: 100% !important;
@@ -14,8 +14,6 @@
             border: none !important;
         }
     </style>
-{% endblock %}
-{% block body %}
     {% load crispy_forms_tags %}
     <form method="post" action="{{ request.path }}">
         <div class="row">
@@ -51,8 +49,6 @@
             </div>
         </div>
     </form>
-{% endblock %}
-{% block js %}
 
     <script>
         function get_url() {
@@ -82,4 +78,6 @@
         $('.select2').select2();
         $('.select2-container').addClass('form-control');
     </script>
-{% endblock %}
+
+    {% block js %}
+    {% endblock %}

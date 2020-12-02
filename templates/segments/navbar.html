@@ -41,7 +41,6 @@
                 data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
-
                 <li class="nav-item">
                     <a href="" class="nav-link">
                         <i class="nav-icon fas fa-calendar"></i>
@@ -56,7 +55,6 @@
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
                                     مواعيد اليوم
-                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                         </li>
@@ -65,7 +63,6 @@
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
                                     الأجندة
-                                    <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                         </li>
@@ -75,6 +72,50 @@
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
+                        <p>
+الحسابات
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    سندات الصرف
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{% url 'Invoices:create_outcome_invoice' %}" class="nav-link" data-toggle="modal"
+                                       data-target="#sub_modal">
+                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        <p>إضافة</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'Invoices:OutcomeInvoiceList' %}"
+                                       class="nav-link">
+                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        <p>عرض</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'Invoices:IncomeInvoiceList' %}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    سندات القبض
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-list-alt"></i>
                         <p>
                             البيانات الأساسية
                             <i class="right fas fa-angle-left"></i>
@@ -254,6 +295,40 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="{% url 'Medicines:MedicineTrashList' %}"
+                                       class="nav-link">
+                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        <p>سلة المهملات</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    تصنيفات المصروفات
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{% url 'Invoices:CategoryCreate' %}" class="nav-link" data-toggle="modal"
+                                       data-target="#sub_modal">
+                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        <p>إضافة</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'Invoices:CategoryList' %}"
+                                       class="nav-link">
+                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        <p>عرض</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'Invoices:CategoryTrash' %}"
                                        class="nav-link">
                                         <i class="far fa-dot-circle nav-icon"></i>
                                         <p>سلة المهملات</p>

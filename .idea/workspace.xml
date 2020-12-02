@@ -2,21 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6195c29f-c14a-4313-922e-2b703262546d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Calendar/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Calendar/templates/Calendar/today_calendar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Invoices/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Invoices/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Invoices/templates/Invoices/income_invoices.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Invoices/templates/Invoices/invoice_form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Invoices/templates/Invoices/outcome_invoices.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Invoices/templates/Invoices/outcomecategory_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calendar/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Calendar/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calendar/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Calendar/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calendar/templates/Calendar/calendar_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Calendar/templates/Calendar/calendar_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calendar/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Calendar/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Calendar/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Calendar/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/templates/Core/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Core/templates/Core/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Calendar/templates/Calendar/today_calendar.html" beforeDir="false" afterPath="$PROJECT_DIR$/Calendar/templates/Calendar/today_calendar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Invoices/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Invoices/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Invoices/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Invoices/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Invoices/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Invoices/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Invoices/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Invoices/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ONCore/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ONCore/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ONCore/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ONCore/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patients/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Patients/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/forms/form_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forms/form_template.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/segments/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/segments/navbar.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,35 +29,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Invoices/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="548">
+              <caret line="136" selection-start-line="136" selection-end-line="136" />
+              <folding>
+                <element signature="e#0#64#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Calendar/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="73" column="44" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Invoices/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="12" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Invoices/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+            <state relative-caret-position="476">
+              <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -69,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Invoices/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+            <state relative-caret-position="187">
+              <caret line="11" column="78" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="78" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -79,43 +66,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Calendar/templates/Calendar/today_calendar.html">
+        <entry file="file://$PROJECT_DIR$/Invoices/templates/Invoices/income_invoices.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="47" column="47" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
+            <state relative-caret-position="384">
+              <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Calendar/urls.py">
+        <entry file="file://$PROJECT_DIR$/templates/segments/navbar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="429">
+              <caret line="107" column="71" selection-start-line="107" selection-start-column="71" selection-end-line="107" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Invoices/templates/Invoices/outcome_invoices.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="15" column="54" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
+              <caret line="15" column="34" selection-end-line="31" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Calendar/models.py">
+        <entry file="file://$PROJECT_DIR$/Invoices/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
+            <state relative-caret-position="153">
+              <caret line="21" column="93" selection-start-line="21" selection-start-column="93" selection-end-line="21" selection-end-column="93" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ONCore/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="133" column="22" selection-start-line="133" selection-start-column="22" selection-end-line="133" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -127,8 +111,8 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -178,11 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Radiology/عقمس.py" />
-        <option value="$PROJECT_DIR$/Radiology/serializers.py" />
-        <option value="$PROJECT_DIR$/Radiology/models.py" />
-        <option value="$PROJECT_DIR$/Radiology/forms.py" />
-        <option value="$PROJECT_DIR$/Radiology/urls.py" />
         <option value="$PROJECT_DIR$/Radiology/templates/Radiology/radiology_list.html" />
         <option value="$PROJECT_DIR$/Radiology/views.py" />
         <option value="$PROJECT_DIR$/Patients/forms.py" />
@@ -190,7 +169,6 @@
         <option value="$PROJECT_DIR$/Patients/templates/Patients/radiologyresult_detail.html" />
         <option value="$PROJECT_DIR$/Patients/urls.py" />
         <option value="$PROJECT_DIR$/Patients/templates/Patients/patient_detail.html" />
-        <option value="$PROJECT_DIR$/Patients/models.py" />
         <option value="$PROJECT_DIR$/Services/templates/service_list.html" />
         <option value="$PROJECT_DIR$/Core/static/AdminLTE/dist/css/adminlte-rtl.css" />
         <option value="$PROJECT_DIR$/Services/models.py" />
@@ -208,7 +186,6 @@
         <option value="$PROJECT_DIR$/Medicines/models.py" />
         <option value="$PROJECT_DIR$/Medicines/templates/Medicines/medicine_list.html" />
         <option value="$PROJECT_DIR$/Calendar/templates/add_appointment_form.html" />
-        <option value="$PROJECT_DIR$/ONCore/urls.py" />
         <option value="$PROJECT_DIR$/Patients/views.py" />
         <option value="$PROJECT_DIR$/Calendar/admin.py" />
         <option value="$PROJECT_DIR$/Calendar/templates/Calendar/add_appointment_form.html" />
@@ -216,19 +193,26 @@
         <option value="$PROJECT_DIR$/../../AdminLTE/pages/calendar.html" />
         <option value="$PROJECT_DIR$/Calendar/serializer.py" />
         <option value="$PROJECT_DIR$/Calendar/serializers.py" />
-        <option value="$PROJECT_DIR$/templates/segments/navbar.html" />
         <option value="$PROJECT_DIR$/Core/templates/Core/index.html" />
         <option value="$PROJECT_DIR$/Calendar/forms.py" />
         <option value="$PROJECT_DIR$/Calendar/models.py" />
         <option value="$PROJECT_DIR$/Calendar/templates/Calendar/calendar_list.html" />
         <option value="$PROJECT_DIR$/ONCore/settings.py" />
+        <option value="$PROJECT_DIR$/Calendar/urls.py" />
+        <option value="$PROJECT_DIR$/Calendar/views.py" />
+        <option value="$PROJECT_DIR$/ONCore/urls.py" />
+        <option value="$PROJECT_DIR$/templates/forms/form_template.html" />
+        <option value="$PROJECT_DIR$/Patients/models.py" />
+        <option value="$PROJECT_DIR$/Invoices/templates/Invoices/invoice_form.html" />
+        <option value="$PROJECT_DIR$/Invoices/templates/Invoices/outcomecategory_list.html" />
+        <option value="$PROJECT_DIR$/Calendar/templates/Calendar/today_calendar.html" />
         <option value="$PROJECT_DIR$/Invoices/models.py" />
-        <option value="$PROJECT_DIR$/Invoices/forms.py" />
+        <option value="$PROJECT_DIR$/Invoices/templates/Invoices/outcome_invoices.html" />
+        <option value="$PROJECT_DIR$/templates/segments/navbar.html" />
         <option value="$PROJECT_DIR$/Invoices/views.py" />
         <option value="$PROJECT_DIR$/Invoices/urls.py" />
-        <option value="$PROJECT_DIR$/Calendar/views.py" />
-        <option value="$PROJECT_DIR$/Calendar/urls.py" />
-        <option value="$PROJECT_DIR$/Calendar/templates/Calendar/today_calendar.html" />
+        <option value="$PROJECT_DIR$/Invoices/templates/Invoices/income_invoices.html" />
+        <option value="$PROJECT_DIR$/Invoices/forms.py" />
       </list>
     </option>
   </component>
@@ -255,22 +239,31 @@
             <path>
               <item name="ONCore" type="b2602c69:ProjectViewProjectNode" />
               <item name="ONCore" type="462c0819:PsiDirectoryNode" />
-              <item name="Calendar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ONCore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ONCore" type="462c0819:PsiDirectoryNode" />
-              <item name="Core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ONCore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ONCore" type="462c0819:PsiDirectoryNode" />
               <item name="Invoices" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ONCore" type="b2602c69:ProjectViewProjectNode" />
               <item name="ONCore" type="462c0819:PsiDirectoryNode" />
-              <item name="Services" type="462c0819:PsiDirectoryNode" />
+              <item name="Invoices" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ONCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ONCore" type="462c0819:PsiDirectoryNode" />
+              <item name="Invoices" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="Invoices" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ONCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ONCore" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ONCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ONCore" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="segments" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -289,16 +282,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\D\Work\Websites\ELSAFWA\ONCore\Calendar\templates\Calendar" />
+      <recent name="F:\D\Work\Websites\ELSAFWA\ONCore\Services\templates\Services" />
+      <recent name="D:\Work\Websites\ONCore\Core\templates\Core" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\D\Work\Websites\ELSAFWA\ONCore\templates" />
       <recent name="D:\Work\Websites\ONCore\Core\templates" />
       <recent name="D:\Work\Websites\ONCore\Core\static\Login\fonts" />
       <recent name="D:\Work\Websites\ONCore\static\Login" />
-      <recent name="D:\Work\Websites\ONCore\Core\templates\Core" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\D\Work\Websites\ELSAFWA\ONCore\Calendar\templates\Calendar" />
-      <recent name="F:\D\Work\Websites\ELSAFWA\ONCore\Services\templates\Services" />
       <recent name="D:\Work\Websites\ONCore\Core\templates\Core" />
     </key>
   </component>
@@ -386,7 +379,7 @@
       <workItem from="1606158344275" duration="9610000" />
       <workItem from="1606251587707" duration="1220000" />
       <workItem from="1606335590372" duration="9240000" />
-      <workItem from="1606526676847" duration="22327000" />
+      <workItem from="1606526676847" duration="41882000" />
     </task>
     <task id="LOCAL-00001" summary="TEST">
       <created>1604835263807</created>
@@ -437,22 +430,29 @@
       <option name="project" value="LOCAL" />
       <updated>1606556005139</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="working on calendar">
+      <created>1606665871018</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1606665871018</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155951000" />
+    <option name="totallyTimeSpent" value="175506000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13539445" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13539445" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26218852" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26218852" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -506,59 +506,8 @@
     <option name="LAST_COMMIT_MESSAGE" value="working on calendar" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Radiology/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LabTest/templates/LabTest/labtest_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="46" selection-end-line="63" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Radiology/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Patients/templates/Patients/patient_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="103" column="44" selection-start-line="103" selection-start-column="44" selection-end-line="103" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Radiology/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="e#0#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Patients/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-629">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LabTest/models.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -703,27 +652,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ONCore/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Medicines/templates/Medicines/medicine_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Patients/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="54" column="13" selection-start-line="54" selection-start-column="4" selection-end-line="54" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -758,13 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="197" column="7" lean-forward="true" selection-start-line="195" selection-start-column="4" selection-end-line="197" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/segments/navbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="63" column="87" selection-start-line="63" selection-start-column="87" selection-end-line="63" selection-end-column="87" />
         </state>
       </provider>
     </entry>
@@ -818,26 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Core/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-543">
-          <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
-          <folding>
-            <element signature="e#0#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Calendar/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../AdminLTE/pages/calendar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -848,57 +753,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ONCore/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="133" column="22" selection-start-line="133" selection-start-column="22" selection-end-line="133" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Services/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="71" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Invoices/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Invoices/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Invoices/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Calendar/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="54" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -912,29 +770,165 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Calendar/templates/Calendar/today_calendar.html">
+    <entry file="file://$PROJECT_DIR$/Calendar/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="47" column="47" selection-start-line="47" selection-start-column="47" selection-end-line="47" selection-end-column="47" />
+        <state relative-caret-position="231">
+          <caret line="75" column="35" lean-forward="true" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Invoices/models.py">
+    <entry file="file://$PROJECT_DIR$/Calendar/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="12" />
+        <state relative-caret-position="255">
+          <caret line="15" column="54" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ONCore/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="47" column="16" lean-forward="true" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ONCore/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="e#630#662#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Calendar/views.py">
+    <entry file="file://$PROJECT_DIR$/Patients/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="73" column="44" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
+        <state relative-caret-position="476">
+          <caret line="73" column="20" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Calendar/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="45" lean-forward="true" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Invoices/templates/Invoices/outcomecategory_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Invoices/templates/Invoices/invoice_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/forms/form_template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-425">
+          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Calendar/templates/Calendar/today_calendar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="12" column="45" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1037">
+          <caret line="213" lean-forward="true" selection-start-line="213" selection-end-line="213" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Invoices/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="21" column="93" selection-start-line="21" selection-start-column="93" selection-end-line="21" selection-end-column="93" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Invoices/templates/Invoices/outcome_invoices.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="34" selection-end-line="31" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/segments/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="107" column="71" selection-start-line="107" selection-start-column="71" selection-end-line="107" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Invoices/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="136" selection-start-line="136" selection-end-line="136" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Invoices/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="78" selection-start-line="11" selection-start-column="66" selection-end-line="11" selection-end-column="78" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Invoices/templates/Invoices/income_invoices.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="25" column="54" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Invoices/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="34" column="9" lean-forward="true" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,0 +1,54 @@
+{% include 'forms/form_template.html' %}
+<div class="col-lg-12 table-responsive">
+    <table class="table table-hover">
+        <thead>
+        <th>#</th>
+        <th>التاريخ</th>
+        <th>الخدمة</th>
+        <th>بعد الخصم</th>
+        <th>مدفوع</th>
+        </thead>
+        <tbody>
+        {% for x in invoices %}
+            <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.date.date.isoformat }}</td>
+            <td>{{ x.service }}</td>
+            <td>{{ x.after_discount }}</td>
+            <td>{{ x.paid }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<script>
+    function calculate_after_discount() {
+        var after = $('#id_price').val() - $('#id_discount').val();
+        $('#id_after_discount').val(after);
+
+    }
+
+    function calculate_remaining() {
+        var remaining = $('#id_after_discount').val() - $('#id_paid').val();
+        console.log(remaining);
+        $('#id_remaining').val(remaining);
+        if (remaining > 0) {
+            $('#id_remaining').css('background-color', 'red');
+        } else if (remaining < 0) {
+            $('#id_remaining').css('background-color', 'yellow');
+        } else{
+             $('#id_remaining').css('background-color', 'green');
+        }
+    }
+
+    $('#id_remaining').prop('readonly', true);
+    $('#id_discount').on('change keyup', function () {
+        calculate_after_discount();
+        calculate_remaining();
+
+    })
+    $('#id_paid').on('change keyup', function () {
+        calculate_after_discount();
+        calculate_remaining();
+    })
+</script>

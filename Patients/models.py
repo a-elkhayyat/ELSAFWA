@@ -2,6 +2,7 @@ from django.db import models
 from Core.models import *
 from LabTest.models import *
 from Radiology.models import *
+from django.db.models import Sum
 
 
 # Create your models here.
@@ -63,6 +64,14 @@ class Patient(models.Model):
 
     def __str__(self):
         return self.name
+
+    def balance(self):
+        invoices = self.invoice_set.all()
+        if invoices:
+            balance = invoices.aggregate(balance=Sum('after_discount')-Sum('paid'))
+            return balance['balance']
+        else:
+            return 0
 
 
 class PatientViralProcess(models.Model):
