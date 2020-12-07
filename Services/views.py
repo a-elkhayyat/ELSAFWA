@@ -10,11 +10,17 @@ class ServiceList(ONViewMixin, ListView):
     model = Service
     queryset = Service.objects.filter(deleted=False)
 
+    def get_queryset(self):
+        return self.queryset.filter(instance=self.request.user.instance)
+
 
 class ServiceTrashList(ONViewMixin, ListView):
     title = 'عرض الخدمات المحذوفة'
     model = Service
     queryset = Service.objects.filter(deleted=True)
+
+    def get_queryset(self):
+        return self.queryset.filter(instance=self.request.user.instance)
 
 
 class ServiceCreate(ONViewMixin, CreateView):
