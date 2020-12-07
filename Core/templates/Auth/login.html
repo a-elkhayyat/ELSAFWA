@@ -40,10 +40,12 @@
 
             <form class="login100-form validate-form" method="post">
                 {% csrf_token %}
-					<span class="login100-form-title">
+                <span class="login100-form-title">
 						تسجيل الدخول
 					</span>
-
+                {% if error %}
+                <div class="alert alert-danger">{{ error }}</div>
+                {% endif %}
                 <div class="wrap-input100 validate-input" data-validate="اسم المستخدم غير صالح">
                     <input class="input100" name="username" placeholder="اسم المستخدم" required="required">
                     <span class="focus-input100"></span>
