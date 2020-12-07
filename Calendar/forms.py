@@ -28,10 +28,10 @@ class AppointmentForm(forms.ModelForm):
         }
 
     def __init__(self, *args, **kwargs):
-        instance = kwargs.pop('instance', None)
+        n = kwargs.pop('n', None)
         super().__init__(*args, **kwargs)
         self.fields['patient'].queryset = Patient.objects.none()
-        self.fields['service'].queryset = Service.objects.filter(deleted=False, instance=instance)
+        self.fields['service'].queryset = Service.objects.filter(deleted=False, instance=n)
 
         if 'patient' in self.data:
             self.fields['patient'].queryset = Patient.objects.filter(deleted=False)

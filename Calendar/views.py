@@ -48,8 +48,8 @@ class AppointmentUpdate(ONViewMixin, UpdateView):
     success_url = reverse_lazy('Calendar:CalendarList')
 
     def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        kwargs['instance'] = self.request.user.instance
+        kwargs = super(AppointmentUpdate, self).get_form_kwargs()
+        kwargs['n'] = self.request.user.instance
         return kwargs
 
 
