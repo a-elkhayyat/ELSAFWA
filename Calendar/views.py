@@ -34,6 +34,11 @@ class AppointmentCreate(ONViewMixin, CreateView):
     form_class = AppointmentForm
     success_url = reverse_lazy('Calendar:CalendarList')
 
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['instance'] = self.request.user.instance
+        return kwargs
+
 
 class AppointmentUpdate(ONViewMixin, UpdateView):
     model = Appointment
@@ -41,6 +46,11 @@ class AppointmentUpdate(ONViewMixin, UpdateView):
     template_name = 'Calendar/add_appointment_form.html'
     form_class = AppointmentForm
     success_url = reverse_lazy('Calendar:CalendarList')
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['instance'] = self.request.user.instance
+        return kwargs
 
 
 def today_calendar(request):
