@@ -45,7 +45,7 @@ class AppointmentUpdate(ONViewMixin, UpdateView):
 
 def today_calendar(request):
     title = 'مواعيد اليوم'
-    appointments = Appointment.objects.filter(instance=request.user.instance)
+    appointments = Appointment.objects.filter(instance=request.user.instance, date__date=now().today())
     queues = Queue.objects.filter(instance=request.user.instance, done=False)
 
     context = {
