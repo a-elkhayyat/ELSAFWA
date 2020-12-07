@@ -1,5 +1,209 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6195c29f-c14a-4313-922e-2b703262546d" name="Default Changelist" comment="enhance git">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>fonts</find>
+      <find>Auth:</find>
+      <find>font-fami</find>
+      <find>Cairo</find>
+      <find>search</find>
+      <find>List</find>
+      <find>Branches</find>
+      <find>Branch</find>
+      <find>crispy</find>
+      <find>accordi</find>
+      <find>accordion</find>
+      <find>spar</find>
+      <find>block</find>
+      <find>rig</find>
+      <find>vue</find>
+      <find>Long</find>
+      <find>v</find>
+      <find>LabTest</find>
+      <find>تحاليل</find>
+      <find>sub_bo</find>
+      <find>rest</find>
+      <find>REST</find>
+      <find>google</find>
+      <find>slotDu</find>
+      <find>default</find>
+      <find>calendar</find>
+      <find>spark</find>
+      <find>href</find>
+      <find>hre</find>
+      <find>url:</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>Core:</replace>
+      <replace>../../../static/</replace>
+      <replace>Radiology</replace>
+      <replace>آشعة</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Radiology/views.py" />
+        <option value="$PROJECT_DIR$/Patients/forms.py" />
+        <option value="$PROJECT_DIR$/Patients/templates/Patients/labtestresult_detail.html" />
+        <option value="$PROJECT_DIR$/Patients/templates/Patients/radiologyresult_detail.html" />
+        <option value="$PROJECT_DIR$/Patients/urls.py" />
+        <option value="$PROJECT_DIR$/Patients/templates/Patients/patient_detail.html" />
+        <option value="$PROJECT_DIR$/Services/templates/service_list.html" />
+        <option value="$PROJECT_DIR$/Core/static/AdminLTE/dist/css/adminlte-rtl.css" />
+        <option value="$PROJECT_DIR$/Services/models.py" />
+        <option value="$PROJECT_DIR$/Services/views.py" />
+        <option value="$PROJECT_DIR$/templates/cardbase.html" />
+        <option value="$PROJECT_DIR$/Services/templates/Services/service_list.html" />
+        <option value="$PROJECT_DIR$/Services/urls.py" />
+        <option value="$PROJECT_DIR$/Core/urls.py" />
+        <option value="$PROJECT_DIR$/Core/forms.py" />
+        <option value="$PROJECT_DIR$/Core/views.py" />
+        <option value="$PROJECT_DIR$/Services/forms.py" />
+        <option value="$PROJECT_DIR$/Medicines/urls.py" />
+        <option value="$PROJECT_DIR$/Medicines/forms.py" />
+        <option value="$PROJECT_DIR$/Medicines/views.py" />
+        <option value="$PROJECT_DIR$/Medicines/models.py" />
+        <option value="$PROJECT_DIR$/Medicines/templates/Medicines/medicine_list.html" />
+        <option value="$PROJECT_DIR$/Calendar/templates/add_appointment_form.html" />
+        <option value="$PROJECT_DIR$/Patients/views.py" />
+        <option value="$PROJECT_DIR$/Calendar/admin.py" />
+        <option value="$PROJECT_DIR$/Calendar/templates/Calendar/add_appointment_form.html" />
+        <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/../../AdminLTE/pages/calendar.html" />
+        <option value="$PROJECT_DIR$/Calendar/serializer.py" />
+        <option value="$PROJECT_DIR$/Calendar/serializers.py" />
+        <option value="$PROJECT_DIR$/Calendar/forms.py" />
+        <option value="$PROJECT_DIR$/Calendar/models.py" />
+        <option value="$PROJECT_DIR$/ONCore/settings.py" />
+        <option value="$PROJECT_DIR$/Calendar/urls.py" />
+        <option value="$PROJECT_DIR$/ONCore/urls.py" />
+        <option value="$PROJECT_DIR$/templates/forms/form_template.html" />
+        <option value="$PROJECT_DIR$/Patients/models.py" />
+        <option value="$PROJECT_DIR$/Invoices/templates/Invoices/invoice_form.html" />
+        <option value="$PROJECT_DIR$/Invoices/templates/Invoices/outcomecategory_list.html" />
+        <option value="$PROJECT_DIR$/Calendar/templates/Calendar/today_calendar.html" />
+        <option value="$PROJECT_DIR$/Invoices/models.py" />
+        <option value="$PROJECT_DIR$/Invoices/templates/Invoices/outcome_invoices.html" />
+        <option value="$PROJECT_DIR$/templates/segments/navbar.html" />
+        <option value="$PROJECT_DIR$/Invoices/views.py" />
+        <option value="$PROJECT_DIR$/Invoices/urls.py" />
+        <option value="$PROJECT_DIR$/Invoices/templates/Invoices/income_invoices.html" />
+        <option value="$PROJECT_DIR$/Invoices/forms.py" />
+        <option value="$PROJECT_DIR$/Calendar/views.py" />
+        <option value="$PROJECT_DIR$/Core/templates/Core/index.html" />
+        <option value="$PROJECT_DIR$/Calendar/templates/Calendar/calendar_list.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ONCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ONCore" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ONCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ONCore" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ONCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ONCore" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="AdminLTE" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ONCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ONCore" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ONCore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ONCore" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="segments" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\D\Work\Websites\ELSAFWA\ONCore" />
+      <recent name="F:\D\Work\Websites\ELSAFWA\ONCore\templates" />
+      <recent name="D:\Work\Websites\ONCore\Core\templates" />
+      <recent name="D:\Work\Websites\ONCore\Core\static\Login\fonts" />
+      <recent name="D:\Work\Websites\ONCore\static\Login" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\D\Work\Websites\ELSAFWA\ONCore\Calendar\templates\Calendar" />
+      <recent name="F:\D\Work\Websites\ELSAFWA\ONCore\Services\templates\Services" />
+      <recent name="D:\Work\Websites\ONCore\Core\templates\Core" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="ONCore" type="Python.DjangoServer" factoryName="Django server">
       <module name="ONCore" />
@@ -25,5 +229,226 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6195c29f-c14a-4313-922e-2b703262546d" name="Default Changelist" comment="" />
+      <created>1602564317929</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602564317929</updated>
+      <workItem from="1602564319628" duration="999000" />
+      <workItem from="1602628283511" duration="831000" />
+      <workItem from="1602640870663" duration="2685000" />
+      <workItem from="1602643867672" duration="10497000" />
+      <workItem from="1602728872529" duration="5557000" />
+      <workItem from="1602860828160" duration="281000" />
+      <workItem from="1602944481569" duration="1398000" />
+      <workItem from="1602945927317" duration="19650000" />
+      <workItem from="1603510595916" duration="227000" />
+      <workItem from="1603663066150" duration="6996000" />
+      <workItem from="1603771825431" duration="1796000" />
+      <workItem from="1604182782828" duration="10574000" />
+      <workItem from="1604264713890" duration="598000" />
+      <workItem from="1604435019711" duration="1813000" />
+      <workItem from="1604497984922" duration="67000" />
+      <workItem from="1604721171618" duration="119000" />
+      <workItem from="1604797210302" duration="4891000" />
+      <workItem from="1604813359739" duration="1503000" />
+      <workItem from="1604816710962" duration="70000" />
+      <workItem from="1604821572642" duration="13919000" />
+      <workItem from="1604894945671" duration="7020000" />
+      <workItem from="1605006120445" duration="11000" />
+      <workItem from="1605106675683" duration="239000" />
+      <workItem from="1605142987858" duration="1653000" />
+      <workItem from="1605193413831" duration="937000" />
+      <workItem from="1605199367336" duration="2519000" />
+      <workItem from="1605249282058" duration="3000" />
+      <workItem from="1605350410464" duration="62000" />
+      <workItem from="1605396173171" duration="823000" />
+      <workItem from="1605478541206" duration="7173000" />
+      <workItem from="1605846523937" duration="3423000" />
+      <workItem from="1605887209981" duration="599000" />
+      <workItem from="1606034040023" duration="4621000" />
+      <workItem from="1606158344275" duration="9610000" />
+      <workItem from="1606251587707" duration="1220000" />
+      <workItem from="1606335590372" duration="9240000" />
+      <workItem from="1606526676847" duration="44480000" />
+      <workItem from="1607080662230" duration="679000" />
+      <workItem from="1607329876226" duration="2918000" />
+    </task>
+    <task id="LOCAL-00001" summary="enhance git">
+      <created>1607337327123</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607337327123</updated>
+    </task>
+    <task id="LOCAL-00002" summary="enhance git">
+      <created>1607337333908</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607337333908</updated>
+    </task>
+    <task id="LOCAL-00003" summary="enhance git">
+      <created>1607337415363</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607337415363</updated>
+    </task>
+    <task id="LOCAL-00004" summary="adding lab requests">
+      <created>1604927537094</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1604927537094</updated>
+    </task>
+    <task id="LOCAL-00005" summary="adding lab requests">
+      <created>1605350460502</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1605350460502</updated>
+    </task>
+    <task id="LOCAL-00006" summary="adding services, and labtest details, radiology details">
+      <created>1606035292585</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1606035292585</updated>
+    </task>
+    <task id="LOCAL-00007" summary="working on calendar">
+      <created>1606556005139</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1606556005139</updated>
+    </task>
+    <task id="LOCAL-00008" summary="working on calendar">
+      <created>1606665871018</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1606665871018</updated>
+    </task>
+    <task id="LOCAL-00009" summary="working on invoices">
+      <created>1606907650638</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1606907650638</updated>
+    </task>
+    <task id="LOCAL-00010" summary="working on invoices">
+      <created>1607336366209</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1607336366209</updated>
+    </task>
+    <task id="LOCAL-00011" summary="removing db from git">
+      <created>1607336511562</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1607336511562</updated>
+    </task>
+    <task id="LOCAL-00012" summary="removing db from git">
+      <created>1607337011671</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1607337011671</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1271000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1380597" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26218852" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32936078" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3206934" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.35714287" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3206934" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout-to-restore>
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/Core/static/AdminLTE" />
+      <path value="$PROJECT_DIR$/static/AdminLTE" />
+      <path value="$PROJECT_DIR$/vueapp/frontend" />
+      <path value="$PROJECT_DIR$/vueapp/frontend/src/assets/static/AdminLTE" />
+    </ignored-roots>
+    <MESSAGE value="enhance git" />
+    <option name="LAST_COMMIT_MESSAGE" value="enhance git" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/segments/card_tools.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
   </component>
 </project>
