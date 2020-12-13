@@ -356,6 +356,33 @@
                                 </li>
                             </ul>
                         </li>
+
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    التشخيصات
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{% url 'Patients:DiagnosisCreate' %}" class="nav-link" data-toggle="modal"
+                                       data-target="#sub_modal">
+                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        <p>إضافة</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'Patients:DiagnosisList' %}"
+                                       class="nav-link">
+                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        <p>عرض</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>

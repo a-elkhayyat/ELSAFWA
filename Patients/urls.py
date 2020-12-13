@@ -29,4 +29,7 @@ urlpatterns += [
     path('radiology/view/result/<int:pk>/', RadiologyResult, name='RadiologyResult'),
     path('sessions/create/<int:pk>/', add_session, name='add_session'),
     path('sessions/update/<int:pk>/', SessionUpdate.as_view(), name='SessionUpdate'),
+    path('diagnosis/list/', DiagnosisList.as_view(), name='DiagnosisList'),
+    path('diagnosis/create/', DiagnosisCreate.as_view(), name='DiagnosisCreate'),
+    path('diagnosis/update/<int:pk>/', DiagnosisUpdate.as_view(), name='DiagnosisUpdate'),
 ]

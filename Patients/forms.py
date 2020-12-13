@@ -77,3 +77,10 @@ class SessionForm(ModelForm):
         widgets = {
             'instance': HiddenInput(),
         }
+
+
+class DiagnosisForm(ModelForm):
+    class Meta:
+        model = Diagnosis
+        fields = '__all__'
+

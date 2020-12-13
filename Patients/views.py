@@ -262,3 +262,21 @@ class SessionUpdate(ONViewMixin, UpdateView):
     form_class = SessionForm
     template_name = 'forms/form_template.html'
 
+
+class DiagnosisList(ONViewMixin, ListView):
+    title = 'عرض التشخيصات'
+    model = Diagnosis
+
+
+class DiagnosisCreate(ONViewMixin, CreateView):
+    title = 'إضافة تشخيص'
+    model = Diagnosis
+    form_class = DiagnosisForm
+    template_name = 'forms/form_template.html'
+
+
+class DiagnosisUpdate(ONViewMixin, UpdateView):
+    title = 'تعديل تشخيص'
+    model = Diagnosis
+    form_class = DiagnosisForm
+    template_name = 'forms/form_template.html'
