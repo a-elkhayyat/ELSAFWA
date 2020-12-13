@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'Radiology',
     'Services',
     'Medicines',
+    'PhysicalTherapy',
     'rest_framework'
 ]
 

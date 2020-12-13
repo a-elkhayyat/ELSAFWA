@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block body %}
-    <a href="{% url 'Patients:PatientDetail' object.lab_test.patient.id %}" class="btn btn-primary">
+    <a href="{% url 'Patients:PatientDetail' object.patient.id %}" class="btn btn-primary">
         <i class="fa fa-undo"></i>
         عودة لصفحة المريض
     </a>
@@ -22,14 +22,14 @@
                     <td></td>
                     </thead>
                     <tbody>
-                    {% for x in object.lab_test.labtestresult_set.all %}
+                    {% for x in object.labtestresult_set.all %}
                         <tr>
                             <td>{{ forloop.counter }}</td>
                             <td>{{ x.attribute }}</td>
                             <td>{{ x.value }}</td>
-                            <td>{{ x.attribute.unit }}</td>
-                            <td>{{ x.attribute.normal_min }}</td>
-                            <td>{{ x.attribute.normal_max }}</td>
+                            <td>{{ x.lab_test.lab_test.unit }}</td>
+                            <td>{{ x.lab_test.lab_test.normal_min }}</td>
+                            <td>{{ x.lab_test.lab_test.normal_max }}</td>
                             <td>
                                 <div class="btn-group">
                                     <a href="{% url 'Patients:LabTestResultUpdate' x.id %}" class="btn btn-warning"

@@ -158,12 +158,12 @@
                                 <td>{{ x.lab_test }}</td>
                                 <td>
                                     {% if x.labtestresult_set.all %}
-                                        <a href="" data-toggle="modal" data-target="#sub_modal" class="btn btn-success">
+                                        <a href="{% url 'Patients:LabTestRequestDetail' x.id %}"  class="btn btn-success">
                                             <i class="fa fa-eye"></i>
                                             عرض النتيجة
                                         </a>
                                     {% else %}
-                                        <a href="{% url 'Patients:add_lab_test_result' x.id %}" data-toggle="modal" data-target="#sub_modal" class="btn btn-success">
+                                        <a href="{% url 'Patients:add_lab_test_result' x.id %}"  class="btn btn-success">
                                             <i class="fa fa-plus-circle"></i>
                                             إضافة النتيجة
                                         </a>

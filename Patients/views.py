@@ -170,15 +170,24 @@ def add_lab_test_result(request, pk):
         result.lab_test = lab_test
         result.attribute = x
         result.save()
-        return redirect('Patients:LabTestResultDetail', lab_test.id)
-    context = {
-        'title': title,
-    }
-    return render(request, 'forms/form_template.html', context)
+    return redirect('Patients:LabTestRequestDetail', lab_test.id)
+
+
+class LabTestRequestDetail(ONViewMixin, DetailView):
+    model = LabTestRequest
+    title = 'نتائج التحليل'
 
 
 class LabTestResultDetail(ONViewMixin, DetailView):
-    model = LabTestRequest
+    model = LabTestResult
+    title = 'نتائج التحليل'
+
+
+class LabTestResultUpdate(ONViewMixin, UpdateView):
+    model = LabTestResult
+    title = 'تعديل نتائج التحليل'
+    template_name = 'forms/form_template.html'
+    form_class = LabTestResultForm
 
 
 def radiology_request(request, pk):
@@ -228,3 +237,28 @@ class PatientViewSet(ModelViewSet):
             queryset = queryset.filter(Q(name__icontains=self.request.GET.get('q')) | Q(
                 telephone__icontains=self.request.GET.get('q')))
         return queryset
+
+
+def add_session(request, pk):
+    patient = get_object_or_404(Patient, id=pk)
+    form = SessionForm(request.POST or None)
+    title = 'إضافة جلسة'
+    if form.is_valid():
+        s = form.save(commit=False)
+        s.patient = patient
+        s.added_by = request.user
+        s.save()
+        redirect(request.POST.get('url'))
+    context = {
+        'title': title,
+        'form': form,
+    }
+    return render(request, 'forms/form_template.html', context)
+
+
+class SessionUpdate(ONViewMixin, UpdateView):
+    title = 'تعديل جلسة'
+    model = Session
+    form_class = SessionForm
+    template_name = 'forms/form_template.html'
+

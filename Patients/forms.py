@@ -52,6 +52,12 @@ class LabTestRequestForm(ModelForm):
         exclude = ['patient']
 
 
+class LabTestResultForm(ModelForm):
+    class Meta:
+        model = LabTestResult
+        fields = ['value']
+
+
 class RadiologyRequestForm(ModelForm):
     class Meta:
         model = RadiologyRequest
@@ -62,3 +68,12 @@ class RadiologyResultForm(ModelForm):
     class Meta:
         model = RadiologyResult
         exclude = ['radiology']
+
+
+class SessionForm(ModelForm):
+    class Meta:
+        model = Session
+        exclude = ['added_by', 'patient']
+        widgets = {
+            'instance': HiddenInput(),
+        }

@@ -26,5 +26,6 @@ urlpatterns = [
     path('medicine/', include('Medicines.urls')),
     path('calendar/', include('Calendar.urls')),
     path('invoices/', include('Invoices.urls')),
+    path('physical-therapy/', include('PhysicalTherapy.urls')),
     path('api-auth/', include('rest_framework.urls'))
 ]

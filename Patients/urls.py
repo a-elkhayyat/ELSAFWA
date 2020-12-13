@@ -22,7 +22,11 @@ urlpatterns += [
     path('lab_test/request/<int:pk>/', lab_test_request, name='lab_test_request'),
     path('lab_test/add/result/<int:pk>/', add_lab_test_result, name='add_lab_test_result'),
     path('lab_test/result/<int:pk>/', LabTestResultDetail.as_view(), name='LabTestResultDetail'),
+    path('lab_test/request/<int:pk>/results/', LabTestRequestDetail.as_view(), name='LabTestRequestDetail'),
+    path('lab_test/result/update/<int:pk>/', LabTestResultUpdate.as_view(), name='LabTestResultUpdate'),
     path('radiology/request/<int:pk>/', radiology_request, name='radiology_request'),
     path('radiology/add/result/<int:pk>/', add_radiology_result, name='add_radiology_result'),
     path('radiology/view/result/<int:pk>/', RadiologyResult, name='RadiologyResult'),
+    path('sessions/create/<int:pk>/', add_session, name='add_session'),
+    path('sessions/update/<int:pk>/', SessionUpdate.as_view(), name='SessionUpdate'),
 ]

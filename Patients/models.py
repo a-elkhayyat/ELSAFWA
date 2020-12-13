@@ -3,6 +3,7 @@ from Core.models import *
 from LabTest.models import *
 from Radiology.models import *
 from django.db.models import Sum
+from PhysicalTherapy.models import Device, Exercise
 
 
 # Create your models here.
@@ -15,6 +16,13 @@ class Complain(models.Model):
 
 class Disease(models.Model):
     name = models.CharField(verbose_name='المرض', max_length=128)
+
+    def __str__(self):
+        return self.name
+
+
+class Diagnosis(models.Model):
+    name = models.CharField(verbose_name='التشخيص', max_length=128)
 
     def __str__(self):
         return self.name
@@ -72,6 +80,12 @@ class Patient(models.Model):
             return balance['balance']
         else:
             return 0
+
+    def get_last_height(self):
+        heights = self.heightandweight_set.all()
+        last_height = heights.last()
+        print(last_height.id)
+        return last_height
 
 
 class PatientViralProcess(models.Model):
@@ -135,8 +149,10 @@ class PatientInvestigation(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='المريض')
     added_at = models.DateTimeField(auto_now_add=True)
     complain = models.ForeignKey(Complain, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='الشكوي')
-    diagnosis = models.ForeignKey(Disease, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='التشخيص')
-    medical_plan = models.TextField(verbose_name='الخطة العلاجية')
+    diagnosis = models.ForeignKey(Diagnosis, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='التشخيص')
+    devices = models.ManyToManyField(Device, blank=True, verbose_name='الأجهزة')
+    exercises = models.ManyToManyField(Exercise, blank=True, verbose_name='التمرينات')
+    medical_plan = models.TextField(verbose_name='الخطة العلاجية', null=True, blank=True)
 
     def __str__(self):
         return str(self.id)
@@ -238,3 +254,14 @@ class RadiologyImages(models.Model):
     def __str__(self):
         return str(self.id)
 
+
+class Session(models.Model):
+    added_at = models.DateTimeField(auto_now_add=True, verbose_name='التاريخ')
+    added_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    instance = models.ForeignKey(Instance, on_delete=models.CASCADE, null=True, blank=True)
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, null=True, blank=True)
+    devices = models.ManyToManyField(Device, verbose_name='الأجهزة المستخدمة')
+    exercises = models.ManyToManyField(Exercise, verbose_name='التمارين المستخدمة')
+
+    def __str__(self):
+        return str(self.id)
