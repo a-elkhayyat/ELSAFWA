@@ -9,11 +9,17 @@ class Device(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        ordering = ['id']
+
 
 class Exercise(models.Model):
     name = models.CharField(max_length=128, verbose_name='اسم التمرين')
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = ['id']
 
 
