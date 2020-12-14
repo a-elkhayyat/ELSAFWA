@@ -1,6 +1,6 @@
 {% extends 'cardbase.html' %}
 {% block cardbody %}
-    <h2>{{ object.radiology }}</h2>
+    <h2>{{ object.radiology.radiology.name }}</h2>
     <small>{{ object.added_at.date }}</small>
     <p>{{ object.comment }}</p>
     {% for x in object.radiology.radiologyimages_set.all %}
