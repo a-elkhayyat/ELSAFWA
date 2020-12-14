@@ -84,3 +84,9 @@ class DiagnosisForm(ModelForm):
         model = Diagnosis
         fields = '__all__'
 
+
+class DiseaseForm(ModelForm):
+    class Meta:
+        model = Disease
+        fields = '__all__'
+

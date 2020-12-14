@@ -280,3 +280,22 @@ class DiagnosisUpdate(ONViewMixin, UpdateView):
     model = Diagnosis
     form_class = DiagnosisForm
     template_name = 'forms/form_template.html'
+
+
+class DiseaseList(ONViewMixin, ListView):
+    title = 'عرض التشخيصات'
+    model = Disease
+
+
+class DiseaseCreate(ONViewMixin, CreateView):
+    title = 'إضافة تشخيص'
+    model = Disease
+    form_class = DiseaseForm
+    template_name = 'forms/form_template.html'
+
+
+class DiseaseUpdate(ONViewMixin, UpdateView):
+    title = 'تعديل تشخيص'
+    model = Disease
+    form_class = DiseaseForm
+    template_name = 'forms/form_template.html'

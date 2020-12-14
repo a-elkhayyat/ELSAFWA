@@ -32,4 +32,7 @@ urlpatterns += [
     path('diagnosis/list/', DiagnosisList.as_view(), name='DiagnosisList'),
     path('diagnosis/create/', DiagnosisCreate.as_view(), name='DiagnosisCreate'),
     path('diagnosis/update/<int:pk>/', DiagnosisUpdate.as_view(), name='DiagnosisUpdate'),
+    path('disease/list/', DiseaseList.as_view(), name='DiseaseList'),
+    path('disease/create/', DiseaseCreate.as_view(), name='DiseaseCreate'),
+    path('disease/update/<int:pk>/', DiseaseUpdate.as_view(), name='DiseaseUpdate'),
 ]
