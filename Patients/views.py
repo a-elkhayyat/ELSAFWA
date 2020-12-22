@@ -121,6 +121,7 @@ def add_investigation(request, pk):
         record = form.save(commit=False)
         record.patient = patient
         record.save()
+        form.save_m2m()
         return redirect('Patients:PatientDetail', patient.id)
     context = {
         'title': title,
@@ -138,6 +139,7 @@ def edit_investigation(request, pk):
         record = form.save(commit=False)
         record.patient = patient
         record.save()
+        form.save_m2m()
         return redirect('Patients:PatientDetail', patient.id)
     context = {
         'title': title,
