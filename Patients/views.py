@@ -100,6 +100,9 @@ def add_height_and_weight(request, pk):
     patient = get_object_or_404(Patient, id=pk)
     title = 'إضافة سجل الوزن والطول'
     form = HeightAndWeightForm(request.POST or None)
+    last_entry = patient.heightandweight_set.last()
+    if last_entry:
+        form.fields['height'].initial = last_entry.height
     if form.is_valid():
         record = form.save(commit=False)
         record.patient = patient
