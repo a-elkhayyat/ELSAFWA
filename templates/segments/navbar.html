@@ -71,9 +71,42 @@
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
+                        <i class="far fa-user nav-icon"></i>
+                        <p>
+                            المرضي
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{% url 'Patients:PatientCreate' %}" class="nav-link" data-toggle="modal"
+                               data-target="#sub_modal">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>إضافة</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'Patients:PatientList' %}"
+                               class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>عرض</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'Patients:PatientTrash' %}"
+                               class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>سلة المهملات</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>
-الحسابات
+                            الحسابات
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -89,7 +122,8 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{% url 'Invoices:create_outcome_invoice' %}" class="nav-link" data-toggle="modal"
+                                    <a href="{% url 'Invoices:create_outcome_invoice' %}" class="nav-link"
+                                       data-toggle="modal"
                                        data-target="#sub_modal">
                                         <i class="far fa-dot-circle nav-icon"></i>
                                         <p>إضافة</p>
@@ -113,6 +147,8 @@
                             </a>
                         </li>
                     </ul>
+                </li>
+
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-list-alt"></i>
@@ -149,38 +185,6 @@
                             </ul>
                         </li>
 
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>
-                                    المرضي
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{% url 'Patients:PatientCreate' %}" class="nav-link" data-toggle="modal"
-                                       data-target="#sub_modal">
-                                        <i class="far fa-dot-circle nav-icon"></i>
-                                        <p>إضافة</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{% url 'Patients:PatientList' %}"
-                                       class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
-                                        <p>عرض</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{% url 'Patients:PatientTrash' %}"
-                                       class="nav-link">
-                                        <i class="far fa-dot-circle nav-icon"></i>
-                                        <p>سلة المهملات</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
 
                         <li class="nav-item">
                             <a href="#" class="nav-link">
@@ -314,7 +318,8 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{% url 'PhysicalTherapy:DeviceCreate' %}" class="nav-link" data-toggle="modal"
+                                    <a href="{% url 'PhysicalTherapy:DeviceCreate' %}" class="nav-link"
+                                       data-toggle="modal"
                                        data-target="#sub_modal">
                                         <i class="far fa-dot-circle nav-icon"></i>
                                         <p>إضافة</p>
@@ -341,7 +346,8 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{% url 'PhysicalTherapy:ExerciseCreate' %}" class="nav-link" data-toggle="modal"
+                                    <a href="{% url 'PhysicalTherapy:ExerciseCreate' %}" class="nav-link"
+                                       data-toggle="modal"
                                        data-target="#sub_modal">
                                         <i class="far fa-dot-circle nav-icon"></i>
                                         <p>إضافة</p>
@@ -440,7 +446,9 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li><li class="nav-item">
+                        </li>
+
+                        <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
@@ -472,6 +480,40 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    الأنظمة الغذائية
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{% url 'Diet:DietCreate' %}" class="nav-link" data-toggle="modal"
+                                       data-target="#sub_modal">
+                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        <p>إضافة</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'Diet:DietList' %}"
+                                       class="nav-link">
+                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        <p>عرض</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{% url 'Diet:DietTrashList' %}"
+                                       class="nav-link">
+                                        <i class="far fa-dot-circle nav-icon"></i>
+                                        <p>سلة المهملات</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
                     </ul>
                 </li>
             </ul>

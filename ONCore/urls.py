@@ -28,5 +28,6 @@ urlpatterns = [
     path('invoices/', include('Invoices.urls')),
     path('physical-therapy/', include('PhysicalTherapy.urls')),
     path('products/', include('Products.urls')),
+    path('diet/', include('Diet.urls')),
     path('api-auth/', include('rest_framework.urls'))
 ]
