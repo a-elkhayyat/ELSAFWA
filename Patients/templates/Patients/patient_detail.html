@@ -61,255 +61,304 @@
                aria-controls="nav-lab-test" aria-selected="false">التحاليل</a>
             <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-radiology" role="tab"
                aria-controls="nav-radiology" aria-selected="false">الآشعة</a>
-            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-visits" role="tab"
-               aria-controls="nav-visits" aria-selected="false">الزيارات</a>
             <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-weight" role="tab"
                aria-controls="nav-visits" aria-selected="false">سجل الوزن والطول</a>
             <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-vital" role="tab"
                aria-controls="nav-visits" aria-selected="false">سجل العمليات الحيوية</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-diet" role="tab"
+               aria-controls="nav-visits" aria-selected="false">النظام الغذائي</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-visits" role="tab"
+               aria-controls="nav-visits" aria-selected="false">الزيارات</a>
 
         </div>
     </nav>
+
     <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-info" role="tabpanel" aria-labelledby="nav-home-tab">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">
-                        البيانات الشخصية
-                    </div>
-                    <div class="card-tools">
-                        <a href="{% url 'Patients:PatientUpdate' object.id %}" class="btn"
-                           data-toggle="modal" data-target="#sub_modal">
-                            <i class="fa fa-edit"></i> تعديل
-                        </a>
-                    </div>
+    <div class="tab-pane fade show active" id="nav-info" role="tabpanel" aria-labelledby="nav-home-tab">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    البيانات الشخصية
                 </div>
-                <div class="card-body">
-                    <h4>{{ object.name }}</h4>
-                    <p>
-                        <i class="fa fa-map-marker"></i>
-                        {{ object.city.state.country }} - {{ object.city.state }} -{{ object.city }} - {{ object.area }}
-                        <br>
-                        <i class="fa fa-briefcase"></i>
-                        {{ object.job }}
-                        <br>
-                        <i class="fa fa-birthday-cake"></i>
-                        {{ object.birthday|timesince }}
-                        <br>
-                        <i class="fa fa-mobile"></i> {{ object.telephone }}
-                        <a href="tel:{{ object.telephone }}">
-                            <i class="fa fa-phone"></i>
-                        </a>
-                        <a href="http://wa.me/2{{ object.telephone }}"
-                           target="_blank">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <br>
-                        <i class="fa fa-clock"></i>
-                        آخر زيارة
-                    </p>
+                <div class="card-tools">
+                    <a href="{% url 'Patients:PatientUpdate' object.id %}" class="btn"
+                       data-toggle="modal" data-target="#sub_modal">
+                        <i class="fa fa-edit"></i> تعديل
+                    </a>
                 </div>
             </div>
-        </div>
-        <div class="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-profile-tab">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">
-                        التاريخ المرضي
-                    </div>
-                    <div class="card-tools">
-                        <a href="{% url 'Patients:PatientHistoryUpdate' object.id %}" class="btn"
-                           data-toggle="modal" data-target="#sub_modal">
-                            <i class="fa fa-edit"></i> تعديل
-                        </a>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        {% for x in object.patient_history.all %}
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                                {{ x }}
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
+            <div class="card-body">
+                <h4>{{ object.name }}</h4>
+                <p>
+                    <i class="fa fa-map-marker"></i>
+                    {{ object.city.state.country }} - {{ object.city.state }} -{{ object.city }} - {{ object.area }}
+                    <br>
+                    <i class="fa fa-briefcase"></i>
+                    {{ object.job }}
+                    <br>
+                    <i class="fa fa-birthday-cake"></i>
+                    {{ object.birthday|timesince }}
+                    <br>
+                    <i class="fa fa-mobile"></i> {{ object.telephone }}
+                    <a href="tel:{{ object.telephone }}">
+                        <i class="fa fa-phone"></i>
+                    </a>
+                    <a href="http://wa.me/2{{ object.telephone }}"
+                       target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <br>
+                    <i class="fa fa-clock"></i>
+                    آخر زيارة
+                </p>
             </div>
-        </div>
-        <div class="tab-pane fade" id="nav-lab-test" role="tabpanel" aria-labelledby="nav-contact-tab">
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">
-                        التحاليل
-                    </div>
-                    <div class="card-tools">
-                        {% include 'segments/card_tools.html' %}
-                    </div>
-                </div>
-                <div class="card-body table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                        <th>#</th>
-                        <th>التاريخ</th>
-                        <th>التحليل</th>
-                        <th></th>
-                        </thead>
-                        <tbody>
-                        {% for x in object.labtestrequest_set.all %}
-                            <tr>
-                                <td>{{ x.id }}</td>
-                                <td>{{ x.added_at.date.isoformat }}</td>
-                                <td>{{ x.lab_test }}</td>
-                                <td>
-                                    {% if x.labtestresult_set.all %}
-                                        <a href="{% url 'Patients:LabTestRequestDetail' x.id %}"  class="btn btn-success">
-                                            <i class="fa fa-eye"></i>
-                                            عرض النتيجة
-                                        </a>
-                                    {% else %}
-                                        <a href="{% url 'Patients:add_lab_test_result' x.id %}"  class="btn btn-success">
-                                            <i class="fa fa-plus-circle"></i>
-                                            إضافة النتيجة
-                                        </a>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-        </div>
-        <div class="tab-pane fade" id="nav-radiology" role="tabpanel" aria-labelledby="nav-contact-tab">
-
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">
-                        الآشعة
-                    </div>
-                    <div class="card-tools">
-                        {% include 'segments/card_tools.html' %}
-                    </div>
-                </div>
-                <div class="card-body table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                        <th>#</th>
-                        <th>التاريخ</th>
-                        <th>الآشعة</th>
-                        <th></th>
-                        </thead>
-                        <tbody>
-                        {% for x in object.radiologyrequest_set.all %}
-                            <tr>
-                                <td>{{ x.id }}</td>
-                                <td>{{ x.added_at.date.isoformat }}</td>
-                                <td>{{ x.radiology }}</td>
-                                <td>
-                                    {% if x.radiologyresult_set.all %}
-                                        <a href="{% url 'Patients:RadiologyResult' x.radiologyresult_set.all.first.id %}" data-toggle="modal" data-target="#sub_modal" class="btn btn-success">
-                                            <i class="fa fa-eye"></i>
-                                            عرض النتيجة
-                                        </a>
-                                    {% else %}
-                                        <a href="{% url 'Patients:add_radiology_result' x.id %}" data-toggle="modal" data-target="#sub_modal" class="btn btn-success">
-                                            <i class="fa fa-plus-circle"></i>
-                                            إضافة النتيجة
-                                        </a>
-                                    {% endif %}
-                                </td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="nav-visits" role="tabpanel" aria-labelledby="nav-contact-tab">
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title">سجل الكشف</div>
-                    <div class="card-tools">{% include 'segments/card_tools.html' %}</div>
-                </div>
-                <div class="card-body table-responsive">
-                    <table class="table table-hover">
-                        <thead>
-                        <th>#</th>
-                        <th>التاريخ</th>
-                        <th>الشكوي</th>
-                        <th>التشخيص</th>
-                        <th>الأجهزة</th>
-                        <th>التمرينات</th>
-                        <th>الخطة العلاجية</th>
-                        <th></th>
-                        </thead>
-                        <tbody>
-                        {% for x in object.patientinvestigation_set.all %}
-                            <tr>
-                                <td>{{ forloop.counter }}</td>
-                                <td>{{ x.added_at.date.isoformat }}</td>
-                                <td>{{ x.complain }}</td>
-                                <td>{{ x.diagnosis }}</td>
-                                <td>{% for y in x.devices.all %}<li>{{ y }}</li>{% endfor %}</td>
-                                <td>{% for y in x.exercises.all %}<li>{{ y }}</li>{% endfor %}</td>
-                                <td>{{ x.medical_plan }}</td>
-                                <td>
-                                    <div class="btn-group-sm">
-                                        <a href="{% url 'Patients:edit_investigation' x.id %}" class="btn btn-warning"
-                                           data-toggle="modal" data-target="#sub_modal">
-                                            <i class="fa fa-edit"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="nav-weight" role="tabpanel" aria-labelledby="nav-contact-tab">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">سجل الوزن</div>
-                            {% include 'segments/card_tools.html' %}
-                        </div>
-                        <div class="card-body" style="height: 550px;">
-                            <div id="weight-chart" style="width:100%; height: 500px;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">سجل الطول</div>
-                            {% include 'segments/card_tools.html' %}
-                        </div>
-                        <div class="card-body" style="height: 550px;">
-                            <div id="height-chart" style="width:100%; height: 500px;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-title">سجل الكتلة</div>
-                            {% include 'segments/card_tools.html' %}
-                        </div>
-                        <div class="card-body" style="height: 550px;">
-                            <div id="bmi-chart" style="width:100%; height: 500px;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="nav-vital" role="tabpanel" aria-labelledby="nav-contact-tab">
-
         </div>
     </div>
+    <div class="tab-pane fade" id="nav-history" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    التاريخ المرضي
+                </div>
+                <div class="card-tools">
+                    <a href="{% url 'Patients:PatientHistoryUpdate' object.id %}" class="btn"
+                       data-toggle="modal" data-target="#sub_modal">
+                        <i class="fa fa-edit"></i> تعديل
+                    </a>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    {% for x in object.patient_history.all %}
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                            {{ x }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-lab-test" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    التحاليل
+                </div>
+                <div class="card-tools">
+                    {% include 'segments/card_tools.html' %}
+                </div>
+            </div>
+            <div class="card-body table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                    <th>#</th>
+                    <th>التاريخ</th>
+                    <th>التحليل</th>
+                    <th></th>
+                    </thead>
+                    <tbody>
+                    {% for x in object.labtestrequest_set.all %}
+                        <tr>
+                            <td>{{ x.id }}</td>
+                            <td>{{ x.added_at.date.isoformat }}</td>
+                            <td>{{ x.lab_test }}</td>
+                            <td>
+                                {% if x.labtestresult_set.all %}
+                                    <a href="{% url 'Patients:LabTestRequestDetail' x.id %}" class="btn btn-success">
+                                        <i class="fa fa-eye"></i>
+                                        عرض النتيجة
+                                    </a>
+                                {% else %}
+                                    <a href="{% url 'Patients:add_lab_test_result' x.id %}" class="btn btn-success">
+                                        <i class="fa fa-plus-circle"></i>
+                                        إضافة النتيجة
+                                    </a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <div class="tab-pane fade" id="nav-radiology" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    الآشعة
+                </div>
+                <div class="card-tools">
+                    {% include 'segments/card_tools.html' %}
+                </div>
+            </div>
+            <div class="card-body table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                    <th>#</th>
+                    <th>التاريخ</th>
+                    <th>الآشعة</th>
+                    <th></th>
+                    </thead>
+                    <tbody>
+                    {% for x in object.radiologyrequest_set.all %}
+                        <tr>
+                            <td>{{ x.id }}</td>
+                            <td>{{ x.added_at.date.isoformat }}</td>
+                            <td>{{ x.radiology }}</td>
+                            <td>
+                                {% if x.radiologyresult_set.all %}
+                                    <a href="{% url 'Patients:RadiologyResult' x.radiologyresult_set.all.first.id %}"
+                                       data-toggle="modal" data-target="#sub_modal" class="btn btn-success">
+                                        <i class="fa fa-eye"></i>
+                                        عرض النتيجة
+                                    </a>
+                                {% else %}
+                                    <a href="{% url 'Patients:add_radiology_result' x.id %}" data-toggle="modal"
+                                       data-target="#sub_modal" class="btn btn-success">
+                                        <i class="fa fa-plus-circle"></i>
+                                        إضافة النتيجة
+                                    </a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-visits" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">سجل الكشف</div>
+                <div class="card-tools">{% include 'segments/card_tools.html' %}</div>
+            </div>
+            <div class="card-body table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                    <th>#</th>
+                    <th>التاريخ</th>
+                    <th>الشكوي</th>
+                    <th>التشخيص</th>
+                    <th>الأجهزة</th>
+                    <th>التمرينات</th>
+                    <th>الخطة العلاجية</th>
+                    <th></th>
+                    </thead>
+                    <tbody>
+                    {% for x in object.patientinvestigation_set.all %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ x.added_at.date.isoformat }}</td>
+                            <td>{{ x.complain }}</td>
+                            <td>{{ x.diagnosis }}</td>
+                            <td>{% for y in x.devices.all %}
+                                <li>{{ y }}</li>{% endfor %}</td>
+                            <td>{% for y in x.exercises.all %}
+                                <li>{{ y }}</li>{% endfor %}</td>
+                            <td>{{ x.medical_plan }}</td>
+                            <td>
+                                <div class="btn-group-sm">
+                                    <a href="{% url 'Patients:edit_investigation' x.id %}" class="btn btn-warning"
+                                       data-toggle="modal" data-target="#sub_modal">
+                                        <i class="fa fa-edit"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-weight" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">سجل الوزن</div>
+                        {% include 'segments/card_tools.html' %}
+                    </div>
+                    <div class="card-body" style="height: 550px;">
+                        <div id="weight-chart" style="width:100%; height: 500px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">سجل الطول</div>
+                        {% include 'segments/card_tools.html' %}
+                    </div>
+                    <div class="card-body" style="height: 550px;">
+                        <div id="height-chart" style="width:100%; height: 500px;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">سجل الكتلة</div>
+                        {% include 'segments/card_tools.html' %}
+                    </div>
+                    <div class="card-body" style="height: 550px;">
+                        <div id="bmi-chart" style="width:100%; height: 500px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-vital" role="tabpanel" aria-labelledby="nav-contact-tab">
+    </div>
+    <div class="tab-pane fade" id="nav-diet" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">النظام الغذائي</div>
+                        {% include 'segments/card_tools.html' %}
+                    </div>
+                    <div class="card-body table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                            <th>#</th>
+                            <th>التاريخ</th>
+                            <th>الطبيب</th>
+                            <th>النظام</th>
+                            <th>الوصف</th>
+                            <th></th>
+                            </thead>
+                            <tbody>
+                            {% for x in object.patientdiet_set.all %}
+                                <tr>
+                                    <td>{{ x.id }}</td>
+                                    <td>{{ x.added_at.date.isoformat }}</td>
+                                    <td>{{ x.added_by }}</td>
+                                    <td>{{ x.diet.name }}</td>
+                                    <td>{{ x.diet.description|linebreaksbr }}</td>
+                                    <td>
+                                        <div class="btn-group-sm">
+                                            <a href="{% url 'Patients:DietUpdate' x.id %}" class="btn btn-warning"
+                                               data-target="#sub_modal" data-toggle="modal">
+                                                <i class="fa fa-edit"></i> تعديل
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
 {% block js %}
     <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>

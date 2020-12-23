@@ -313,6 +313,7 @@ def add_diet(request, pk):
     if form.is_valid():
         diet = form.save(commit=False)
         diet.patient = patient
+        diet.added_by = request.user
         diet.save()
         return redirect('Patients:PatientDetail', patient.id)
     context = {
@@ -325,6 +326,6 @@ def add_diet(request, pk):
 class DietUpdate(ONViewMixin, UpdateView):
     model = PatientDiet
     form_class = PatientDietForm
-    template_name = 'forms/form_template.html',
+    template_name = 'forms/form_template.html'
     title = 'تعديل نظام غذائي لمريض'
 
