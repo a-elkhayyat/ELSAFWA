@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block body %}
+    <a href="{% url 'Patients:PatientDetail' prescription.patient.id %}" class="btn btn-primary">
+        <i class="fa fa-undo"></i>
+        عودة لصفحة المريض
+    </a>
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <b>التاريخ:</b>
+                    {{ prescription.added_at.date.isoformat }}
+                    <br>
+                    <b>الإسم:</b>
+                    {{ prescription.patient.name }}
+                </div>
+                <div class="card-tools">{% include 'segments/card_tools.html' %}</div>
+            </div>
+            <div class="card-body table-responsive">
+                <form method="post" action="#">
+                    <table class="table table-hover">
+                        <thead>
+                        <th>#</th>
+                        <th>الدواء</th>
+                        <th>الجرعة</th>
+                        <td></td>
+                        </thead>
+                        <tbody>
+                        {% for x in prescription.prescriptionitem_set.all %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ x.medicine.trade_name }}</td>
+                                <td>{{ x.dose }}</td>
+                                <td>
+                                    <div class="btn-group-sm">
+                                        <a href="{% url 'Patients:PrescriptionItemUpdate' x.id %}"
+                                           class="btn btn-sm btn-warning"
+                                           data-toggle="modal" data-target="#sub_modal">
+                                            <i class="fa fa-edit"></i>
+                                            تعديل
+                                        </a>
+                                        <a href="{% url 'Patients:prescription_item_delete' x.id %}"
+                                           class="btn btn-sm btn-danger">
+                                            <i class="fa fa-trash"></i>
+                                            حذف
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        <tr>
+                            <td>{% csrf_token %}</td>
+                            <td>{{ form.medicine }}</td>
+                            <td><input type="text" name="dose" class="form-control"></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button type="submit" class="btn btn-sm btn-success">
+                                        <i class="fa fa-plus-circle"></i>
+                                        إضافة
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+
+    <script>
+        $('select').addClass('select2');
+        $('.select2').select2();
+        $('.select2-container').addClass('form-control');
+    </script>
+{% endblock %}

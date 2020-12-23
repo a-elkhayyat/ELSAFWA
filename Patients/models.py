@@ -3,6 +3,7 @@ from Core.models import *
 from LabTest.models import *
 from Radiology.models import *
 from Diet.models import *
+from Medicines.models import *
 from django.db.models import Sum
 from PhysicalTherapy.models import Device, Exercise
 
@@ -280,3 +281,26 @@ class PatientDiet(models.Model):
 
     class Meta:
         ordering = ['id']
+
+
+class Prescription(models.Model):
+    added_at = models.DateTimeField(auto_now_add=True, verbose_name='التاريخ')
+    added_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    instance = models.ForeignKey(Instance, on_delete=models.CASCADE, null=True, blank=True)
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, null=True, blank=True, verbose_name='المريض')
+
+    def __str__(self):
+        return str(self.id)
+
+    class Meta:
+        ordering = ['id']
+
+
+class PrescriptionItem(models.Model):
+    prescription = models.ForeignKey(Prescription, on_delete=models.CASCADE, null=True, blank=True)
+    medicine = models.ForeignKey(Medicine, on_delete=models.SET_NULL, null=True, blank=True)
+    dose = models.TextField(verbose_name='الجرعة')
+
+    def __str__(self):
+        return self.medicine.trade_name + ' - ' + self.dose
+

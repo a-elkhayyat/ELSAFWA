@@ -329,3 +329,42 @@ class DietUpdate(ONViewMixin, UpdateView):
     template_name = 'forms/form_template.html'
     title = 'تعديل نظام غذائي لمريض'
 
+
+def add_prescription(request, pk):
+    patient = get_object_or_404(Patient, id=pk)
+    prescription = Prescription()
+    prescription.patient = patient
+    prescription.added_by = request.user
+    prescription.instance = request.user.instance
+    prescription.save()
+    return redirect('Patients:view_prescription', prescription.id)
+
+
+def view_prescription(request, pk):
+    prescription = get_object_or_404(Prescription, id=pk)
+    form = PrescriptionItemForm(request.POST or None)
+    if form.is_valid():
+        item = form.save(commit=False)
+        item.prescription = prescription
+        item.save()
+        return redirect('Patients:view_prescription', prescription.id)
+    context = {
+        'prescription': prescription,
+        'form': form,
+    }
+    return render(request, 'Patients/prescription_detail.html', context)
+
+
+class PrescriptionItemUpdate(ONViewMixin, UpdateView):
+    model = PrescriptionItem
+    title = 'تعديل روشتة'
+    template_name = 'forms/form_template.html'
+    form_class = PrescriptionItemForm
+
+
+def prescription_item_delete(request, pk):
+    item = get_object_or_404(PrescriptionItem, id=pk)
+    prescripton = item.prescription
+    item.delete()
+    return redirect('Patients:view_prescription', prescripton.id)
+
