@@ -33,6 +33,10 @@
            class="btn btn-info">
             تسجيل كشف
         </a>
+        <a href="{% url 'Patients:add_diet' object.id %}" class="btn bg-navy" data-toggle="modal"
+           data-target="#sub_modal">
+            كتابة نظام غذائي
+        </a>
     </div>
     <div class="btn-group btn-block">
         <a href="{% url 'Patients:lab_test_request' object.id %}" class="btn btn-primary" data-toggle="modal"

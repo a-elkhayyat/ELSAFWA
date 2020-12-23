@@ -2,6 +2,7 @@ from django.db import models
 from Core.models import *
 from LabTest.models import *
 from Radiology.models import *
+from Diet.models import *
 from django.db.models import Sum
 from PhysicalTherapy.models import Device, Exercise
 
@@ -265,3 +266,17 @@ class Session(models.Model):
 
     def __str__(self):
         return str(self.id)
+
+
+class PatientDiet(models.Model):
+    added_at = models.DateTimeField(auto_now_add=True, verbose_name='التاريخ')
+    added_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    instance = models.ForeignKey(Instance, on_delete=models.CASCADE, null=True, blank=True)
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, null=True, blank=True, verbose_name='المريض')
+    diet = models.ForeignKey(Diet, on_delete=models.CASCADE, null=True, blank=True, verbose_name='النظام الغذائي')
+
+    def __str__(self):
+        return str(self.id)
+
+    class Meta:
+        ordering = ['id']

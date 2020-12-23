@@ -304,3 +304,27 @@ class DiseaseUpdate(ONViewMixin, UpdateView):
     model = Disease
     form_class = DiseaseForm
     template_name = 'forms/form_template.html'
+
+
+def add_diet(request, pk):
+    title = 'إضافة نظام غذائي للمريض'
+    patient = get_object_or_404(Patient, id=pk)
+    form = PatientDietForm(request.POST or None)
+    if form.is_valid():
+        diet = form.save(commit=False)
+        diet.patient = patient
+        diet.save()
+        return redirect('Patients:PatientDetail', patient.id)
+    context = {
+        'title': title,
+        'form': form,
+    }
+    return render(request, 'forms/form_template.html', context)
+
+
+class DietUpdate(ONViewMixin, UpdateView):
+    model = PatientDiet
+    form_class = PatientDietForm
+    template_name = 'forms/form_template.html',
+    title = 'تعديل نظام غذائي لمريض'
+

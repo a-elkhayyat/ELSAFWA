@@ -90,3 +90,11 @@ class DiseaseForm(ModelForm):
         model = Disease
         fields = '__all__'
 
+
+class PatientDietForm(ModelForm):
+    class Meta:
+        model = PatientDiet
+        exclude = ['added_by', 'patient']
+        widgets = {
+            'instance': HiddenInput(),
+        }
