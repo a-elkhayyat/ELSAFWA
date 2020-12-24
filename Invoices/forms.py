@@ -16,7 +16,8 @@ class InvoiceForm(forms.ModelForm):
             'added_by',
             'outcome',
             'category',
-            'invoice_type'
+            'invoice_type',
+            'is_invoice',
         ]
         widgets = {
             'instance': forms.HiddenInput(),

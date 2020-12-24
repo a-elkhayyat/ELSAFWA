@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-lg-12 no-print">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">تقارير الخزينة</div>
+                    {% include 'segments/card_tools.html' %}
+                </div>
+                <div class="card-body">
+                    <form method="post" action="#">
+                        {% csrf_token %}
+                        {{ form }}
+                        <button type="submit" class="btn btn-sm btn-info"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">تقارير الدخل والمصروفات</div>
+                    {% include 'segments/card_tools.html' %}
+                </div>
+                <div class="card-body" style="height: 300px;">
+                    <div id="chartContainer" style="height: 275px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">تقارير الدخل</div>
+                    {% include 'segments/card_tools.html' %}
+                </div>
+                <div class="card-body" style="height: 300px;">
+                    <div id="incomeChart" style="height: 275px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">تقرير مفصل</div>
+                    {% include 'segments/card_tools.html' %}
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                        <th>#</th>
+                        <th>التاريخ</th>
+                        <th>النوع</th>
+                        <th>قبض</th>
+                        <th>صرف</th>
+                        <th>ملاحظات</th>
+                        <th></th>
+                        </thead>
+                        <tbody>
+                        {% for x in object_list %}
+                            <tr>
+                                <td>{{ x.id }}</td>
+                                <td>{{ x.added_at.date.isoformat }}</td>
+                                <td>{{ x.get_invoice_type_display }}</td>
+                                <td>{{ x.paid }}</td>
+                                <td>{{ x.outcome }}</td>
+                                <td>{% if x.category %}{{ x.cateogry }}<br>{% endif %}{{ x.comment|linebreaksbr }}</td>
+                                <td>
+                                    <div class="btn-group-sm note-btn-primary">
+                                        <a href="" class="btn btn-warning">
+                                            <i class="fa fa-edit"></i>
+                                            تعديل
+                                        </a>
+                                        <a href="" class="btn btn-danger">
+                                            <i class="fa fa-trash"></i>
+                                            حذف
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block js %}
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script type="text/javascript">
+
+            var chart = new CanvasJS.Chart("chartContainer",
+                {
+                    theme: "light2",
+                    title: {
+                        text: "تقارير الدخل والمصروفات"
+                    },
+                    data: [
+                        {
+                            type: "pie",
+                            showInLegend: true,
+                            legendText: "{indexLabel}",
+                            dataPoints: [
+                                {y: {{ income.total|floatformat:0 }}, indexLabel: "المقبوضات"},
+                                {y: {{ outcome.total|floatformat:0 }}, indexLabel: "المصروفات"}
+                            ]
+                        }
+                    ]
+                });
+            chart.render();
+    </script>
+    <script type="text/javascript">
+            var chart2 = new CanvasJS.Chart("incomeChart",
+                {
+                    theme: "light2",
+                    title: {
+                        text: "تقارير الدخل"
+                    },
+                    data: [
+                        {
+                            type: "pie",
+                            showInLegend: true,
+                            legendText: "{indexLabel}",
+                            dataPoints: [
+                                {y: {% if sales_invoices.total %}{{ sales_invoices.total|floatformat:0 }}{% else %}0{% endif %}, indexLabel: "المبيعات"},
+                                {y: {{ services_invoices.total|floatformat:0 }}, indexLabel: "الخدمات"}
+                            ]
+                        }
+                    ]
+                });
+            chart2.render();
+    </script>
+{% endblock %}

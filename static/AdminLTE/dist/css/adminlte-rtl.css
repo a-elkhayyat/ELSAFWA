@@ -2,7 +2,13 @@ body {
     direction: rtl !important;
     text-align: right;
 }
-
+@media print
+{
+    .no-print
+    {
+        display: none !important;
+    }
+}
 @media (min-width: 768px) {
     .layout-fixed .main-sidebar {
         right: 0 !important;

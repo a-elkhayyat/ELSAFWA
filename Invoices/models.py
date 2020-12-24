@@ -34,6 +34,7 @@ class Invoice(models.Model):
     category = models.ForeignKey(OutcomeCategory, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='التصنيف')
     comment = models.TextField(null=True, blank=True, verbose_name='ملاحظات')
     instance = models.ForeignKey(Instance, on_delete=models.CASCADE, null=True, blank=True)
+    is_invoice = models.BooleanField(default=False, verbose_name='فاتورة')
 
     def __str__(self):
         return str(self.id)
