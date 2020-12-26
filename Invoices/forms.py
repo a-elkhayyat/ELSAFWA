@@ -49,6 +49,7 @@ class OutcomeForm(forms.ModelForm):
             'instance',
             'category',
             'outcome',
+            'comment'
         ]
         widgets = {
             'instance': forms.HiddenInput(),

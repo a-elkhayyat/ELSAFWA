@@ -67,7 +67,8 @@
                                 <td>{% if x.category %}{{ x.cateogry }}<br>{% endif %}{{ x.comment|linebreaksbr }}</td>
                                 <td>
                                     <div class="btn-group-sm note-btn-primary">
-                                        <a href="" class="btn btn-warning">
+                                        <a href={% if x.invoice_type == 1 and x.is_invoice %}"{% url 'Invoices:IncomeUpdate' x.id %}"{% elif x.invoice_type == 1 and x.is_invoice == False %}"{% url 'Invoices:IncomeUpdate' x.id %}"{% else %}"{% url 'Invoices:OutcomeUpdate' x.id %}"{% endif %}
+                                           class="btn btn-warning" data-toggle="modal" data-target="#sub_modal">
                                             <i class="fa fa-edit"></i>
                                             تعديل
                                         </a>
@@ -91,45 +92,48 @@
     <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <script type="text/javascript">
 
-            var chart = new CanvasJS.Chart("chartContainer",
-                {
-                    theme: "light2",
-                    title: {
-                        text: "تقارير الدخل والمصروفات"
-                    },
-                    data: [
-                        {
-                            type: "pie",
-                            showInLegend: true,
-                            legendText: "{indexLabel}",
-                            dataPoints: [
-                                {y: {{ income.total|floatformat:0 }}, indexLabel: "المقبوضات"},
-                                {y: {{ outcome.total|floatformat:0 }}, indexLabel: "المصروفات"}
-                            ]
-                        }
-                    ]
-                });
-            chart.render();
+        var chart = new CanvasJS.Chart("chartContainer",
+            {
+                theme: "light2",
+                title: {
+                    text: "تقارير الدخل والمصروفات"
+                },
+                data: [
+                    {
+                        type: "pie",
+                        showInLegend: true,
+                        legendText: "{indexLabel}",
+                        dataPoints: [
+                            {y: {{ income.total|floatformat:0 }}, indexLabel: "المقبوضات"},
+                            {y: {{ outcome.total|floatformat:0 }}, indexLabel: "المصروفات"}
+                        ]
+                    }
+                ]
+            });
+        chart.render();
     </script>
     <script type="text/javascript">
-            var chart2 = new CanvasJS.Chart("incomeChart",
-                {
-                    theme: "light2",
-                    title: {
-                        text: "تقارير الدخل"
-                    },
-                    data: [
-                        {
-                            type: "pie",
-                            showInLegend: true,
-                            legendText: "{indexLabel}",
-                            dataPoints: [
-                                {y: {% if sales_invoices.total %}{{ sales_invoices.total|floatformat:0 }}{% else %}0{% endif %}, indexLabel: "المبيعات"},
-                                {y: {{ services_invoices.total|floatformat:0 }}, indexLabel: "الخدمات"}
-                            ]
-                        }
-                    ]
-                });
-            chart2.render();
+        var chart2 = new CanvasJS.Chart("incomeChart",
+            {
+                theme: "light2",
+                title: {
+                    text: "تقارير الدخل"
+                },
+                data: [
+                    {
+                        type: "pie",
+                        showInLegend: true,
+                        legendText: "{indexLabel}",
+                        dataPoints: [
+                            {
+                                y: {% if sales_invoices.total %}{{ sales_invoices.total|floatformat:0 }}{% else %}0{% endif %},
+                                indexLabel: "المبيعات"
+                            },
+                            {y: {{ services_invoices.total|floatformat:0 }}, indexLabel: "الخدمات"}
+                        ]
+                    }
+                ]
+            });
+        chart2.render();
     </script>
 {% endblock %}
