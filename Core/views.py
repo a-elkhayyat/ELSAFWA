@@ -271,3 +271,84 @@ class UserDisable(PermissionRequiredMixin, UpdateView):
             return self.request.POST.get('url')
         else:
             return self.success_url
+
+
+class CountryList(ONViewMixin, ListView):
+    title = 'عرض الدول'
+    model = Country
+    paginate_by = 100
+    
+
+class CountryCreate(ONViewMixin, CreateView):
+    title = 'إضافة دولة'
+    model = Country
+    form_class = CountryForm
+    template_name = 'forms/form_template.html'
+
+
+class CountryUpdate(ONViewMixin, UpdateView):
+    title = 'تعديل دولة'
+    model = Country
+    form_class = CountryForm
+    template_name = 'forms/form_template.html'
+
+
+class StateList(ONViewMixin, ListView):
+    title = 'عرض المحافظات'
+    model = State
+    paginate_by = 100
+    
+
+class StateCreate(ONViewMixin, CreateView):
+    title = 'إضافة محافظة'
+    model = State
+    form_class = StateForm
+    template_name = 'forms/form_template.html'
+    
+
+class StateUpdate(ONViewMixin, UpdateView):
+    title = 'تعديل محافظة'
+    model = State
+    form_class = StateForm
+    template_name = 'forms/form_template.html'
+
+
+class CityList(ONViewMixin, ListView):
+    title = 'عرض المدن'
+    model = City
+    paginate_by = 100
+    
+
+class CityCreate(ONViewMixin, CreateView):
+    title = 'إضافة مدينة'
+    model = City
+    form_class = CityForm
+    template_name = 'forms/form_template.html'
+    
+
+class CityUpdate(ONViewMixin, UpdateView):
+    title = 'تعديل مدينة'
+    model = City
+    form_class = CityForm
+    template_name = 'forms/form_template.html'
+
+
+class AreaList(ONViewMixin, ListView):
+    title = 'عرض المناطق'
+    model = Area
+    paginate_by = 100
+
+
+class AreaCreate(ONViewMixin, CreateView):
+    title = 'إضافة منطقة'
+    model = Area
+    form_class = AreaForm
+    template_name = 'forms/form_template.html'
+
+
+class AreaUpdate(ONViewMixin, UpdateView):
+    title = 'تعديل منطقة'
+    model = Area
+    form_class = AreaForm
+    template_name = 'forms/form_template.html'
+

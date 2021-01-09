@@ -184,7 +184,118 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>
+                                    المناطق الجغرافية
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            الدول
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{% url 'Core:CountryCreate' %}" class="nav-link" data-toggle="modal"
+                                               data-target="#sub_modal">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>إضافة</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{% url 'Core:CountryList' %}"
+                                               class="nav-link">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>عرض</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
 
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            المحافظات
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{% url 'Core:StateCreate' %}" class="nav-link" data-toggle="modal"
+                                               data-target="#sub_modal">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>إضافة</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{% url 'Core:StateList' %}"
+                                               class="nav-link">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>عرض</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            المدن
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{% url 'Core:CityCreate' %}" class="nav-link" data-toggle="modal"
+                                               data-target="#sub_modal">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>إضافة</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{% url 'Core:CityList' %}"
+                                               class="nav-link">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>عرض</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            المناطق
+                                            <i class="right fas fa-angle-left"></i>
+                                        </p>
+                                    </a>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="{% url 'Core:AreaCreate' %}" class="nav-link" data-toggle="modal"
+                                               data-target="#sub_modal">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>إضافة</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{% url 'Core:AreaList' %}"
+                                               class="nav-link">
+                                                <i class="far fa-dot-circle nav-icon"></i>
+                                                <p>عرض</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
 
                         <li class="nav-item">
                             <a href="#" class="nav-link">

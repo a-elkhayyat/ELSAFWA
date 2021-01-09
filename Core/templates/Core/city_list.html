@@ -1,0 +1,32 @@
+{% extends 'cardbase.html' %}
+{% block cardbody %}
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <td>#</td>
+            <td>الدولة</td>
+            <td>المحافظة</td>
+            <td>الاسم</td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for x in object_list %}
+            <tr>
+                <td>{{ x.id }}</td>
+                <td>{{ x.state.country }}</td>
+                <td>{{ x.state }}</td>
+                <td>{{ x.name }}</td>
+                <td>
+                    <div class="btn-group-sm">
+                        <a href="{% url 'Core:CityUpdate' x.id %}" class="btn btn-warning" data-toggle='modal' data-target='#sub_modal'>
+                            <i class="fa fa-edit"></i>
+                            تعديل
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

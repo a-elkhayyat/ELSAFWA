@@ -65,3 +65,27 @@ class DisableForm(forms.ModelForm):
         fields = [
             'is_active',
         ]
+
+
+class CountryForm(forms.ModelForm):
+    class Meta:
+        model = Country
+        fields = '__all__'
+
+
+class StateForm(forms.ModelForm):
+    class Meta:
+        model = State
+        fields = '__all__'
+
+
+class CityForm(forms.ModelForm):
+    class Meta:
+        model = City
+        fields = '__all__'
+
+
+class AreaForm(forms.ModelForm):
+    class Meta:
+        model = Area
+        fields = '__all__'
