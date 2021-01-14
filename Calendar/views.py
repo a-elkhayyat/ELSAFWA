@@ -36,7 +36,7 @@ class AppointmentCreate(ONViewMixin, CreateView):
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-        kwargs['instance'] = self.request.user.instance
+        kwargs['n'] = self.request.user.instance
         return kwargs
 
 
