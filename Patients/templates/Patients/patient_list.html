@@ -55,6 +55,7 @@
                 <th>#</th>
                 <th>الاسم</th>
                 <th>رقم التليفون</th>
+                <th>أول زيارة</th>
                 <th>آخر زيارة</th>
                 <th></th>
                 </thead>
@@ -75,7 +76,8 @@
                                 </a>
                             {% endif %}
                         </td>
-                        <td>{{ x.las }}</td>
+                        <td>{{ x.added_at.date.isoformat }}</td>
+                        <td>{{ x.get_last_visit.added_at.date.isoformat }}</td>
                         <td>
 
                             <div class="btn-group-sm">
