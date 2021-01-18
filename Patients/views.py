@@ -368,3 +368,30 @@ def prescription_item_delete(request, pk):
     item.delete()
     return redirect('Patients:view_prescription', prescripton.id)
 
+
+def add_image(request, pk):
+    title = 'إضافة صورة'
+    patient = get_object_or_404(Patient, id=pk)
+    form = PatientUploadForm(request.POST or None, request.FILES or None)
+    if form.is_valid():
+        img = form.save(commit=False)
+        img.patient = patient
+        img.save()
+        return redirect('Patients:PatientDetail', patient.id)
+    context = {
+        'title': title,
+        'form': form,
+    }
+    return render(request, 'forms/form_template.html', context)
+
+
+def delete_image(request, pk):
+    img = get_object_or_404(PatientImage, id=pk)
+    patient = img.patient
+    img.delete()
+    return redirect('Patients:PatientDetail', patient.id)
+
+
+class ImageDetail(ONViewMixin, DetailView):
+    model = PatientImage
+    title = 'عرض الصورة'

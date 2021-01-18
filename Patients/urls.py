@@ -41,4 +41,7 @@ urlpatterns += [
     path('disease/list/', DiseaseList.as_view(), name='DiseaseList'),
     path('disease/create/', DiseaseCreate.as_view(), name='DiseaseCreate'),
     path('disease/update/<int:pk>/', DiseaseUpdate.as_view(), name='DiseaseUpdate'),
+    path('images/add/<int:pk>/', add_image, name='add_image'),
+    path('images/delete/<int:pk>/', delete_image, name='delete_image'),
+    path('images/view/<int:pk>/', add_image, name='add_image'),
 ]

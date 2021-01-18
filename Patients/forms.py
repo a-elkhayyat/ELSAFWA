@@ -108,3 +108,11 @@ class PrescriptionItemForm(ModelForm):
             'dose',
         ]
 
+
+class PatientUploadForm(ModelForm):
+    class Meta:
+        model = PatientImage
+        exclude = [
+            'added_by',
+            'patient'
+        ]

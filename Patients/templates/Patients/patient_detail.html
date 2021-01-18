@@ -50,6 +50,10 @@
         <a href="{% url 'Patients:add_prescription' object.id %}" class="btn btn-warning">
             كتابة روشتة
         </a>
+        <a href="{% url 'Patients:add_image' object.id %}" class="btn btn-secondary" data-toggle="modal"
+           data-target="#sub_modal">
+            إضافة صورة
+        </a>
     </div>
     <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -71,6 +75,8 @@
                aria-controls="nav-visits" aria-selected="false">النظام الغذائي</a>
             <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-visits" role="tab"
                aria-controls="nav-visits" aria-selected="false">الزيارات</a>
+            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-images" role="tab"
+               aria-controls="nav-visits" aria-selected="false">ألبوم الصور</a>
 
         </div>
     </nav>
@@ -396,6 +402,49 @@
                             {% endfor %}
                             </tbody>
                         </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="nav-images" role="tabpanel" aria-labelledby="nav-contact-tab">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">البوم الصور</div>
+                        {% include 'segments/card_tools.html' %}
+                    </div>
+                    <div class="card-body table-responsive">
+                        <div class="row">
+                            {% for x in object.patientimage_set.all %}
+                                <div class="col-lg-3 col-md-4 col-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="card-title">
+                                                {{ x.added_at.date.isoformat }}
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <img src="{{ x.img.url }}" class="img-fluid">
+
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="btn-group-sm">
+                                                <a href="" class="btn btn-info">
+                                                    <i class="fa fa-eye"></i>
+                                                    عرض
+                                                </a>
+                                                <a href="" class="btn btn-danger confirm-delete">
+                                                    <i class="fa fa-trash"></i>
+                                                    حذف
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>

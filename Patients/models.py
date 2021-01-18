@@ -86,8 +86,10 @@ class Patient(models.Model):
     def get_last_height(self):
         heights = self.heightandweight_set.all()
         last_height = heights.last()
-        print(last_height.id)
         return last_height
+
+    def get_last_visit(self):
+        return self.patientinvestigation_set.last()
 
 
 class PatientViralProcess(models.Model):
@@ -303,4 +305,14 @@ class PrescriptionItem(models.Model):
 
     def __str__(self):
         return self.medicine.trade_name + ' - ' + self.dose
+
+
+class PatientImage(models.Model):
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    img = models.ImageField(verbose_name='الصورة', upload_to='upload/patient_images/')
+    added_at = models.DateTimeField(auto_now_add=True, verbose_name='التاريخ')
+    added_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+
+    def __str__(self):
+        return str(self.id)
 
