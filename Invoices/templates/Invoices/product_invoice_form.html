@@ -1,0 +1,31 @@
+{% include 'forms/form_template.html' %}
+<script>
+    function calculate_after_discount() {
+        var after = $('#id_price').val() - $('#id_discount').val();
+        $('#id_after_discount').val(after);
+
+    }
+
+    function calculate_remaining() {
+        var remaining = $('#id_after_discount').val() - $('#id_paid').val();
+        console.log(remaining);
+        $('#id_remaining').val(remaining);
+        if (remaining > 0) {
+            $('#id_remaining').css('background-color', 'red');
+        } else if (remaining < 0) {
+            $('#id_remaining').css('background-color', 'yellow');
+        } else{
+             $('#id_remaining').css('background-color', 'green');
+        }
+    }
+
+    $('#id_remaining').prop('readonly', true);
+    $('#id_discount').on('change keyup', function () {
+        calculate_after_discount();
+        calculate_remaining();
+    });
+    $('#id_paid').on('change keyup', function () {
+        calculate_after_discount();
+        calculate_remaining();
+    });
+</script>

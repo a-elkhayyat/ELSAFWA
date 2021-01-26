@@ -5,6 +5,7 @@ from .views import *
 app_name = 'Invoices'
 urlpatterns = [
     path('pay/<int:pk>/', pay, name='Pay'),
+    path('patient/sales/<int:pk>/', add_product_invoice, name='add_product_invoice'),
     path('outcome/create/', create_outcome_invoice, name='create_outcome_invoice'),
     path('outcome/list/', OutcomeInvoiceList.as_view(), name='OutcomeInvoiceList'),
     path('outcome/update/<int:pk>/', OutcomeUpdate.as_view(), name='OutcomeUpdate'),

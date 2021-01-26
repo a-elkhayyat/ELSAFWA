@@ -134,3 +134,19 @@ class IncomeUpdate(ONViewMixin, UpdateView):
     model = Invoice
     form_class = InvoiceForm
     template_name = 'Invoices/invoice_form.html'
+
+
+def add_product_invoice(request, pk):
+    title = 'بيع منتج'
+    patient = get_object_or_404(Patient, id=pk)
+    form = ProductInvoiceForm(request.POST or None)
+    if form.is_valid():
+        invoice = form.save(commit=False)
+        invoice.patient = patient
+        invoice.save()
+    context = {
+        'title': title,
+        'patient': patient,
+        'form': form,
+    }
+    return render(request, 'Invoices/product_invoice_form.html', context)

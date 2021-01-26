@@ -2,6 +2,7 @@ from django.db import models
 from Core.models import User, Instance
 from Services.models import Service
 from Patients.models import Patient
+from Products.models import Product
 
 
 # Create your models here.
@@ -24,6 +25,7 @@ class Invoice(models.Model):
     added_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='الموظف')
     patient = models.ForeignKey(Patient, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='المريض')
     service = models.ForeignKey(Service, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='الخدمة')
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='المنتج')
     visits_added = models.IntegerField(default=1, verbose_name='عدد الزيارات المضافة')
     price = models.FloatField(default=0, verbose_name='سعر الخدمة')
     discount = models.FloatField(default=0, verbose_name='خصم')
@@ -41,6 +43,4 @@ class Invoice(models.Model):
 
     def visits_left(self):
         return self.visits_added - self.visits_used
-
-
 

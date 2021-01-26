@@ -55,3 +55,22 @@ class OutcomeForm(forms.ModelForm):
             'instance': forms.HiddenInput(),
         }
 
+
+class ProductInvoiceForm(forms.ModelForm):
+    class Meta:
+        model = Invoice
+        fields = [
+            'instance',
+            'product',
+            'price',
+            'discount',
+            'after_discount',
+            'paid',
+            'comment',
+        ]
+        widgets = {
+            'instance': forms.HiddenInput(),
+            'price': forms.NumberInput(attrs={'readonly': 'true'}),
+            'after_discount': forms.NumberInput(attrs={'readonly': 'true'}),
+            'old_balance': forms.NumberInput(attrs={'readonly': 'true'}),
+        }
