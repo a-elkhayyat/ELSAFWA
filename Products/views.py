@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect, get_object_or_404
 from Core.views import ONViewMixin
 from django.views.generic import *
 from .forms import *
+from rest_framework.viewsets import ModelViewSet
+from .serializers import *
+from django.db.models import Q
+from rest_framework.pagination import PageNumberPagination
 
 
 # Create your views here.
@@ -42,3 +46,14 @@ class ProductDelete(ONViewMixin, UpdateView):
     form_class = ProductDeleteForm
     template_name = 'forms/form_template.html'
     title = 'حذف منتج'
+
+
+class ProductViewSet(ModelViewSet):
+    queryset = Product.objects.filter(deleted=False)
+    serializer_class = ProductSerializer
+
+    def get_queryset(self):
+        queryset = self.queryset.filter(instance=self.request.user.instance)
+        if self.request.GET.get('q'):
+            queryset = queryset.filter(Q(name__icontains=self.request.GET.get('q')))
+        return queryset
