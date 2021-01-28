@@ -1,0 +1,13 @@
+{% include 'forms/form_template.html' %}
+<script>
+$('#id_diet').on('change', function (x) {
+        var diet_id = this.value;
+        $.ajax({
+            url: "/diet/diet/" + diet_id,
+            success: function (result) {
+                $("#id_description").val(result.description);
+                console.log(result.description);
+            }
+        });
+    });
+</script>

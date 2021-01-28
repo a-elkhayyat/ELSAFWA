@@ -100,6 +100,15 @@ class PatientDietForm(ModelForm):
         }
 
 
+class PatientDietEditForm(ModelForm):
+    class Meta:
+        model = PatientDiet
+        fields = ['description']
+        widgets = {
+            'instance': HiddenInput(),
+        }
+
+
 class PrescriptionItemForm(ModelForm):
     class Meta:
         model = PrescriptionItem

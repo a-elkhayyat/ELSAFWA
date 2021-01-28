@@ -310,12 +310,27 @@ def add_diet(request, pk):
     title = 'إضافة نظام غذائي للمريض'
     patient = get_object_or_404(Patient, id=pk)
     form = PatientDietForm(request.POST or None)
+    form.fields['diet'].queryset = Diet.objects.filter(instance=request.user.instance)
     if form.is_valid():
         diet = form.save(commit=False)
         diet.patient = patient
         diet.added_by = request.user
         diet.save()
         return redirect('Patients:PatientDetail', patient.id)
+    context = {
+        'title': title,
+        'form': form,
+    }
+    return render(request, 'Patients/patient_diet.html', context)
+
+
+def edit_diet_program(request, pk):
+    title = 'تعديل النظام الغذائي للمريض'
+    diet = get_object_or_404(PatientDiet, id=pk)
+    form = PatientDietEditForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect()
     context = {
         'title': title,
         'form': form,

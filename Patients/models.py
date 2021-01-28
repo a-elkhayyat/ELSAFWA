@@ -277,6 +277,7 @@ class PatientDiet(models.Model):
     instance = models.ForeignKey(Instance, on_delete=models.CASCADE, null=True, blank=True)
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE, null=True, blank=True, verbose_name='المريض')
     diet = models.ForeignKey(Diet, on_delete=models.CASCADE, null=True, blank=True, verbose_name='النظام الغذائي')
+    description = models.TextField(verbose_name='وصف النظام', null=True, blank=True)
 
     def __str__(self):
         return str(self.id)

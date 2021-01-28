@@ -6,6 +6,9 @@ class DietForm(forms.ModelForm):
     class Meta:
         model = Diet
         exclude = ['deleted']
+        widgets = {
+            'instance': forms.HiddenInput()
+        }
 
 
 class DietDeleteForm(forms.ModelForm):
