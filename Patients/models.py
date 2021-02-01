@@ -301,11 +301,12 @@ class Prescription(models.Model):
 
 class PrescriptionItem(models.Model):
     prescription = models.ForeignKey(Prescription, on_delete=models.CASCADE, null=True, blank=True)
-    medicine = models.ForeignKey(Medicine, on_delete=models.SET_NULL, null=True, blank=True)
-    dose = models.TextField(verbose_name='الجرعة')
+    medicine = models.ForeignKey(Medicine, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='الدواء')
+    dose = models.ForeignKey(Dose, on_delete=models.SET_NULL, null=True, verbose_name='الجرعة')
+    timing = models.ForeignKey(Timing, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='التوقيت')
 
     def __str__(self):
-        return self.medicine.trade_name + ' - ' + self.dose
+        return self.medicine.trade_name + ' - ' + self.dose.name + ' - ' + self.timing.name
 
 
 class PatientImage(models.Model):

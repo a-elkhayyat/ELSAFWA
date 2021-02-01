@@ -13,3 +13,17 @@ class Medicine(models.Model):
 
     def __str__(self):
         return self.trade_name
+
+
+class Dose(models.Model):
+    name = models.CharField(max_length=128, verbose_name='اسم الجرعة')
+
+    def __str__(self):
+        return self.name
+
+
+class Timing(models.Model):
+    name = models.CharField(max_length=128, verbose_name='التوقيت')
+
+    def __str__(self):
+        return self.name

@@ -23,6 +23,7 @@
                         <th>#</th>
                         <th>الدواء</th>
                         <th>الجرعة</th>
+                        <th>التوقيت</th>
                         <td></td>
                         </thead>
                         <tbody>
@@ -31,6 +32,7 @@
                                 <td>{{ forloop.counter }}</td>
                                 <td>{{ x.medicine.trade_name }}</td>
                                 <td>{{ x.dose }}</td>
+                                <td>{{ x.timing }}</td>
                                 <td>
                                     <div class="btn-group-sm">
                                         <a href="{% url 'Patients:PrescriptionItemUpdate' x.id %}"
@@ -51,7 +53,8 @@
                         <tr>
                             <td>{% csrf_token %}</td>
                             <td>{{ form.medicine }}</td>
-                            <td><input type="text" name="dose" class="form-control"></td>
+                            <td>{{ form.dose }}</td>
+                            <td>{{ form.timing }}</td>
                             <td>
                                 <div class="btn-group">
                                     <button type="submit" class="btn btn-sm btn-success">

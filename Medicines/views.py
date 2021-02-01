@@ -37,3 +37,45 @@ class MedicineDelete(ONViewMixin, UpdateView):
     model = Medicine
     template_name = 'forms/form_template.html'
     form_class = MedicineDeleteForm
+
+
+class DoseCreate(ONViewMixin, CreateView):
+    title = 'إضافة جرعة'
+    model = Dose
+    template_name = 'forms/form_template.html'
+    form_class = DoseForm
+
+
+class DoseList(ONViewMixin, ListView):
+    title = 'عرض الجرعات'
+    model = Dose
+    queryset = Dose.objects.all()
+    form_class = DoseForm
+
+
+class DoseUpdate(ONViewMixin, UpdateView):
+    title = 'تعديل الجرعات'
+    model = Dose
+    template_name = 'forms/form_template.html'
+    form_class = DoseForm
+
+
+class TimingCreate(ONViewMixin, CreateView):
+    title = 'إضافة توقيت دواء'
+    model = Timing
+    template_name = 'forms/form_template.html'
+    form_class = TimingForm
+
+
+class TimingList(ONViewMixin, ListView):
+    title = 'عرض توقيتات الأدوية'
+    model = Timing
+    queryset = Timing.objects.all()
+    form_class = TimingForm
+
+
+class TimingUpdate(ONViewMixin, UpdateView):
+    title = 'تعديل توقيت دواء'
+    model = Timing
+    template_name = 'forms/form_template.html'
+    form_class = TimingForm

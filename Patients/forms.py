@@ -115,6 +115,7 @@ class PrescriptionItemForm(ModelForm):
         fields = [
             'medicine',
             'dose',
+            'timing'
         ]
 
 
