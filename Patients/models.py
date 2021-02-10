@@ -306,7 +306,7 @@ class PrescriptionItem(models.Model):
     timing = models.ForeignKey(Timing, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='التوقيت')
 
     def __str__(self):
-        return self.medicine.trade_name + ' - ' + self.dose.name + ' - ' + self.timing.name
+        return self.medicine.trade_name + ' - ' + self.dose.__str__() + ' - ' + self.timing.__str__()
 
 
 class PatientImage(models.Model):
