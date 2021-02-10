@@ -412,3 +412,22 @@ def delete_image(request, pk):
 class ImageDetail(ONViewMixin, DetailView):
     model = PatientImage
     title = 'عرض الصورة'
+
+
+class ComplainList(ONViewMixin, ListView):
+    model = Complain
+    title = 'عرض الشكاوي'
+
+
+class ComplainCreate(ONViewMixin, CreateView):
+    model = Complain
+    title = 'إضافة شكوي'
+    form_class = ComplainForm
+    template_name = 'forms/form_template.html'
+
+
+class ComplainUpdate(ONViewMixin, UpdateView):
+    model = Complain
+    title = 'تعديل شكوي'
+    form_class = ComplainForm
+    template_name = 'forms/form_template.html'

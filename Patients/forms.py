@@ -126,3 +126,9 @@ class PatientUploadForm(ModelForm):
             'added_by',
             'patient'
         ]
+
+
+class ComplainForm(ModelForm):
+    class Meta:
+        model = PatientImage
+        fields = '__all__'

@@ -44,4 +44,7 @@ urlpatterns += [
     path('images/add/<int:pk>/', add_image, name='add_image'),
     path('images/delete/<int:pk>/', delete_image, name='delete_image'),
     path('images/view/<int:pk>/', add_image, name='add_image'),
+    path('complain/list/', ComplainList.as_view(), name='ComplainList'),
+    path('complain/create/', ComplainCreate.as_view(), name='ComplainCreate'),
+    path('complain/update/<int:pk>/', ComplainUpdate.as_view(), name='ComplainUpdate'),
 ]
