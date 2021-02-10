@@ -140,6 +140,7 @@ def add_product_invoice(request, pk):
     title = 'بيع منتج'
     patient = get_object_or_404(Patient, id=pk)
     form = ProductInvoiceForm(request.POST or None)
+    form.fields['product'].queryset = request.user.instance.product_set.all()
     if form.is_valid():
         invoice = form.save(commit=False)
         invoice.patient = patient
