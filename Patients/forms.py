@@ -130,5 +130,5 @@ class PatientUploadForm(ModelForm):
 
 class ComplainForm(ModelForm):
     class Meta:
-        model = PatientImage
+        model = Complain
         fields = '__all__'
