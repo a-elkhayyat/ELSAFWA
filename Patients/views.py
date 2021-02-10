@@ -24,6 +24,8 @@ class PatientList(ONViewMixin, ListView):
             queryset = queryset.filter(telephone__icontains=self.request.GET.get('telephone'))
         if self.request.GET.get('gender'):
             queryset = queryset.filter(gender=self.request.GET.get('gender'))
+        if self.request.GET.get('q'):
+            queryset = queryset.filter(Q(name__icontains=self.request.GET.get('q')) | Q(telephone__icontains=self.request.GET.get('q')))
         return queryset
 
 

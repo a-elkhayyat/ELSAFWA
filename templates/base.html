@@ -44,7 +44,8 @@
         .symbol-input100 {
             left: -12px !important;
         }
-        .select2-container--default .select2-selection--multiple .select2-selection__choice{
+
+        .select2-container--default .select2-selection--multiple .select2-selection__choice {
             color: black;
         }
     </style>
@@ -93,9 +94,10 @@
         {% endblock %}
 
         <!-- SEARCH FORM -->
-        <form class="form-inline ml-3">
+        <form class="form-inline ml-3" action="{% url 'Patients:PatientList' %}">
             <div class="input-group input-group-sm">
-                <input class="form-control form-control-navbar" type="search" placeholder="بحث ..." aria-label="Search">
+                <input class="form-control form-control-navbar" type="search" name="q" placeholder="بحث ..."
+                       aria-label="Search">
                 <div class="input-group-append">
                     <button class="btn btn-navbar" type="submit">
                         <i class="fas fa-search"></i>

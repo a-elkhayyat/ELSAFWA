@@ -25,15 +25,17 @@
 
         <!-- SidebarSearch Form -->
         <div class="form-inline">
-            <div class="input-group" data-widget="sidebar-search">
-                <input class="form-control form-control-sidebar" type="search" placeholder="بحث ..."
-                       aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-sidebar">
-                        <i class="fas fa-search fa-fw"></i>
-                    </button>
+            <form action="{% url 'Patients:PatientList' %}">
+                <div class="input-group" data-widget="sidebar-search">
+                    <input class="form-control form-control-sidebar" type="search" placeholder="بحث ..."
+                           aria-label="Search" name="q">
+                    <div class="input-group-append">
+                        <button class="btn btn-sidebar">
+                            <i class="fas fa-search fa-fw"></i>
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
         <!-- Sidebar Menu -->
         <nav class="mt-2">
@@ -203,7 +205,8 @@
                                     </a>
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item">
-                                            <a href="{% url 'Core:CountryCreate' %}" class="nav-link" data-toggle="modal"
+                                            <a href="{% url 'Core:CountryCreate' %}" class="nav-link"
+                                               data-toggle="modal"
                                                data-target="#sub_modal">
                                                 <i class="far fa-dot-circle nav-icon"></i>
                                                 <p>إضافة</p>
