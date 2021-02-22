@@ -448,15 +448,11 @@ def electricity_image_upload(request, pk):
             img = form.save()
             try:
                 image_data = base64.b64decode(re.search(r'base64,(.*)', request.POST['electricity_img']).group(1))
-                print('image_data: ' + str(image_data))
                 encoded_img = ContentFile(image_data, 'electricity_img_.png')
                 img.electricity_img = encoded_img
-                print(encoded_img)
             except Exception as e:
-                print('Error:')
                 print(e)
             img.save()
-            print(patient.electricity_img)
             return JsonResponse({
                 'error': False,
                 'message': 'Saved Successfully'
