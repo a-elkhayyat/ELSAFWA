@@ -69,6 +69,7 @@ class Patient(models.Model):
     area = models.ForeignKey(Area, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='المنطقة')
     patient_history = models.ManyToManyField(Disease, verbose_name='التاريخ المرضي', blank=True)
     visits = models.IntegerField(verbose_name='الزيارات', default=0)
+    electricity_img = models.ImageField(upload_to='electricity/', verbose_name='صورة الكهرباء', null=True, blank=True)
     added_at = models.DateTimeField(auto_now_add=True, verbose_name='تاريخ الإضافة')
     deleted = models.BooleanField(default=False, verbose_name='حذف')
 

@@ -9,7 +9,7 @@ class DateInput(DateInput):
 class PatientForm(ModelForm):
     class Meta:
         model = Patient
-        exclude = ['patient_history', 'deleted', 'visits']
+        exclude = ['patient_history', 'deleted', 'visits', 'electricity_img']
         widgets = {
             'instance': HiddenInput(),
             'birthday': DateInput(),
@@ -132,3 +132,9 @@ class ComplainForm(ModelForm):
     class Meta:
         model = Complain
         fields = '__all__'
+
+
+class ElectricityImageForm(ModelForm):
+    class Meta:
+        model = Patient
+        fields = ['electricity_img']

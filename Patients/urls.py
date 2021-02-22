@@ -14,6 +14,7 @@ urlpatterns += [
     path('update/<int:pk>/', PatientUpdate.as_view(), name='PatientUpdate'),
     path('delete/<int:pk>/', PatientDelete.as_view(), name='PatientDelete'),
     path('view/<int:pk>/', PatientDetail.as_view(), name='PatientDetail'),
+    path('electricity/<int:pk>/', electricity_image_upload, name='electricity_image_upload'),
     path('update/history/<int:pk>/', PatientHistoryUpdate.as_view(), name='PatientHistoryUpdate'),
     path('record/weight/<int:pk>/', add_height_and_weight, name='add_height_and_weight'),
     path('record/vital/<int:pk>/', add_vital_record, name='add_vital_record'),

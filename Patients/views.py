@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404, redirect, HttpResponse
+from django.http import JsonResponse
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, UpdateView, DetailView
 from django.contrib.auth.mixins import PermissionRequiredMixin
@@ -8,6 +9,10 @@ from rest_framework.viewsets import ModelViewSet
 from .serializers import *
 from django.db.models import Q
 from rest_framework.pagination import PageNumberPagination
+import base64
+import re
+from django.core.files.base import ContentFile
+from django.views.decorators.csrf import csrf_exempt
 
 
 # Create your views here.
@@ -431,3 +436,39 @@ class ComplainUpdate(ONViewMixin, UpdateView):
     title = 'تعديل شكوي'
     form_class = ComplainForm
     template_name = 'forms/form_template.html'
+
+
+@csrf_exempt
+def electricity_image_upload(request, pk):
+    patient = get_object_or_404(Patient, id=pk)
+    form = ElectricityImageForm(request.POST or None, request.FILES or None, instance=patient)
+    title = 'رفع صورة جلسات الكهرباء'
+    if request.method == 'POST':
+        if form.is_valid():
+            img = form.save()
+            try:
+                image_data = base64.b64decode(re.search(r'base64,(.*)', request.POST['electricity_img']).group(1))
+                print('image_data: ' + str(image_data))
+                encoded_img = ContentFile(image_data, 'electricity_img_.png')
+                img.electricity_img = encoded_img
+                print(encoded_img)
+            except Exception as e:
+                print('Error:')
+                print(e)
+            img.save()
+            print(patient.electricity_img)
+            return JsonResponse({
+                'error': False,
+                'message': 'Saved Successfully'
+            })
+        else:
+            return JsonResponse({
+                'error': True,
+                'errors': form.errors
+            })
+    context = {
+        'patient': patient,
+        'form': form,
+        'title': title,
+    }
+    return render(request, 'forms/get_form.html', context)
