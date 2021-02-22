@@ -92,6 +92,9 @@ class Patient(models.Model):
     def get_last_visit(self):
         return self.patientinvestigation_set.last()
 
+    def get_visits_count(self):
+        return self.patientinvestigation_set.count()
+
 
 class PatientViralProcess(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE, verbose_name='المريض')

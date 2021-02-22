@@ -57,6 +57,7 @@
                 <th>رقم التليفون</th>
                 <th>أول زيارة</th>
                 <th>آخر زيارة</th>
+                <th>عدد الزيارات</th>
                 <th></th>
                 </thead>
                 <tbody>
@@ -78,6 +79,7 @@
                         </td>
                         <td>{{ x.added_at.date.isoformat }}</td>
                         <td>{{ x.get_last_visit.added_at.date.isoformat }}</td>
+                        <td>{{ x.get_visits_count }}</td>
                         <td>
 
                             <div class="btn-group-sm">

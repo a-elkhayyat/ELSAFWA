@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% block body %}
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">فلتر</div>
+                <div class="card-tools">{% include 'segments/card_tools.html' %}</div>
+            </div>
+            <div class="card-body">
+                <form method="post" action="#">
+                    {% csrf_token %}
+                    {{ form }}
+                    <button type="submit" class="btn btn-sm btn-info"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% if object_list %}
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">المبيعات</div>
+                        <div class="card-tools">
+                            {% include 'segments/card_tools.html' %}
+                        </div>
+                    </div>
+                    <div class="card-body" style="height: 500px;">
+                        <b>إجمالي المبيعات</b> {{ sales_total.total }}
+                        <br>
+                        <b>إجمالي المدفوع</b> {{ sales_total.paid }}
+                        <br>
+
+                        <div id="productChart" style="height: 370px; width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">الخدمات</div>
+                        <div class="card-tools">
+                            {% include 'segments/card_tools.html' %}
+                        </div>
+                    </div>
+                    <div class="card-body" style="height: 500px;">
+                        <b>إجمالي الخدمات</b> {{ services_total.total }}
+                        <br>
+                        <b>إجمالي المدفوع</b> {{ services_total.paid }}
+                        <br>
+                        <div id="serviceChart" style="height: 370px; width: 100%;"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+{% block js %}
+
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script type="text/javascript">
+        var chart1 = new CanvasJS.Chart("productChart",
+            {
+                theme: "light2",
+                title: {
+                    text: "المبيعات حسب المنتج"
+                },
+                data: [
+                    {
+                        type: "pie",
+                        showInLegend: true,
+                        legendText: "{indexLabel}",
+                        dataPoints: [
+                            {% for x in sales_total_by_product  %}
+                                {
+                                    y: {{ x.sum|floatformat:0 }},
+                                    indexLabel: "{{ x.product__name }}"
+                                }{% if not forloop.last %},{% endif %}
+                            {% endfor %}
+                        ]
+                    }
+                ]
+            });
+        chart2.render();
+    </script>
+
+    <script type="text/javascript">
+        var chart1 = new CanvasJS.Chart("serviceChart",
+            {
+                theme: "light2",
+                title: {
+                    text: "الخدمات حسب الخدمة"
+                },
+                data: [
+                    {
+                        type: "pie",
+                        showInLegend: true,
+                        legendText: "{indexLabel}",
+                        dataPoints: [
+                            {% for x in services_total_by_service  %}
+                                {
+                                    y: {{ x.sum|floatformat:0 }},
+                                    indexLabel: "{{ x.service__name }}"
+                                }{% if not forloop.last %},{% endif %}
+                            {% endfor %}
+                        ]
+                    }
+                ]
+            });
+        chart2.render();
+    </script>
+{% endblock %}
