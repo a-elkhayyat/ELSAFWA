@@ -19,6 +19,7 @@ def invoices_report(request):
                                              instance=request.user.instance)
         income = object_list.filter(invoice_type=1).aggregate(total=Sum('paid'))
         outcome = object_list.filter(invoice_type=2).aggregate(total=Sum('outcome'))
+        outcome_by_category = object_list.filter(invoice_type=2).values('category__name').annotate(total=Sum('outcome'))
         sales_invoices = object_list.filter(invoice_type=1).filter(is_invoice=True).aggregate(total=Sum('paid'))
         services_invoices = object_list.filter(invoice_type=1).filter(is_invoice=False).aggregate(total=Sum('paid'))
         context.update({
@@ -27,6 +28,7 @@ def invoices_report(request):
             'outcome': outcome,
             'sales_invoices': sales_invoices,
             'services_invoices': services_invoices,
+            'outcome_by_category': outcome_by_category,
         })
     return render(request, 'Reports/invoices_reports.html', context)
 
@@ -58,3 +60,4 @@ def category_reports(request):
             'services_total_by_service': services_total_by_service,
         })
     return render(request, 'Reports/category_reports.html', context)
+

@@ -145,6 +145,7 @@ def add_product_invoice(request, pk):
         invoice = form.save(commit=False)
         invoice.patient = patient
         invoice.added_by = request.user
+        invoice.is_invoice = True
         invoice.save()
         return redirect(request.POST.get('url'))
     context = {

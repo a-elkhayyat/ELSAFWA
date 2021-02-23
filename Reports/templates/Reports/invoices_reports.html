@@ -17,7 +17,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">تقارير الدخل والمصروفات</div>
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <div class="card">
                 <div class="card-header">
                     <div class="card-title">تقارير الدخل</div>
@@ -36,6 +36,17 @@
                 </div>
                 <div class="card-body" style="height: 300px;">
                     <div id="incomeChart" style="height: 275px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">تقارير المصروفات</div>
+                    {% include 'segments/card_tools.html' %}
+                </div>
+                <div class="card-body" style="height: 300px;">
+                    <div id="expenseChart" style="height: 275px;"></div>
                 </div>
             </div>
         </div>
@@ -67,10 +78,12 @@
                                 <td>{% if x.category %}{{ x.cateogry }}<br>{% endif %}{{ x.comment|linebreaksbr }}</td>
                                 <td>
                                     <div class="btn-group-sm note-btn-primary">
-                                        <a href={% if x.invoice_type == 1 and x.is_invoice %}"{% url 'Invoices:IncomeUpdate' x.id %}"{% elif x.invoice_type == 1 and x.is_invoice == False %}"{% url 'Invoices:IncomeUpdate' x.id %}"{% else %}"{% url 'Invoices:OutcomeUpdate' x.id %}"{% endif %}
-                                           class="btn btn-warning" data-toggle="modal" data-target="#sub_modal">
-                                            <i class="fa fa-edit"></i>
-                                            تعديل
+                                        <a href={% if x.invoice_type == 1 and x.is_invoice %}"{% url 'Invoices:IncomeUpdate' x.id %}"{% elif x.invoice_type == 1 and x.is_invoice == False %}
+                                            "{% url 'Invoices:IncomeUpdate' x.id %}"{% else %}"
+                                            {% url 'Invoices:OutcomeUpdate' x.id %}"{% endif %}
+                                        class="btn btn-warning" data-toggle="modal" data-target="#sub_modal">
+                                        <i class="fa fa-edit"></i>
+                                        تعديل
                                         </a>
                                         <a href="" class="btn btn-danger">
                                             <i class="fa fa-trash"></i>
@@ -135,5 +148,31 @@
                 ]
             });
         chart2.render();
+    </script>
+    <script type="text/javascript">
+        var chart3 = new CanvasJS.Chart("expenseChart",
+            {
+                theme: "light2",
+                title: {
+                    text: "تقارير المصروفات"
+                },
+                data: [
+                    {
+                        type: "pie",
+                        showInLegend: true,
+                        legendText: "{indexLabel}",
+                        dataPoints: [
+                            {% for x in outcome_by_category %}
+                                {
+                                    y: {{ x.total|floatformat:0 }},
+                                    indexLabel: "{{ x.category__name }}"
+                                }
+                                {% if not forloop.last %},{% endif %}
+                            {% endfor %}
+                        ]
+                    }
+                ]
+            });
+        chart3.render();
     </script>
 {% endblock %}

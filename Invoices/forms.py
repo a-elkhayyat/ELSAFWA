@@ -10,6 +10,7 @@ class InvoiceForm(forms.ModelForm):
         model = Invoice
         exclude = [
             'patient',
+            'product',
             'service',
             'visits_added',
             'visits_used',
