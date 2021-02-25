@@ -22,6 +22,7 @@ def invoices_report(request):
         outcome_by_category = object_list.filter(invoice_type=2).values('category__name').annotate(total=Sum('outcome'))
         sales_invoices = object_list.filter(invoice_type=1).filter(is_invoice=True).aggregate(total=Sum('paid'))
         services_invoices = object_list.filter(invoice_type=1).filter(is_invoice=False).aggregate(total=Sum('paid'))
+        net = object_list.aggregate(total=Sum('paid')-Sum('outcome'))
         context.update({
             'object_list': object_list,
             'income': income,
@@ -29,6 +30,7 @@ def invoices_report(request):
             'sales_invoices': sales_invoices,
             'services_invoices': services_invoices,
             'outcome_by_category': outcome_by_category,
+            'net': net,
         })
     return render(request, 'Reports/invoices_reports.html', context)
 
