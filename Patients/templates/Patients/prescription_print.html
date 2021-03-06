@@ -10,7 +10,10 @@
             </div>
         </div>
         <div class="card-body">
-            <h1>روشتة</h1>
+
+            <div style="text-align: center; min-width: 100%;">
+                <h3>روشتة</h3>
+            </div>
             <ul>
                 {% for x in object.prescriptionitem_set.all %}
                     <li>{{ x }}</li>

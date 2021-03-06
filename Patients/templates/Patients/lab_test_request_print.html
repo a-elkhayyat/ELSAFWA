@@ -2,15 +2,19 @@
 
 {% block body %}
     <div class="card">
-        <div class="card-header">
-            <div class="card-title">
-                الاسم: {{ object.patient.name }}
-                <br>
-                التاريخ: {{ object.added_at.date.isoformat }}
-            </div>
+    <div class="card-header">
+        <div class="card-title">
+            الاسم: {{ object.patient.name }}
+            <br>
+            التاريخ: {{ object.added_at.date.isoformat }}
         </div>
-        <div class="card-body">
-            <h1>طلب تحاليل</h1>
+    </div>
+    <div class="card-body">
+
+    <div style="text-align: center; min-width: 100%;">
+        <h3>طلب تحاليل</h3>
+
+        <div style="text-align: center; min-width: 100%;">
             <h3>{{ object.lab_test }}</h3>
         </div>
     </div>
