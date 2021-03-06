@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block top_navbar %}{% endblock %}
+{% block right_navbar %}{% endblock %}
+{% block navbar %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block css %}
+    <style>
+        body:not(.sidebar-mini-md) .content-wrapper, body:not(.sidebar-mini-md) .main-footer, body:not(.sidebar-mini-md) .main-header {
+            margin-right: 0 !important;
+        }
+
+    </style>
+{% endblock %}

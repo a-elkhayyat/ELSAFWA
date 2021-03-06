@@ -2,16 +2,20 @@
 {% block body %}
     <div class="row">
         <div class="col-lg-12">
-            <div class="btn-group">
+            <div class="btn-group btn-block">
 
-            <a href="{% url 'Calendar:AppointmentCreate' %}" class="btn btn-success" data-toggle="modal"
-               data-target="#sub_modal">
-                <i class="fa fa-calendar-plus"></i> إضافة موعد
-            </a>
-            <a href="{% url 'Invoices:create_outcome_invoice' %}" class="btn btn-warning" data-toggle="modal"
-               data-target="#sub_modal">
-                <i class="fa fa-calendar-plus"></i> سند صرف نقدية
-            </a>
+                <a href="{% url 'Calendar:AppointmentCreate' %}" class="btn btn-success" data-toggle="modal"
+                   data-target="#sub_modal">
+                    <i class="fa fa-calendar-plus"></i> إضافة موعد
+                </a>
+                <a href="{% url 'Patients:PatientCreate' %}" class="btn btn-info" data-toggle="modal"
+                   data-target="#sub_modal">
+                    <i class="fa fa-user-plus"></i> إضافة مريض
+                </a>
+                <a href="{% url 'Invoices:create_outcome_invoice' %}" class="btn btn-warning" data-toggle="modal"
+                   data-target="#sub_modal">
+                    <i class="fa fa-book"></i> سند صرف نقدية
+                </a>
             </div>
         </div>
         <div class="col-md-6">
@@ -36,7 +40,7 @@
                             <tr>
                                 <td>{{ x.id }}</td>
                                 <td>{{ x.date.time }}</td>
-                                <td>{{ x.patient }}</td>
+                                <td><a href="{% url 'Patients:PatientDetail' x.id %}">{{ x.patient }}</a></td>
                                 <td>{{ x.service }}</td>
                                 <td>
                                     {% if x.queue_set.count == 0 %}
@@ -87,7 +91,11 @@
                                 <td>{{ x.id }}</td>
                                 <td>{{ x.date.time }}</td>
                                 <td>{{ x.appointment.date.time }}</td>
-                                <td>{{ x.appointment.patient }}</td>
+                                <td>
+                                    <a href="{% url 'Patients:PatientDetail' x.appointment.patient.id %}">
+                                        {{ x.appointment.patient }}
+                                    </a>
+                                </td>
                                 <td>
                                     {% if x.sessions_left < 0 %}
                                         <span class="badge badge-danger">
@@ -105,7 +113,8 @@
                                             <i class="fa fa-check"></i>
                                             إتمام
                                         </a>
-                                        <a href="{% url 'Invoices:Pay' x.id %}" class="btn btn-warning" data-toggle="modal" data-target="#sub_modal">
+                                        <a href="{% url 'Invoices:Pay' x.id %}" class="btn btn-warning"
+                                           data-toggle="modal" data-target="#sub_modal">
                                             <i class="fab fa-cc-visa"></i>
                                             دفع
                                         </a>

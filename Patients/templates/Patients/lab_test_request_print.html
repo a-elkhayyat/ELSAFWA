@@ -1,0 +1,21 @@
+{% extends 'empty_base.html' %}
+
+{% block body %}
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">
+                الاسم: {{ object.patient.name }}
+                <br>
+                التاريخ: {{ object.added_at.date.isoformat }}
+            </div>
+        </div>
+        <div class="card-body">
+            <h1>طلب تحاليل</h1>
+            <h3>{{ object.lab_test }}</h3>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script>window.print();</script>
+{% endblock %}

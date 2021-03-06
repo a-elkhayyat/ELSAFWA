@@ -112,7 +112,18 @@
                 </div>
             </div>
             <div class="card-body">
-                <h4>{{ object.name }}</h4>
+                <h4>
+                    {{ object.name }}
+                    <div class="btn-group-sm">
+                        <a href="tel:{{ object.telephone }}" class="btn-sm btn-info">
+                            <i class="fa fa-phone"></i>
+                        </a>
+                        <a href="http://wa.me/2{{ object.telephone }}"
+                           target="_blank" class="btn-sm btn-success">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </h4>
                 <p>
                     <i class="fa fa-map-marker"></i>
                     {{ object.city.state.country }} - {{ object.city.state }} -{{ object.city }} - {{ object.area }}
@@ -124,16 +135,15 @@
                     {{ object.birthday|timesince }}
                     <br>
                     <i class="fa fa-mobile"></i> {{ object.telephone }}
-                    <a href="tel:{{ object.telephone }}">
-                        <i class="fa fa-phone"></i>
-                    </a>
-                    <a href="http://wa.me/2{{ object.telephone }}"
-                       target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
+
                     <br>
                     <i class="fa fa-clock"></i>
-                    آخر زيارة
+                    آخر زيارة:
+                    {{ object.get_last_visit.added_at.date.isoformat }}
+                    <br>
+                    <i class="fas fa-stopwatch-20"></i>
+                    عدد الزيارات:
+                    {{ object.get_visits_count }}
                 </p>
             </div>
         </div>
@@ -193,10 +203,18 @@
                                         <i class="fa fa-eye"></i>
                                         عرض النتيجة
                                     </a>
+                                    <a href="{% url 'Patients:print_lab_test_request' x.id %}" class="btn btn-info"
+                                       target="_blank">
+                                        <i class="fa fa-print"></i> طباعة الطلب
+                                    </a>
                                 {% else %}
                                     <a href="{% url 'Patients:add_lab_test_result' x.id %}" class="btn btn-success">
                                         <i class="fa fa-plus-circle"></i>
                                         إضافة النتيجة
+                                    </a>
+                                    <a href="{% url 'Patients:print_lab_test_request' x.id %}" class="btn btn-info"
+                                       target="_blank">
+                                        <i class="fa fa-print"></i> طباعة الطلب
                                     </a>
                                 {% endif %}
                             </td>
@@ -259,7 +277,13 @@
         <div class="card">
             <div class="card-header">
                 <div class="card-title">سجل الكشف</div>
-                <div class="card-tools">{% include 'segments/card_tools.html' %}</div>
+                <div class="card-tools">
+                    {% include 'segments/card_tools.html' %}
+                    <a href="{% url 'Patients:print_patient_report' object.id %}" class="btn-sm btn-info"
+                       target="_blank">
+                        <i class="fa fa-print"></i>
+                    </a>
+                </div>
             </div>
             <div class="card-body table-responsive">
                 <table class="table table-hover">
@@ -371,6 +395,10 @@
                                                data-target="#sub_modal" data-toggle="modal">
                                                 <i class="fa fa-edit"></i> تعديل
                                             </a>
+                                            <a href="{% url 'Patients:print_diet' x.id %}" class="btn btn-info"
+                                               target="_blank">
+                                                <i class="fa fa-print"></i> طباعة
+                                            </a>
                                         </div>
                                     </td>
                                 </tr>
@@ -411,6 +439,10 @@
                                         <div class="btn-group-sm">
                                             <a href="{% url 'Patients:view_prescription' x.id %}" class="btn btn-info">
                                                 <i class="fa fa-eye"></i> عرض
+                                            </a>
+                                            <a href="{% url 'Patients:print_prescription' x.id %}" class="btn btn-info"
+                                               target="_blank">
+                                                <i class="fa fa-print"></i>طباعة
                                             </a>
                                         </div>
                                     </td>

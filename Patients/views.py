@@ -468,3 +468,35 @@ def electricity_image_upload(request, pk):
         'title': title,
     }
     return render(request, 'forms/get_form.html', context)
+
+
+def print_lab_test_request(request, pk):
+    object = get_object_or_404(LabTestRequest, id=pk)
+    context = {
+        'object': object,
+    }
+    return render(request, 'Patients/lab_test_request_print.html', context)
+
+
+def print_prescription(request, pk):
+    object = get_object_or_404(Prescription, id=pk)
+    context = {
+        'object': object,
+    }
+    return render(request, 'Patients/prescription_print.html', context)
+
+
+def print_patient_report(request, pk):
+    object = get_object_or_404(Patient, id=pk)
+    context = {
+        'object': object,
+    }
+    return render(request, 'Patients/report_print.html', context)
+
+
+def print_diet(request, pk):
+    object = get_object_or_404(PatientDiet, id=pk)
+    context = {
+        'object': object,
+    }
+    return render(request, 'Patients/diet_print.html', context)

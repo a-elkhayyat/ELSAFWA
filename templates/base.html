@@ -77,8 +77,8 @@
         </div>
     {% endblock %}
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-navy navbar-dark text-sm">
-        {% block top_navbar %}
+    {% block top_navbar %}
+        <nav class="main-header navbar navbar-expand navbar-navy navbar-dark text-sm">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -91,23 +91,21 @@
                     <a href="#" class="nav-link">اتصل بنا</a>
                 </li>
             </ul>
-        {% endblock %}
 
-        <!-- SEARCH FORM -->
-        <form class="form-inline ml-3" action="{% url 'Patients:PatientList' %}">
-            <div class="input-group input-group-sm">
-                <input class="form-control form-control-navbar" type="search" name="q" placeholder="بحث ..."
-                       aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-navbar" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
+            <!-- SEARCH FORM -->
+            <form class="form-inline ml-3" action="{% url 'Patients:PatientList' %}">
+                <div class="input-group input-group-sm">
+                    <input class="form-control form-control-navbar" type="search" name="q" placeholder="بحث ..."
+                           aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-navbar" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
 
-        <!-- Right navbar links -->
-        {% block right_navbar %}
+            <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'Core:logout' %}">
@@ -115,8 +113,8 @@
                     </a>
                 </li>
             </ul>
-        {% endblock %}
-    </nav>
+        </nav>
+    {% endblock %}
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
@@ -138,14 +136,15 @@
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <strong>جميع الحقوق محفوظة &copy; 2008-2020 <a href="https://onlink4it.com" target="_blank">شركة اون
-            لينك</a>.</strong>
-        <div class="float-right d-none d-sm-inline-block">
-            <b>الاصدار</b> 1.0.0
-        </div>
-    </footer>
-
+    {% block footer %}
+        <footer class="main-footer">
+            <strong>جميع الحقوق محفوظة &copy; 2008-2020 <a href="https://onlink4it.com" target="_blank">شركة اون
+                لينك</a>.</strong>
+            <div class="float-right d-none d-sm-inline-block">
+                <b>الاصدار</b> 1.0.0
+            </div>
+        </footer>
+    {% endblock %}
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark text-sm">
         <!-- Control sidebar content goes here -->

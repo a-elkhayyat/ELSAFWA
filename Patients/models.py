@@ -79,7 +79,7 @@ class Patient(models.Model):
     def balance(self):
         invoices = self.invoice_set.all()
         if invoices:
-            balance = invoices.aggregate(balance=Sum('after_discount')-Sum('paid'))
+            balance = invoices.aggregate(balance=Sum('after_discount') - Sum('paid'))
             return balance['balance']
         else:
             return 0
@@ -94,6 +94,9 @@ class Patient(models.Model):
 
     def get_visits_count(self):
         return self.patientinvestigation_set.count()
+
+    class Meta:
+        ordering = ['id']
 
 
 class PatientViralProcess(models.Model):
@@ -310,7 +313,12 @@ class PrescriptionItem(models.Model):
     timing = models.ForeignKey(Timing, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='التوقيت')
 
     def __str__(self):
-        return self.medicine.trade_name + ' - ' + self.dose.__str__() + ' - ' + self.timing.__str__()
+        text = self.medicine.trade_name
+        if self.dose:
+            text += ' - ' + self.dose.__str__()
+        if self.timing:
+            text += ' - ' + self.timing.__str__()
+        return text
 
 
 class PatientImage(models.Model):
@@ -321,4 +329,3 @@ class PatientImage(models.Model):
 
     def __str__(self):
         return str(self.id)
-

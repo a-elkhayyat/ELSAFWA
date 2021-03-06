@@ -1,0 +1,25 @@
+{% extends 'empty_base.html' %}
+
+{% block body %}
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">
+                الاسم: {{ object.patient.name }}
+                <br>
+                التاريخ: {{ object.added_at.date.isoformat }}
+            </div>
+        </div>
+        <div class="card-body">
+            <h1>روشتة</h1>
+            <ul>
+                {% for x in object.prescriptionitem_set.all %}
+                    <li>{{ x }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script>window.print();</script>
+{% endblock %}
