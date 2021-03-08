@@ -290,7 +290,7 @@ class PatientDiet(models.Model):
         return str(self.id)
 
     class Meta:
-        ordering = ['id']
+        ordering = ['-id']
 
 
 class Prescription(models.Model):
@@ -303,7 +303,7 @@ class Prescription(models.Model):
         return str(self.id)
 
     class Meta:
-        ordering = ['id']
+        ordering = ['-id']
 
 
 class PrescriptionItem(models.Model):
@@ -329,3 +329,20 @@ class PatientImage(models.Model):
 
     def __str__(self):
         return str(self.id)
+
+    class Meta:
+        ordering = ['-id']
+
+
+class Printing(models.Model):
+    added_at = models.DateTimeField(auto_now_add=True, verbose_name='التاريخ')
+    added_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, null=True, blank=True, verbose_name='المريض')
+    title = models.CharField(max_length=128, verbose_name='عنوان الصفحة')
+    body = models.TextField(verbose_name='النص')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['-id']

@@ -11,12 +11,12 @@
         </div>
         <div class="card-body">
 
-            <div style="text-align: center; min-width: 100%;">
+            <div style="text-align: center; min-width: 100%; padding-bottom: 100px;">
                 <h3>روشتة</h3>
             </div>
             <ul>
                 {% for x in object.prescriptionitem_set.all %}
-                    <li>{{ x }}</li>
+                    <li><h4>{{ x }}</h4></li>
                 {% endfor %}
             </ul>
         </div>

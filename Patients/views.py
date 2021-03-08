@@ -500,3 +500,42 @@ def print_diet(request, pk):
         'object': object,
     }
     return render(request, 'Patients/diet_print.html', context)
+
+
+def printing_create(request, pk):
+    patient = get_object_or_404(Patient, id=pk)
+    title = 'كتابة مطبوعات'
+    form = PrintingForm(request.POST or None)
+    if form.is_valid():
+        printing = form.save(commit=False)
+        printing.added_by = request.user
+        printing.patient = patient
+        printing.save()
+        return redirect('Patients:PatientDetail', patient.id)
+    context = {
+        'title': title,
+        'form': form,
+    }
+    return render(request, 'forms/form_template.html', context)
+
+
+def printing_edit(request, pk):
+    printing = get_object_or_404(Printing, id=pk)
+    title = 'تعديل مطبوعات'
+    form = PrintingForm(request.POST or None, instance=printing)
+    if form.is_valid():
+        printing = form.save(commit=False)
+        return redirect('Patients:PatientDetail', printing.patient.id)
+    context = {
+        'title': title,
+        'form': form,
+    }
+    return render(request, 'forms/form_template.html', context)
+
+
+def printing_print(request, pk):
+    printing = get_object_or_404(Printing, id=pk)
+    context = {
+        'printing': printing,
+    }
+    return render(request, 'Patients/printing_print.html', context)

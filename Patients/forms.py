@@ -138,3 +138,9 @@ class ElectricityImageForm(ModelForm):
     class Meta:
         model = Patient
         fields = ['electricity_img']
+
+
+class PrintingForm(ModelForm):
+    class Meta:
+        model = Printing
+        exclude = ['added_by', 'patient']

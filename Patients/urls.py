@@ -52,4 +52,7 @@ urlpatterns += [
     path('complain/list/', ComplainList.as_view(), name='ComplainList'),
     path('complain/create/', ComplainCreate.as_view(), name='ComplainCreate'),
     path('complain/update/<int:pk>/', ComplainUpdate.as_view(), name='ComplainUpdate'),
+    path('printing/<int:pk>/create/', printing_create, name='printing_create'),
+    path('printing/<int:pk>/update/', printing_edit, name='printing_edit'),
+    path('printing/<int:pk>/print/', printing_print, name='printing_print'),
 ]
