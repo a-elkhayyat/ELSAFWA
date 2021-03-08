@@ -525,6 +525,7 @@ def printing_edit(request, pk):
     form = PrintingForm(request.POST or None, instance=printing)
     if form.is_valid():
         printing = form.save(commit=False)
+        printing.save()
         return redirect('Patients:PatientDetail', printing.patient.id)
     context = {
         'title': title,
