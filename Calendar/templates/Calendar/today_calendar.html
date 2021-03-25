@@ -38,14 +38,14 @@
                         <tbody>
                         {% for x in appointments %}
                             <tr>
-                                <td>{{ x.id }}</td>
+                                <td>{{ forloop.counter }}</td>
                                 <td>{{ x.date.time }}</td>
                                 <td><a href="{% url 'Patients:PatientDetail' x.id %}">{{ x.patient }}</a></td>
                                 <td>{{ x.service }}</td>
                                 <td>
                                     {% if x.queue_set.count == 0 %}
                                         <div class="btn-group-sm">
-                                            <a href="{% url 'Calendar:AppointmentUpdate' x.id %}"
+                                            <a href="{% url 'Calendar:AppointmentUpdate' x.patient.id %}"
                                                class="btn btn-warning"
                                                data-toggle="modal" data-target="#sub_modal">
                                                 <i class="fa fa-edit"></i>
@@ -88,7 +88,7 @@
                         <tbody>
                         {% for x in queues %}
                             <tr>
-                                <td>{{ x.id }}</td>
+                                <td>{{ forloop.counter }}</td>
                                 <td>{{ x.date.time }}</td>
                                 <td>{{ x.appointment.date.time }}</td>
                                 <td>
